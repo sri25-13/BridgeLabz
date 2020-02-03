@@ -24,7 +24,7 @@ then
 	wins=$wins++
  fi
 done
-winper=100*$(($trials/$wins))
-#lossper=`expr 100 - $winper`
+winper=$(echo "$trials" "$wins" | awk '{print 100*$(($trials/$wins))}')
+lossper=`expr 100 - $winper`
 echo "win percentage is $winper"
-#echo "loss percentage is $lossper"
+echo "loss percentage is $lossper"
