@@ -53,4 +53,4 @@ echo $wins "wins of" $trials
 echo "win percentage is =" $(($((100*$wins))/$trials))
 #echo "loss percentage is $losspe"
 
->>>>>>> [harshini]add .Implementation of gambler shellscript program
+
