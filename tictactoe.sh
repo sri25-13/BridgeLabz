@@ -30,16 +30,16 @@ checkmatch(){
   fi
 }
 
-#checkgame(){
- # checkmatch 0 1 2
-  #checkmatch 3 4 5
-  #checkmatch 6 7 8
-  #checkmatch 0 3 6
-  #checkmatch 1 4 7
-  #checkmatch 2 5 8
-  #checkmatch 0 4 8
-  #checkmatch 2 4 6
-#}
+checkgame(){
+  checkmatch 0 1 2
+  checkmatch 3 4 5
+  checkmatch 6 7 8
+  checkmatch 0 3 6
+  checkmatch 1 4 7
+  checkmatch 2 5 8
+  checkmatch 0 4 8
+  checkmatch 2 4 6
+}
 
 
 reset
