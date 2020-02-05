@@ -9,7 +9,7 @@ namespace FunctionalPrograms
         public static void Power()
         {
             Console.WriteLine("enter the number:");
-            int n = Convert.ToInt32(Console.ReadLine());
+            int n = Utility.PowerInput();
             int power = 1;
             for (int i = 0; i <= n; i++)
             {
