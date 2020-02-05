@@ -6,5 +6,16 @@ namespace FunctionalPrograms
 {
     class Powerof2
     {
+        public static void Power()
+        {
+            Console.WriteLine("enter the number:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int power = 1;
+            for (int i = 0; i <= n; i++)
+            {
+                Console.WriteLine("2^" + i + "=" + power);
+                power = power * 2;
+            }
+        }
     }
 }
