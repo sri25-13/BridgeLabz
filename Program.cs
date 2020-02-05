@@ -7,10 +7,10 @@ namespace FunctionalPrograms
         static void Main(string[] args)
         {
 
-            Console.WriteLine("1.Replace\n2.powerof2\n3.PrimeFactors\n4.HarmonicNum\n5.LeapYear\n6.FlipCoin");
+            Console.WriteLine("1.Replace\n2.powerof2\n3.PrimeFactors\n4.HarmonicNum\n5.LeapYear\n6.FlipCoin\n7.Distance\n8.Quadratic\n9.WindChill\n10.SumofTrip\n11.twodiArray");
             Console.WriteLine("enter an option to be executed");
             int option = Utility.readInt();
-            switch(option)
+            switch (option)
             {
                 case 1:
                     Replace.ReplaceString();
@@ -30,8 +30,23 @@ namespace FunctionalPrograms
                 case 6:
                     FlipCoin.Flip();
                     break;
+                case 7:
+                    Distance.Dist();
+                    break;
+                case 8:
+                    Quadratic.Quad();
+                    break;
+                case 9:
+                    WindChill.Wind();
+                    break;
+                case 10:
+                    SumofTrip.Trip();
+                    break;
+                case 11:
+                    twodiArray.array2d();
+                    break;
+            }
             }
 
         }
     }
-}

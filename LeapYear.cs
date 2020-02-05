@@ -9,7 +9,7 @@ namespace FunctionalPrograms
         public static void Leap()
         {
             Console.WriteLine("enter a year:");
-            int n = Utility.LeapInput();
+            int n = Utility.readInt();
             if (n % 400 == 0)
             {
                 Console.WriteLine(n + "is as leapyear");

@@ -9,7 +9,7 @@ namespace FunctionalPrograms
         public static void Prime()
         {
             Console.WriteLine("enter a number:");
-            int n = Utility.PrimeInput();
+            int n = Utility.readInt();
             for(int i=2;i<=n;i++)
             {
                 while(n%i==0)

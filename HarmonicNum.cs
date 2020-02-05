@@ -9,7 +9,7 @@ namespace FunctionalPrograms
         public static void Harmonic()
         {
             Console.WriteLine("enter the number:");
-            int n = Utility.HarmonicInput();
+            int n = Utility.readInt();
             double sum = 0.0;
             for (int i = 1; i <= n; i++)
             {
