@@ -1,0 +1,11 @@
+C:\Users\Bridgelabz\source\repos\AlgorithmPrograms\obj\Debug\netcoreapp3.0\AlgorithmPrograms.csprojAssemblyReference.cache
+C:\Users\Bridgelabz\source\repos\AlgorithmPrograms\obj\Debug\netcoreapp3.0\AlgorithmPrograms.AssemblyInfoInputs.cache
+C:\Users\Bridgelabz\source\repos\AlgorithmPrograms\obj\Debug\netcoreapp3.0\AlgorithmPrograms.AssemblyInfo.cs
+C:\Users\Bridgelabz\source\repos\AlgorithmPrograms\bin\Debug\netcoreapp3.0\AlgorithmPrograms.exe
+C:\Users\Bridgelabz\source\repos\AlgorithmPrograms\bin\Debug\netcoreapp3.0\AlgorithmPrograms.deps.json
+C:\Users\Bridgelabz\source\repos\AlgorithmPrograms\bin\Debug\netcoreapp3.0\AlgorithmPrograms.runtimeconfig.json
+C:\Users\Bridgelabz\source\repos\AlgorithmPrograms\bin\Debug\netcoreapp3.0\AlgorithmPrograms.runtimeconfig.dev.json
+C:\Users\Bridgelabz\source\repos\AlgorithmPrograms\bin\Debug\netcoreapp3.0\AlgorithmPrograms.dll
+C:\Users\Bridgelabz\source\repos\AlgorithmPrograms\bin\Debug\netcoreapp3.0\AlgorithmPrograms.pdb
+C:\Users\Bridgelabz\source\repos\AlgorithmPrograms\obj\Debug\netcoreapp3.0\AlgorithmPrograms.dll
+C:\Users\Bridgelabz\source\repos\AlgorithmPrograms\obj\Debug\netcoreapp3.0\AlgorithmPrograms.pdb
