@@ -12,6 +12,10 @@ namespace AlgorithmPrograms
             return s;
 
         }
+        public static double readDouble()
+        {
+            return Convert.ToDouble(Console.ReadLine());
+        }
         public static int readInt()
         {
             return Convert.ToInt32(Console.ReadLine());

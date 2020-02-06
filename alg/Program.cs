@@ -6,7 +6,7 @@ namespace AlgorithmPrograms
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("1.MonthlyPay\n2.TemperatureConversion");
+            Console.WriteLine("1.MonthlyPay\n2.TemperatureConversion\n3.SquareRoot");
             Console.WriteLine("enter an option to be executed");
             int option = Utility.readInt();
             switch (option)
@@ -16,6 +16,9 @@ namespace AlgorithmPrograms
                     break;
                 case 2:
                     TemperatureConversion.TempConversion();
+                    break;
+                case 3:
+                    SquareRoot.Sqrt();
                     break;
 
             }
