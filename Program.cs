@@ -7,7 +7,7 @@ namespace FunctionalPrograms
         static void Main(string[] args)
         {
 
-            Console.WriteLine("1.Replace\n2.powerof2\n3.PrimeFactors\n4.HarmonicNum\n5.LeapYear\n6.FlipCoin\n7.Distance\n8.Quadratic\n9.WindChill\n10.SumofTrip\n11.twodiArray\n12.Gambler\n13.Coupon\n14.Stopwatch");
+            Console.WriteLine("1.Replace\n2.powerof2\n3.PrimeFactors\n4.HarmonicNum\n5.LeapYear\n6.FlipCoin\n7.Distance\n8.Quadratic\n9.WindChill\n10.SumofTrip\n11.twodiArray\n12.Gambler\n13.Coupon\n14.Stopwatch\n15.TicTac1\n16.MonthlyPay");
             Console.WriteLine("enter an option to be executed");
             int option = Utility.readInt();
             switch (option)
@@ -53,6 +53,16 @@ namespace FunctionalPrograms
                     break;
                 case 14:
                     Stopwatch1.Stopwatch();
+                    break;
+                case 15:
+                    TicTac1.initBoard();
+                    TicTac1.dispBoard();
+                    TicTac1.putVal();
+                    TicTac1.win();
+                    TicTac1.play();
+                    break;
+                case 16:
+                    MonthlyPay.MonthPay();
                     break;
 
             }
