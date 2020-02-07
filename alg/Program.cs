@@ -6,7 +6,7 @@ namespace AlgorithmPrograms
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("1.MonthlyPay\n2.TemperatureConversion\n3.SquareRoot");
+            Console.WriteLine("1.MonthlyPay\n2.TemperatureConversion\n3.SquareRoot\n4.DayofWeek\n5.Binary\n6.BinarySwap\n7.VendingMachine");
             Console.WriteLine("enter an option to be executed");
             int option = Utility.readInt();
             switch (option)
@@ -20,7 +20,18 @@ namespace AlgorithmPrograms
                 case 3:
                     SquareRoot.Sqrt();
                     break;
-
+                case 4:
+                    DayofWeek.DayWeekMethod();
+                    break;
+                case 5:
+                    Binary.BinaryM();
+                    break;
+                case 6:
+                    BinarySwap.Swapping();
+                    break;
+                case 7:
+                    VendingMachine.Vending();
+                    break;
             }
         }
     }

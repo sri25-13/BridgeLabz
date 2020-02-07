@@ -20,5 +20,17 @@ namespace AlgorithmPrograms
         {
             return Convert.ToInt32(Console.ReadLine());
         }
+        public static int[] readArray()
+        {
+            Console.WriteLine("enter the array size");
+            int num = readInt();
+            int[] arr = new int[num];
+            for (int i = 0; i < num; i++)
+            {
+                arr[i] = readInt();
+            }
+            return arr;
+
+        }
     }
 }
