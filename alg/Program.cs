@@ -6,7 +6,7 @@ namespace AlgorithmPrograms
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("1.MonthlyPay\n2.TemperatureConversion\n3.SquareRoot\n4.DayofWeek\n5.Binary\n6.BinarySwap\n7.VendingMachine\n8.AnagramDetection\n9.PrimeNumbers");
+            Console.WriteLine("1.MonthlyPay\n2.TemperatureConversion\n3.SquareRoot\n4.DayofWeek\n5.Binary\n6.BinarySwap\n7.VendingMachine\n8.AnagramDetection\n9.PrimeNumbers\n10.BubbleSort\n11.InsertionSort");
             Console.WriteLine("enter an option to be executed");
             int option = Utility.readInt();
             switch (option)
@@ -38,7 +38,12 @@ namespace AlgorithmPrograms
                 case 9:
                     PrimeNumbers.Prime();
                     break;
-
+                case 10:
+                    BubbleSort.Bubble();
+                    break;
+                case 11:
+                    InsertionSort.Insertion();
+                    break;
             }
         }
     }
