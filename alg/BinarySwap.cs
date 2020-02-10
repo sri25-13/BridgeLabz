@@ -10,17 +10,17 @@ namespace AlgorithmPrograms
         {
             Console.WriteLine("enter number for swapping");
             int x = Utility.readInt();
-            
-          methodcalling(x);
+
+            BinaryConversion(x);
             int y = ((x & 0x0F )<<4|(x & 0xF0)>>4);
            
 
             Console.WriteLine(y);
-            methodcalling(y);
+            BinaryConversion(y);
            
 
         }
-        public static void methodcalling(int n)
+        public static void BinaryConversion(int n)
         {
             String str = "";
             while (n > 0)
