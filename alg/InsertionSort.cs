@@ -9,7 +9,7 @@ namespace AlgorithmPrograms
         public static void Insertion()
         {
 
-            List<String> MyList = new List<string>() { "harshini", "amulya", "lucky", "teju" };
+            List<string> MyList = new List<string>() { "harshini", "amulya", "lucky", "teju" };
             int n = MyList.Count;
             for (int i = 0; i < n; i++)
             {
@@ -17,7 +17,7 @@ namespace AlgorithmPrograms
                 {
                     if (MyList[i].CompareTo(MyList[j]) > 0)
                     {
-                        String temp = MyList[i];
+                        string temp = MyList[i];
                         MyList[i] = MyList[j];
                         MyList[j] = temp;
                     }

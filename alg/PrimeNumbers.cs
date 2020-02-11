@@ -9,14 +9,14 @@ namespace AlgorithmPrograms
         public static void Prime()
         {
             Console.Write("Enter The Start Number: ");
-            int startNumber = Utility.readInt();
+            int startNumber = Utility.ReadInt();
             Console.Write("Enter the End Number : ");
-            int endNumber = Utility.readInt();
+            int endNumber = Utility.ReadInt();
           
             for (int i = startNumber; i <= endNumber; i++)
             {
                 int counter = 0;
-                for (int j = 2; j <= i / 2; j++)
+                for (int j = 2; j <= i/2; j++)
                 {
                     if (i % j == 0)
                     {

@@ -9,7 +9,7 @@ namespace AlgorithmPrograms
         public static void Vending()
         {
             Console.WriteLine("enter the amount");
-            int n = Utility.readInt();
+            int n = Utility.ReadInt();
             int[] arr = { 1000, 500, 100, 50, 10, 5, 2, 1 };
             int[] notecount = new int[arr.Length];
             int count = 0;
@@ -19,7 +19,7 @@ namespace AlgorithmPrograms
                 {
                     notecount[i] = n / arr[i];
                     n = n - notecount[i] * arr[i];
-                    count = count + notecount[i];
+                    count+= notecount[i];
                 }
 
                 if (notecount[i] != 0)

@@ -8,7 +8,7 @@ namespace AlgorithmPrograms
     {
         public static void Bubble()
         {
-            int temp = 0;
+            int temp;
             
             List<int> MyList = new List<int>() { 1, 6, 9, 3 };
            

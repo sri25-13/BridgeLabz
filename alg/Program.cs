@@ -6,9 +6,9 @@ namespace AlgorithmPrograms
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("1.MonthlyPay\n2.TemperatureConversion\n3.SquareRoot\n4.DayofWeek\n5.Binary\n6.BinarySwap\n7.VendingMachine\n8.AnagramDetection\n9.PrimeNumbers\n10.BubbleSort\n11.InsertionSort\n12.Permutations\n13.FindingNumber");
+            Console.WriteLine("1.MonthlyPay\n2.TemperatureConversion\n3.SquareRoot\n4.DayofWeek\n5.Binary\n6.BinarySwap\n7.VendingMachine\n8.AnagramDetection\n9.PrimeNumbers\n10.BubbleSort\n11.InsertionSort\n12.Permutations\n13.FindingNumber\n14.BinarySearch\n15.AnagramandPalindrome\n16.MergeSort");
             Console.WriteLine("enter an option to be executed");
-            int option = Utility.readInt();
+            int option = Utility.ReadInt();
             switch (option)
             {
                 case 1:
@@ -49,6 +49,15 @@ namespace AlgorithmPrograms
                     break;
                 case 13:
                     FindingNumber.FindingNum();
+                    break;
+                case 14:
+                    BinarySearch.ReadingFile();
+                    break;
+                case 15:
+                    AnagramandPalindrome.PrimePalindrome();
+                    break;
+                case 16:
+                    MergeSort.Merge();
                     break;
             }
         }

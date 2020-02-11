@@ -9,11 +9,11 @@ namespace AlgorithmPrograms
         public static void MethodCalling()
         {
             Console.Write("enter a string to check permutations using recursion:");
-            char[] ch = Utility.readString().ToCharArray();
+            char[] ch = Utility.ReadString().ToCharArray();
             string s1 = Permute(ch, 0);
             Console.WriteLine(s1);
             Console.WriteLine("\n enter a string to check permutations using iteration:");
-            string s = Utility.readString();
+            string s = Utility.ReadString();
             Console.WriteLine();
             String s2 = PermutationUsingIteration(s);
             Console.WriteLine(s2);
@@ -71,7 +71,7 @@ namespace AlgorithmPrograms
                 {
                     int j = ((i % 2) == 0) ? 0 : p[i];
                     Swap(chars, i, j);
-                    result = new string(join(chars));
+                    result = new string(Join(chars));
                     Console.WriteLine(result);
                     p[i]++;
                     i = 1;
@@ -87,7 +87,7 @@ namespace AlgorithmPrograms
             return "";
 
         }
-        private static String join(char[] a)
+        private static String Join(char[] a)
         {
             StringBuilder builder = new StringBuilder();
             builder.Append(a);

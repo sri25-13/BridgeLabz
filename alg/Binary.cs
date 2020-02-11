@@ -9,14 +9,14 @@ namespace AlgorithmPrograms
         public static void BinaryM()
         {
             Console.WriteLine("enter a number");
-            int n = Utility.readInt();
+            int n = Utility.ReadInt();
             
-            String str = "";
+            string str = "";
             while(n>0)
             {
                
                 int num = n % 2;
-                n = n / 2;
+                n /= 2;
                 str = num + str;
             }
           

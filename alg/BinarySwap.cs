@@ -9,7 +9,7 @@ namespace AlgorithmPrograms
         public static void Swapping()
         {
             Console.WriteLine("enter number for swapping");
-            int x = Utility.readInt();
+            int x = Utility.ReadInt();
 
             BinaryConversion(x);
             int y = ((x & 0x0F )<<4|(x & 0xF0)>>4);
@@ -22,12 +22,12 @@ namespace AlgorithmPrograms
         }
         public static void BinaryConversion(int n)
         {
-            String str = "";
+            string str = "";
             while (n > 0)
             {
 
                 int num = n % 2;
-                n = n / 2;
+                n /= 2;
                 str = num + str;
             }
 

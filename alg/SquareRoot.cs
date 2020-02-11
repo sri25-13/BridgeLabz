@@ -9,7 +9,7 @@ namespace AlgorithmPrograms
         public static void Sqrt()
         {
             Console.WriteLine("enter a number");
-            double c = Utility.readDouble();
+            double c = Utility.ReadDouble();
             double epsilon = 1.0e-15;
             double t = c;
             while(Math.Abs(t-c/t)>epsilon*t)

@@ -9,9 +9,9 @@ namespace AlgorithmPrograms
         public static void Anagram()
         {
             Console.WriteLine("enter first string");
-            string str1 = Utility.readString();
+            string str1 = Utility.ReadString();
             Console.WriteLine("enter second string");
-            string str2 = Utility.readString();
+            string str2 = Utility.ReadString();
             char[] s1Array= str1.ToLower().ToCharArray();
             char[] s2Array = str2.ToLower().ToCharArray();
             Array.Sort(s1Array);
