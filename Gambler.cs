@@ -9,11 +9,11 @@ namespace FunctionalPrograms
         public static void Gambling()
         {
             Console.WriteLine("Enter stake value");
-            int stake = Utility.readInt();
+            int stake = Utility.ReadInt();
             Console.WriteLine("Enter goal");
-            int goal = Utility.readInt();
+            int goal = Utility.ReadInt();
             Console.WriteLine("enter the number of trials");
-            int trials = Utility.readInt();
+            int trials = Utility.ReadInt();
 
             int wins = 0;
             Random rnd = new Random();

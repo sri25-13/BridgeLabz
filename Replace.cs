@@ -10,7 +10,7 @@ namespace FunctionalPrograms
         {
             String str = "Hello <<username>>,How are you?";
             Console.WriteLine("enter the string you want to replace with username");
-            String s = Utility.readString();
+            String s = Utility.ReadString();
             if (s.Length <= 3)
             {
                 Console.WriteLine("INVALID INPUT");
@@ -18,7 +18,7 @@ namespace FunctionalPrograms
 
             else
             {
-                String replace = str.Replace("<<username>>", s);
+                string replace = str.Replace("<<username>>", s);
                 Console.WriteLine(replace);
             }
         }

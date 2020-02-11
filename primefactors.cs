@@ -9,13 +9,13 @@ namespace FunctionalPrograms
         public static void Prime()
         {
             Console.WriteLine("enter a number:");
-            int n = Utility.readInt();
+            int n = Utility.ReadInt();
             for(int i=2;i<=n;i++)
             {
                 while(n%i==0)
                 {
                     Console.WriteLine(i);
-                    n = n/i;
+                    n/=i;
                 }
             }
           

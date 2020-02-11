@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bridgelabz\\Documents\\GitHub\\FunctionalPrograms\\FunctionalPrograms.csproj": {}
+    "C:\\Users\\Bridgelabz\\source\\repos\\FunctionalPrograms\\FunctionalPrograms.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bridgelabz\\Documents\\GitHub\\FunctionalPrograms\\FunctionalPrograms.csproj": {
+    "C:\\Users\\Bridgelabz\\source\\repos\\FunctionalPrograms\\FunctionalPrograms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bridgelabz\\Documents\\GitHub\\FunctionalPrograms\\FunctionalPrograms.csproj",
+        "projectUniqueName": "C:\\Users\\Bridgelabz\\source\\repos\\FunctionalPrograms\\FunctionalPrograms.csproj",
         "projectName": "FunctionalPrograms",
-        "projectPath": "C:\\Users\\Bridgelabz\\Documents\\GitHub\\FunctionalPrograms\\FunctionalPrograms.csproj",
+        "projectPath": "C:\\Users\\Bridgelabz\\source\\repos\\FunctionalPrograms\\FunctionalPrograms.csproj",
         "packagesPath": "C:\\Users\\Bridgelabz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bridgelabz\\Documents\\GitHub\\FunctionalPrograms\\obj\\",
+        "outputPath": "C:\\Users\\Bridgelabz\\source\\repos\\FunctionalPrograms\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

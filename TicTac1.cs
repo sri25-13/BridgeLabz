@@ -7,10 +7,10 @@ namespace FunctionalPrograms
     class TicTac1
     {
         static int player = 0;
-        static int[,] BOARD = new int[3, 3];
-        static Boolean isEmpty = true;
+        static int[,] BOARD= new int[3, 3];
+        static bool isEmpty = true;
 
-        public static void initBoard()
+        public static void InitBoard()
         {
             Console.WriteLine("TIC TAC TOE GAME\nComputer is x\nPlayer  is o ");
             for (int i = 0; i < 3; i++)
@@ -21,10 +21,10 @@ namespace FunctionalPrograms
                 }
             }
             Console.WriteLine("Board is this :");
-            dispBoard();
+            DispBoard();
         }
 
-        public static void dispBoard()
+        public static void DispBoard()
         {
             int count = 0;
             for (int i = 0; i < 3; i++)
@@ -56,7 +56,7 @@ namespace FunctionalPrograms
         }
        
 
-        public static void putVal()
+        public static void PutVal()
         {
             Random random = new Random();
             int i;
@@ -70,9 +70,9 @@ namespace FunctionalPrograms
             {
 
                 Console.WriteLine("enter value of row ");
-                i = Utility.readInt();
+                i = Utility.ReadInt();
                 Console.WriteLine("enter value of column");
-                j = Utility.readInt();
+                j = Utility.ReadInt();
             }
             if (BOARD[i, j] == -10)
             {
@@ -88,12 +88,12 @@ namespace FunctionalPrograms
             }
             else
             {
-                putVal();
+                PutVal();
             }
 
         }
 
-        public static Boolean win()
+        public static bool Win()
         {
             return ((BOARD[0, 0] + BOARD[0, 1] + BOARD[0, 2] == player * 3)
                  || (BOARD[1, 0] + BOARD[1, 1] + BOARD[1, 2] == player * 3)
@@ -105,24 +105,24 @@ namespace FunctionalPrograms
                  || (BOARD[2, 0] + BOARD[1, 1] + BOARD[0, 2] == player * 3));
         }
 
-        public static void play()
+        public static void Play()
         {
-            initBoard();
+            InitBoard();
             while (isEmpty)
             {
                 Console.WriteLine("Players turn");
-                putVal();
-                dispBoard();
-                if (win())
+                PutVal();
+                DispBoard();
+                if (Win())
                 {
                     Console.WriteLine("Player won");
                     return;
                 }
                 player = 1;
                 Console.WriteLine("Computers turn");
-                putVal();
-                dispBoard();
-                if (win())
+                PutVal();
+                DispBoard();
+                if (Win())
                 {
                     Console.WriteLine("Computer won");
                     return;

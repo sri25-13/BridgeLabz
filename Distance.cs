@@ -11,11 +11,11 @@ namespace FunctionalPrograms
             Console.WriteLine("enter x value:");
         
             Console.WriteLine("enter y value:");
-            int x= Utility.readInt();
+            int x= Utility.ReadInt();
 
-            int y =Utility.readInt();
+            int y =Utility.ReadInt();
             int a =(x*x)+(y*y);
-            Double res = Math.Pow(a, 0.5);
+            double res = Math.Pow(a, 0.5);
             Console.WriteLine(res);
         }
     }

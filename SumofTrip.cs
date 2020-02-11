@@ -4,15 +4,15 @@ using System.Text;
 
 namespace FunctionalPrograms
 {
-    class SumofTrip
+    class SumOfTrip
     {
         public static void Trip()
         {
             
             Console.WriteLine("enter the array elements");
-            int[] arr=Utility.readArray();
-           
-            
+            int[] arr=Utility.ReadArray();
+
+            int count = 0;
 
             for(int i=0;i<arr.Length-2;i++)
             {
@@ -23,9 +23,10 @@ namespace FunctionalPrograms
                         if(arr[i]+arr[j]+arr[k]==0)
                         {
                             Console.WriteLine(arr[i] +","+arr[j] +","+ arr[k]);
+                            count++;
                         }
-                        
-                        
+
+                        Console.WriteLine("number of distinct triples are" + count);   
                     }
 
                 }

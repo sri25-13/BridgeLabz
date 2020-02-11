@@ -6,33 +6,33 @@ namespace FunctionalPrograms
 {
     class Utility
     {
-        public static String readString()
+        public static string ReadString()
         {
-            String s = Console.ReadLine();
+            string s = Console.ReadLine();
             return s;
 
         }
-        public static int readInt()
+        public static int ReadInt()
         {
             return Convert.ToInt32(Console.ReadLine());
         }
-        public static double readDouble()
+        public static double ReadDouble()
         {
             return Convert.ToDouble(Console.ReadLine());
         }
-        public static int[] readArray()
+        public static int[] ReadArray()
         {
             Console.WriteLine("enter the array size");
-            int n = readInt();
+            int n = ReadInt();
             int[] arr = new int[n];
             for (int i = 0; i < n; i++)
             {
-                arr[i] = readInt();
+                arr[i] = ReadInt();
             }
             return arr;
 
         }
-        public static int[,] read2dArray(int m,int n)
+        public static int[,] Read2dArray(int m,int n)
         {
            
             int[,] arr = new int[m, n];
@@ -40,7 +40,7 @@ namespace FunctionalPrograms
             {
                 for (int j = 0; j < n; j++)
                 {
-                    arr[i,j] = readInt();
+                    arr[i,j] = ReadInt();
                 }
             }
             return arr;

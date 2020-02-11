@@ -9,10 +9,10 @@ namespace FunctionalPrograms
         public static void CouponNumber()
         {
             Console.WriteLine("enter the coupon no length u need:");
-            int n= Utility.readInt();
+            int n= Utility.ReadInt();
             Console.WriteLine("enter how many values u need:");
-            int n1 = Utility.readInt();
-String    chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            int n1 = Utility.ReadInt();
+            string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             var stringChars = new char[n];
 
             Random rnd = new Random();

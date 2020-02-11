@@ -9,7 +9,7 @@ namespace FunctionalPrograms
 
             Console.WriteLine("1.Replace\n2.powerof2\n3.PrimeFactors\n4.HarmonicNum\n5.LeapYear\n6.FlipCoin\n7.Distance\n8.Quadratic\n9.WindChill\n10.SumofTrip\n11.twodiArray\n12.Gambler\n13.Coupon\n14.Stopwatch\n15.TicTac1\n16.MonthlyPay");
             Console.WriteLine("enter an option to be executed");
-            int option = Utility.readInt();
+            int option = Utility.ReadInt();
             switch (option)
             {
                 case 1:
@@ -40,10 +40,10 @@ namespace FunctionalPrograms
                     WindChill.Wind();
                     break;
                 case 10:
-                    SumofTrip.Trip();
+                    SumOfTrip.Trip();
                     break;
                 case 11:
-                    twodiArray.array2d();
+                    TwoDArray.Array2d();
                     break;
                 case 12:
                     Gambler.Gambling();
@@ -55,16 +55,13 @@ namespace FunctionalPrograms
                     Stopwatch1.Stopwatch();
                     break;
                 case 15:
-                    TicTac1.initBoard();
-                    TicTac1.dispBoard();
-                    TicTac1.putVal();
-                    TicTac1.win();
-                    TicTac1.play();
+                    TicTac1.InitBoard();
+                    TicTac1.DispBoard();
+                    TicTac1.PutVal();
+                    TicTac1.Win();
+                    TicTac1.Play();
                     break;
-                case 16:
-                    MonthlyPay.MonthPay();
-                    break;
-
+               
             }
             }
 

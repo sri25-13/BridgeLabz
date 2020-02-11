@@ -9,7 +9,7 @@ namespace FunctionalPrograms
         public static void Flip()
         {
             Console.WriteLine("enter the number of time to flip:");
-            int n = Utility.readInt();
+            int n = Utility.ReadInt();
             double headco = 0;
 
             Random rnd = new Random();
@@ -26,8 +26,8 @@ namespace FunctionalPrograms
 
             }
             double a = (headco / n) * 100.0;
-            Console.WriteLine(a);
-            Console.WriteLine(((n - headco) / n) * 100.0);
+            Console.WriteLine("percentage of heads:" + a);
+            Console.WriteLine("percentage of tails:" + ((n - headco) / n) * 100.0);
         }
     }
 }
