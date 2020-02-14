@@ -6,7 +6,7 @@ namespace DataStructures
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("1.UnorderedList\n2.OrderedList");
+            Console.WriteLine("1.UnorderedList\n2.OrderedList\n3.Calender");
             Console.WriteLine("enter an option to be executed");
             int option = Utility.ReadInt();
             switch (option)
@@ -17,6 +17,9 @@ namespace DataStructures
                 case 2:
                     OrderedList.ReadFile();
                     
+                    break;
+                case 3:
+                    Calender.MethodCalling();
                     break;
             }
         }
