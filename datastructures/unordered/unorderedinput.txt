@@ -1,0 +1,8 @@
+Basic
+Functional
+Logical
+Junit
+Algorithm
+Datastructures
+Oops
+Designpatterns
