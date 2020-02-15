@@ -6,7 +6,7 @@ namespace DataStructures
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("1.UnorderedList\n2.OrderedList\n3.Calender");
+            Console.WriteLine("1.UnorderedList\n2.OrderedList\n3.Calender\n4.Prime2D");
             Console.WriteLine("enter an option to be executed");
             int option = Utility.ReadInt();
             switch (option)
@@ -20,6 +20,10 @@ namespace DataStructures
                     break;
                 case 3:
                     Calender.MethodCalling();
+                    break;
+                case 4:
+                    Prime2D.Prime();
+                    
                     break;
             }
         }
