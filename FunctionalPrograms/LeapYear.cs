@@ -1,11 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file=LeapYear.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace FunctionalPrograms
 {
-    class LeapYear
+    using System;
+
+    /// <summary>
+    /// class for LeapYear
+    /// </summary>
+    public class LeapYear
     {
+        /// <summary>
+        /// Leaps this instance.
+        /// </summary>
         public static void Leap()
         {
             Console.WriteLine("enter a year:");
@@ -29,7 +40,6 @@ namespace FunctionalPrograms
             {
                 Console.WriteLine(n + "is not a aleapyear");
             }
-
-            }
         }
     }
+}

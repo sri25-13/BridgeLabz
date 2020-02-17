@@ -1,11 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file=Gambler.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace FunctionalPrograms
 {
-    class Gambler
+    using System;
+
+    /// <summary>
+    /// class for gambler
+    /// </summary>
+    public class Gambler
     {
+        /// <summary>
+        /// Gambler this instance.
+        /// </summary>
         public static void Gambling()
         {
             Console.WriteLine("Enter stake value");
@@ -22,12 +33,10 @@ namespace FunctionalPrograms
                 int cash = stake;
                 if (cash > 0 && cash < goal)
                 {
-
                     if (rnd.NextDouble() < 0.5)
                     {
                         cash++;
                         wins++;
-
                     }
                     else
                     {
@@ -35,20 +44,16 @@ namespace FunctionalPrograms
                     }
                 }
 
-                if (cash >= goal)
-
+                if (cash == goal)
                 {
                     Console.WriteLine("goal reached");
                 }
             }
 
             Console.WriteLine(wins + "wins of" + trials);
-            double a = ((100.0 * wins) / trials);
+            double a = (100.0 * wins) / trials;
             Console.WriteLine("percentage of games won:" + a);
             Console.WriteLine("percentage of games lost:" + (100 - a));
-
-
-
         }
     }
 }

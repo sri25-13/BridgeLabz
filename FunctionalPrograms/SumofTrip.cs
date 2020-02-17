@@ -1,36 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file=SumofTrip.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace FunctionalPrograms
 {
-    class SumOfTrip
+    using System;
+
+    /// <summary>
+    /// class for finding sum of distinct triplets
+    /// </summary>
+    public class SumOfTrip
     {
+        /// <summary>
+        /// Trips this instance.
+        /// </summary>
         public static void Trip()
         {
-            
-            Console.WriteLine("enter the array elements");
-            int[] arr=Utility.ReadArray();
-
+            int[] arr = Utility.ReadArray();
             int count = 0;
-
-            for(int i=0;i<arr.Length-2;i++)
+            for (int i = 0; i < arr.Length - 2; i++)
             {
-                for(int j=i+1;j<arr.Length-1;j++)
+                for (int j = i + 1; j < arr.Length - 1; j++)
                 {
-                    for(int k=j+1;k<arr.Length;k++)
+                    for (int k = j + 1; k < arr.Length; k++)
                     {
-                        if(arr[i]+arr[j]+arr[k]==0)
+                        if (arr[i] + arr[j] + arr[k] == 0)
                         {
-                            Console.WriteLine(arr[i] +","+arr[j] +","+ arr[k]);
+                            Console.WriteLine(arr[i] + "," + arr[j] + "," + arr[k]);
                             count++;
                         }
-
-                        Console.WriteLine("number of distinct triples are" + count);   
                     }
-
                 }
             }
+
+            Console.WriteLine("number of distinct triples are:" + count);
         }
     }
 }

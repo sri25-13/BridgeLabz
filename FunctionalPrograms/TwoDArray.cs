@@ -1,11 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file=TwoDArray.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace FunctionalPrograms
 {
-    class TwoDArray
+    using System;
+
+    /// <summary>
+    /// class for printing TwoDArray
+    /// </summary>
+   public class TwoDArray
     {
+        /// <summary>
+        /// Array2ds this instance.
+        /// </summary>
         public static void Array2d()
         {
             Console.WriteLine("enter the no of rows");
@@ -20,10 +31,9 @@ namespace FunctionalPrograms
                 {
                     Console.Write(arr[i, j] + " ");
                 }
-                Console.WriteLine();
 
+                Console.WriteLine();
             }
         }
-
     }
 }
