@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file=Program.cs" company="Bridgelabz">
+// <copyright file="Program.cs" company="Bridgelabz">
 //   Copyright © 2019 Company="BridgeLabz"
 // </copyright>
 // <creator name="sriharshini"/>
@@ -28,7 +28,7 @@ namespace FunctionalPrograms
                     Replace.ReplaceString();
                     break;
                 case 2:
-                    Powerof2.Power();
+                    PowerOfTwo.Power();
                     break;
                 case 3:
                     PrimeFactors.Prime();

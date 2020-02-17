@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file=TicTacToe.cs" company="Bridgelabz">
+// <copyright file="TicTacToe.cs" company="Bridgelabz">
 //   Copyright © 2019 Company="BridgeLabz"
 // </copyright>
 // <creator name="sriharshini"/>
@@ -21,7 +21,6 @@ namespace FunctionalPrograms
         /// <summary>
         /// Initializes the board.
         /// </summary>
-        
         public static void InitBoard()
         {
             Console.WriteLine("TIC TAC TOE GAME\nComputer is x\nPlayer  is o ");

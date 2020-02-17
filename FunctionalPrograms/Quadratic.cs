@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file=Quadratic.cs" company="Bridgelabz">
+// <copyright file="Quadratic.cs" company="Bridgelabz">
 //   Copyright © 2019 Company="BridgeLabz"
 // </copyright>
 // <creator name="sriharshini"/>
@@ -9,7 +9,7 @@ namespace FunctionalPrograms
     using System;
 
     /// <summary>
-    /// class for finding roots of the quadraticequation
+    /// class for finding roots of the QuadraticEquation
     /// </summary>
     public class Quadratic
     {

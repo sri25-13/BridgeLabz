@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file=Powerof2.cs" company="Bridgelabz">
+// <copyright file="PowerOfTwo.cs" company="Bridgelabz">
 //   Copyright © 2019 Company="BridgeLabz"
 // </copyright>
 // <creator name="sriharshini"/>
@@ -9,9 +9,9 @@ namespace FunctionalPrograms
     using System;
 
     /// <summary>
-    /// class for Powersoftwo
+    /// class for PowerOfTwo
     /// </summary>
-    public class Powerof2
+    public class PowerOfTwo
     {
         /// <summary>
         /// Power this instance.

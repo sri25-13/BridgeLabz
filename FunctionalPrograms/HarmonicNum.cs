@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file=HarmonicNum.cs" company="Bridgelabz">
+// <copyright file="HarmonicNum.cs" company="Bridgelabz">
 //   Copyright © 2019 Company="BridgeLabz"
 // </copyright>
 // <creator name="sriharshini"/>
@@ -10,7 +10,7 @@ namespace FunctionalPrograms
     using System;
 
     /// <summary>
-    /// class for finding nth HarmonicNum
+    /// class for finding nth HarmonicNumber
     /// </summary>
     public class HarmonicNum
     {

@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file=WindChill.cs" company="Bridgelabz">
+// <copyright file="WindChill.cs" company="Bridgelabz">
 //   Copyright © 2019 Company="BridgeLabz"
 // </copyright>
 // <creator name="sriharshini"/>
@@ -24,7 +24,7 @@ namespace FunctionalPrograms
             double v = Utility.ReadInt();
             if (t < 50 || (v > 3 && v < 120))
             {
-                double w = 35.74 + (0.6215 * t) + (0.4275 * t - 35.75) * Math.Pow(v, 0.16);
+                double w = 35.74 + (0.6215 * t) + (((0.4275 * t) - 35.75) * Math.Pow(v, 0.16));
                 Console.WriteLine(w);
             }
             else
