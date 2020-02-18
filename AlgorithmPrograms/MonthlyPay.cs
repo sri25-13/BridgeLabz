@@ -1,22 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="MonthlyPay.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// ----------------------------------------------------------------------------------------------------------
 namespace AlgorithmPrograms
 {
-    class MonthlyPay
+    using System;
+
+    /// <summary>
+    /// class for MonthlyPay
+    /// </summary>
+    public class MonthlyPay
     {
+        /// <summary>
+        /// MonthlyPay this instance.
+        /// </summary>
         public static void Month()
         {
             Console.WriteLine("enter loan amount");
-            double P = Utility.ReadDouble();
+            double loan = Utility.ReadDouble();
             Console.WriteLine("enter years");
-            double Y = Utility.ReadDouble();
+            double years = Utility.ReadDouble();
             Console.WriteLine("enter interest");
-            double R = Utility.ReadDouble();
-            double r = R / (12 * 100);
-            double n = 12 * Y;
-            Console.WriteLine(P * r /(1 - Math.Pow(1 + r, -n)));
+            double interest = Utility.ReadDouble();
+            double r = interest / (12 * 100);
+            double n = 12 * years;
+            Console.WriteLine(loan * r / (1 - Math.Pow(1 + r, -n)));
         }
     }
 }

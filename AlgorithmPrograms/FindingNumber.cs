@@ -1,27 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="FindingNumber.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// ----------------------------------------------------------------------------------------------------------
 namespace AlgorithmPrograms
 {
-    class FindingNumber
+    using System;
+
+    /// <summary>
+    /// class for finding a number
+    /// </summary>
+   public class FindingNumber
     {
+        /// <summary>
+        /// Findings the number.
+        /// </summary>
         public static void FindingNum()
         {
             Console.WriteLine("enter the number");
             int n = Utility.ReadInt();
-            int N = (int)Math.Pow(2, n);
-            Console.WriteLine("Think of a number between 0 and" + (N - 1));
-           Console.WriteLine("your number is"+ Number(0, N));
+            int n1 = (int)Math.Pow(2, n);
+            Console.WriteLine("Think of a number between 0 and" + (n1 - 1));
+           Console.WriteLine("your number is" + Number(0, n1));
         }
+
+        /// <summary>
+        /// Numbers the specified low.
+        /// </summary>
+        /// <param name="low">The low.</param>
+        /// <param name="high">The high.</param>
+        /// <returns></returns>
         public static int Number(int low, int high)
         {
-            String str1 = "yes";
-            String str2 = "no";
+            string str1 = "yes";
+            string str2 = "no";
             if ((high - low) == 1)
             {
                 return low;
-
             }
+
             while (low <= high)
             {
                 int mid = (low + high) / 2;
@@ -41,18 +59,13 @@ namespace AlgorithmPrograms
                 {
                     return mid;
                 }
-
-
                 else
                 {
                     Console.WriteLine("INVALID INPUT");
                 }
             }
+
             return low;
         }
-
-
     }
 }
-
-

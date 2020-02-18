@@ -1,41 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="BubbleSort.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// ----------------------------------------------------------------------------------------------------------
 namespace AlgorithmPrograms
 {
-    class BubbleSort
+    using System;
+    using System.Collections.Generic;
+
+    /// <summary>
+    /// class for BubbleSort
+    /// </summary>
+    public class BubbleSort
     {
+        /// <summary>
+        /// Bubbles this instance.
+        /// </summary>
         public static void Bubble()
         {
             int temp;
-            
-            List<int> MyList = new List<int>() { 1, 6, 9, 3 };
-           
-            
-            
-        
-            for (int i = 0; i <= MyList.Count; i++)
+            List<int> myList = new List<int>() { 1, 6, 9, 3 };
+            for (int i = 0; i <= myList.Count; i++)
             {
-                for (int j = 1; j <= MyList.Count-1; j++)
+                for (int j = 1; j <= myList.Count - 1; j++)
                 {
-                    if (MyList[j - 1] > MyList[j])
+                    if (myList[j - 1] > myList[j])
                     {
-                        temp = MyList[j - 1];
-                        MyList[j - 1] = MyList[j];
-                        MyList[j] = temp;
+                        temp = myList[j - 1];
+                        myList[j - 1] = myList[j];
+                        myList[j] = temp;
                     }
                 }
             }
+
             Console.WriteLine("after sorting");
-            for (int p = 0; p < MyList.Count; p++)
+            for (int p = 0; p < myList.Count; p++)
             {
-                
-                Console.WriteLine(MyList[p]+"");
-               
+                Console.WriteLine(myList[p] + "");
             }
-            
         }
     }
 }
-

@@ -1,11 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="VendingMachine.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// ----------------------------------------------------------------------------------------------------------
 namespace AlgorithmPrograms
 {
-    class VendingMachine
+    using System;
+
+    /// <summary>
+    /// class for VendingMachine
+    /// </summary>
+    public class VendingMachine
     {
+        /// <summary>
+        /// Vending this instance.
+        /// </summary>
         public static void Vending()
         {
             Console.WriteLine("enter the amount");
@@ -18,8 +28,8 @@ namespace AlgorithmPrograms
                 if (n >= arr[i])
                 {
                     notecount[i] = n / arr[i];
-                    n = n - notecount[i] * arr[i];
-                    count+= notecount[i];
+                    n -= notecount[i] * arr[i];
+                    count += notecount[i];
                 }
 
                 if (notecount[i] != 0)
@@ -28,8 +38,8 @@ namespace AlgorithmPrograms
                         + notecount[i]);
                 }
             }
-                Console.WriteLine("total number of notes:"+ count);
-            
+
+            Console.WriteLine("total number of notes:" + count);
         }
     }
 }

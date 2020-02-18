@@ -1,24 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="AnagramDetection.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// ----------------------------------------------------------------------------------------------------------
 namespace AlgorithmPrograms
 {
-    class AnagramDetection
+    using System;
+
+    /// <summary>
+    /// class for detecting two strings are anagram or not
+    /// </summary>
+    public class AnagramDetection
     {
+        /// <summary>
+        /// Anagrams this instance.
+        /// </summary>
         public static void Anagram()
         {
             Console.WriteLine("enter first string");
             string str1 = Utility.ReadString();
             Console.WriteLine("enter second string");
             string str2 = Utility.ReadString();
-            char[] s1Array= str1.ToLower().ToCharArray();
-            char[] s2Array = str2.ToLower().ToCharArray();
-            Array.Sort(s1Array);
-            Array.Sort(s2Array);
-            string res1 = new string(s1Array);
-            string res2 = new string(s2Array);
-
+            char[] array1 = str1.ToLower().ToCharArray();
+            char[] array2 = str2.ToLower().ToCharArray();
+            Array.Sort(array1);
+            Array.Sort(array2);
+            string res1 = new string(array1);
+            string res2 = new string(array2);
             if (res1 == res2)
             {
                 Console.WriteLine("Both the strings are Anagrams");
@@ -28,13 +37,5 @@ namespace AlgorithmPrograms
                 Console.WriteLine("Both the strings are not Anagrams");
             }
         }
-
-
     }
-
-
 }
-
-
-    
-

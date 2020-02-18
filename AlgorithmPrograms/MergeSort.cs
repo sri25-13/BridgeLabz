@@ -1,11 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="MergeSort.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// ----------------------------------------------------------------------------------------------------------
 namespace AlgorithmPrograms
 {
-    class MergeSort
+    using System;
+
+    /// <summary>
+    /// class for MergeSort
+    /// </summary>
+    public class MergeSort
     {
+        /// <summary>
+        /// Merges this instance.
+        /// </summary>
         public static void Merge()
         {
             Console.WriteLine("enter the arraysize");
@@ -16,14 +26,18 @@ namespace AlgorithmPrograms
                 arr[i] = Utility.ReadInt();
             }
             Sorting(arr, 0, n - 1);
-           Console.WriteLine ("after sorting");
+            Console.WriteLine("after sorting");
             for (int i = 0; i < n; i++)
             {
-               
                 Console.WriteLine(arr[i]);
             }
         }
-
+        /// <summary>
+        /// Sortings the specified arr.
+        /// </summary>
+        /// <param name="arr">The arr.</param>
+        /// <param name="start">The start.</param>
+        /// <param name="end">The end.</param>
         public static void Sorting(int[] arr, int start, int end)
         {
             if (start != end)
@@ -32,10 +46,8 @@ namespace AlgorithmPrograms
                 Sorting(arr, start, mid);
                 Sorting(arr, mid + 1, end);
                 Merging(arr, start, end);
-
             }
-
-             static void Merging(int[] arr, int start, int end)
+           static void Merging(int[] arr, int start, int end)
             {
                 int mid = (start + end) / 2;
                 int i = start;

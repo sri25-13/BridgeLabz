@@ -1,29 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="InsertionSort.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// ----------------------------------------------------------------------------------------------------------
 namespace AlgorithmPrograms
 {
-    class InsertionSort
+    using System;
+    using System.Collections.Generic;
+
+    /// <summary>
+    /// class for InsertionSort
+    /// </summary>
+    public class InsertionSort
     {
+        /// <summary>
+        /// Insertions this instance.
+        /// </summary>
         public static void Insertion()
         {
-
-            List<string> MyList = new List<string>() { "harshini", "amulya", "lucky", "teju" };
-            int n = MyList.Count;
+            List<string> myList = new List<string>() { "harshini", "amulya", "lucky", "teju" };
+            int n = myList.Count;
             for (int i = 0; i < n; i++)
             {
                 for (int j = i + 1; j < n; j++)
                 {
-                    if (MyList[i].CompareTo(MyList[j]) > 0)
+                    if (myList[i].CompareTo(myList[j]) > 0)
                     {
-                        string temp = MyList[i];
-                        MyList[i] = MyList[j];
-                        MyList[j] = temp;
+                        string temp = myList[i];
+                        myList[i] = myList[j];
+                        myList[j] = temp;
                     }
                 }
-                Console.WriteLine(MyList[i]);
 
+                Console.WriteLine(myList[i]);
             }
         }
     }

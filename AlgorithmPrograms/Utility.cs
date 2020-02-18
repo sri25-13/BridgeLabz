@@ -30,11 +30,52 @@ namespace AlgorithmPrograms
                 return false;
 
         }
-       /* public static Boolean IsAnagram()
+        public static bool IsAnagram(int num1, int num2)
         {
+            int[] a = new int[10];
+            int[] b = new int[10];
+            int count1 = 0;
+            int count2 = 0;
+            int c = 0;
+            while (num1 != 0)
+            {
+                int n = num1 % 10;
+                a[n]++;
+                count1++;
+                num1 /= 10;
+            }
 
-        }*/
-        public static double ReadDouble()
+            while (num2 != 0)
+            {
+                int m = num2 % 10;
+                b[m]++;
+                count2++;
+                num2 /= 10;
+            }
+
+            if (count1 != count2)
+            {
+                return false;
+            }
+            else
+            {
+                for (int k = 0; k < 10; k++)
+                {
+                    if (a[k] == b[k])
+                    {
+                        c++;
+                    }
+                }
+
+                if (c == 10)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+            public static double ReadDouble()
         {
             return Convert.ToDouble(Console.ReadLine());
         }
@@ -54,5 +95,7 @@ namespace AlgorithmPrograms
             return arr;
 
         }
+        
+
     }
 }
