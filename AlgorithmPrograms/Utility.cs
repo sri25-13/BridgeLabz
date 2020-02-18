@@ -30,7 +30,7 @@ namespace AlgorithmPrograms
                 return false;
 
         }
-        public static bool IsAnagram(int num1, int num2)
+        /*public static bool IsAnagram(int num1, int num2)
         {
             int[] a = new int[10];
             int[] b = new int[10];
@@ -74,7 +74,7 @@ namespace AlgorithmPrograms
             }
 
             return false;
-        }
+        }*/
             public static double ReadDouble()
         {
             return Convert.ToDouble(Console.ReadLine());

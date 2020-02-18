@@ -38,8 +38,8 @@ namespace AlgorithmPrograms
         /// <param name="s2">The s2.</param>
         public static void IsEqual(string s1, string s2)
         {
-            bool result = s1.Contains(s2);
-            if (result)
+            bool res = s1.Contains(s2);
+            if (res)
             {
                 Console.WriteLine("Two string arrays are equal");
             }

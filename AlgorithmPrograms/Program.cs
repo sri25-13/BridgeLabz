@@ -25,16 +25,16 @@ namespace AlgorithmPrograms
             switch (option)
             {
                 case 1:
-                    MonthlyPay.Month();
+                    MonthlyPay.MonthlyPayment();
                     break;
                 case 2:
                     TemperatureConversion.TemperatureConversionM();
                     break;
                 case 3:
-                    SquareRoot.Sqrt();
+                    SquareRoot.Squarert();
                     break;
                 case 4:
-                    DayofWeek.DayWeekMethod();
+                    DayofWeek.DayOfWeekMethod();
                     break;
                 case 5:
                     Binary.BinaryM();
@@ -67,7 +67,7 @@ namespace AlgorithmPrograms
                     BinarySearch.ReadingFile();
                     break;
                 case 15:
-                    AnagramandPalindrome.PrimePalindrome();
+                    AnagramandPalindrome.PalindromePrime();
                     /*AnagramandPalindrome.PrimeAnagram();*/
                     break;
                 case 16:

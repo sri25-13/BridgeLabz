@@ -44,13 +44,13 @@ namespace AlgorithmPrograms
             {
                 int mid = (low + high) / 2;
                 Console.WriteLine("type yes or no if it is less than" + mid);
-                string str = Utility.ReadString();
-                if (str.Equals(str1))
+                string s = Utility.ReadString();
+                if (s.Equals(str1))
                 {
                     high = mid;
                     return Number(low, high);
                 }
-                else if (str.Equals(str2))
+                else if (s.Equals(str2))
                 {
                     low = mid;
                     return Number(low, high);

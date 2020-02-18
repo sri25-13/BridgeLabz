@@ -19,11 +19,11 @@ namespace AlgorithmPrograms
         public static void Anagram()
         {
             Console.WriteLine("enter first string");
-            string str1 = Utility.ReadString();
+            string s1 = Utility.ReadString();
             Console.WriteLine("enter second string");
-            string str2 = Utility.ReadString();
-            char[] array1 = str1.ToLower().ToCharArray();
-            char[] array2 = str2.ToLower().ToCharArray();
+            string s2 = Utility.ReadString();
+            char[] array1 = s1.ToLower().ToCharArray();
+            char[] array2 = s2.ToLower().ToCharArray();
             Array.Sort(array1);
             Array.Sort(array2);
             string res1 = new string(array1);

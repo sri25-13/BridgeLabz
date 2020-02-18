@@ -16,7 +16,7 @@ namespace AlgorithmPrograms
         /// <summary>
         /// MonthlyPay this instance.
         /// </summary>
-        public static void Month()
+        public static void MonthlyPayment()
         {
             Console.WriteLine("enter loan amount");
             double loan = Utility.ReadDouble();

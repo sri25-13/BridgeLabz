@@ -16,7 +16,7 @@ namespace AlgorithmPrograms
         /// <summary>
         /// Primes the palindrome.
         /// </summary>
-        public static void PrimePalindrome()
+        public static void PalindromePrime()
         {
             Console.Write("Enter the range: ");
             int startnumber = Utility.ReadInt();

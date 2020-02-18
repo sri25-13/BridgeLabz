@@ -16,7 +16,7 @@ namespace AlgorithmPrograms
         /// <summary>
         /// SQRTs this instance.
         /// </summary>
-        public static void Sqrt()
+        public static void Squarert()
         {
             Console.WriteLine("enter a number");
             double c = Utility.ReadDouble();

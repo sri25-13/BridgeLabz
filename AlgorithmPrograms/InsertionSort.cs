@@ -20,10 +20,10 @@ namespace AlgorithmPrograms
         public static void Insertion()
         {
             List<string> myList = new List<string>() { "harshini", "amulya", "lucky", "teju" };
-            int n = myList.Count;
-            for (int i = 0; i < n; i++)
+            int num = myList.Count;
+            for (int i = 0; i < num; i++)
             {
-                for (int j = i + 1; j < n; j++)
+                for (int j = i + 1; j < num; j++)
                 {
                     if (myList[i].CompareTo(myList[j]) > 0)
                     {

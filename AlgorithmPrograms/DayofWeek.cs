@@ -16,7 +16,7 @@ namespace AlgorithmPrograms
         /// <summary>
         /// Days the week method.
         /// </summary>
-        public static void DayWeekMethod()
+        public static void DayOfWeekMethod()
         {
             Console.WriteLine("enter the date");
             int d = Utility.ReadInt();

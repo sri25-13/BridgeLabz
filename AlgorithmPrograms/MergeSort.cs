@@ -19,15 +19,15 @@ namespace AlgorithmPrograms
         public static void Merge()
         {
             Console.WriteLine("enter the arraysize");
-            int n = Utility.ReadInt();
-            int[] arr = new int[n];
-            for (int i = 0; i < n; i++)
+            int num = Utility.ReadInt();
+            int[] arr = new int[num];
+            for (int i = 0; i < num; i++)
             {
                 arr[i] = Utility.ReadInt();
             }
-            Sorting(arr, 0, n - 1);
+            Sorting(arr, 0, num - 1);
             Console.WriteLine("after sorting");
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < num; i++)
             {
                 Console.WriteLine(arr[i]);
             }

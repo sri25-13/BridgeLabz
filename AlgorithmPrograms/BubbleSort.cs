@@ -35,9 +35,9 @@ namespace AlgorithmPrograms
             }
 
             Console.WriteLine("after sorting");
-            for (int p = 0; p < myList.Count; p++)
+            for (int i = 0; i < myList.Count; i++)
             {
-                Console.WriteLine(myList[p] + "");
+                Console.WriteLine(myList[i] + "");
             }
         }
     }

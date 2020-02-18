@@ -19,16 +19,16 @@ namespace AlgorithmPrograms
         public static void Vending()
         {
             Console.WriteLine("enter the amount");
-            int n = Utility.ReadInt();
+            int amount = Utility.ReadInt();
             int[] arr = { 1000, 500, 100, 50, 10, 5, 2, 1 };
             int[] notecount = new int[arr.Length];
             int count = 0;
             for (int i = 0; i < arr.Length; i++)
             {
-                if (n >= arr[i])
+                if (amount >= arr[i])
                 {
-                    notecount[i] = n / arr[i];
-                    n -= notecount[i] * arr[i];
+                    notecount[i] = amount / arr[i];
+                    amount -= notecount[i] * arr[i];
                     count += notecount[i];
                 }
 
