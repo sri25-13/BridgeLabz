@@ -32,15 +32,15 @@ namespace AlgorithmPrograms
         /// <param name="n">The n.</param>
         public static void BinaryConversion(int n)
         {
-            string str = "";
+            string s = "";
             while (n > 0)
             {
                 int num = n % 2;
                 n /= 2;
-                str = num + str;
+                s = num + s;
             }
 
-            Console.WriteLine(str);
+            Console.WriteLine(s);
         }
     }
 }
