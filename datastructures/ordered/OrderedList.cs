@@ -1,12 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="OrderedList.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace DataStructures
 {
-    class OrderedList
+    using System;
+    using System.IO;
+
+    /// <summary>
+    /// class for unorderedlist 
+    /// </summary>
+    public class OrderedList
     {
+        /// <summary>
+        /// Reads the file.
+        /// </summary>
         public static void ReadFile()
         {
             OrderedListMethods<int> ol = new OrderedListMethods<int>();
@@ -18,51 +28,38 @@ namespace DataStructures
                 num[i] = int.Parse(lines[i]);
                 Console.WriteLine(num[i]);
                 ol.Add(num[i]);
-
-
             }
+
             Console.WriteLine("size:" + ol.Size());
-
-
-
-
-            /* public static void Test()
-             {
-                 OrderedListMethods<int> ol = new OrderedListMethods<int>();
-            Console.WriteLine("enter how numbers you want to add to the list :");
-            int n = Utility.ReadInt();
-            for (int i = 0; i < n; i++)
-            {
-                Console.WriteLine("enter the  number");
-                ol.Add(Utility.ReadInt());
-            }
-
-            ol.Print();*/
             Console.WriteLine("enter the number to add or remove");
             int number = Utility.ReadInt();
             AddOrRemoveFromOrdered(number, ol);
-            
-
+            ol.Print();
         }
-        static int AddOrRemoveFromOrdered(int data, OrderedListMethods<int> ol)
+
+        /// <summary>
+        /// Adds the or remove from ordered.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <param name="ol">The ol.</param>
+        /// <returns></returns>
+       public static int AddOrRemoveFromOrdered(int data, OrderedListMethods<int> ol)
         {
             bool presence = ol.Search(data);
             Console.WriteLine(presence);
-            if (presence==true)
+            if (presence == true)
             {
                 ol.Remove(data);
                 Console.WriteLine("removed");
-                ol.Print();
+                return data;
             }
             else
             {
                 ol.Add(data);
                 Console.WriteLine("added");
-                ol.Print();
             }
+
             return data;
         }
     }
 }
-    
-

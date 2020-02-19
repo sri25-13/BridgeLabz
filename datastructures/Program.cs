@@ -6,7 +6,7 @@ namespace DataStructures
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("1.UnorderedList\n2.OrderedList\n3.Calender\n4.Prime2D\n5.PrimeAnagram2D");
+            Console.WriteLine("1.UnorderedList\n2.OrderedList\n3.Calender\n4.Prime2D\n5.PrimeAnagram2D\n6.SimpleBalancedParentheses\n7.PrimeAnagramStack\n8.BankingCashCounter\n9.PrimeAnagramQueue");
             Console.WriteLine("enter an option to be executed");
             int option = Utility.ReadInt();
             switch (option)
@@ -23,10 +23,21 @@ namespace DataStructures
                     break;
                 case 4:
                     Prime2D.Prime();
-                    
                     break;
                 case 5:
                     PrimeAnagram2D.PrimeAnagram();
+                    break;
+                case 6:
+                    SimpleBalancedParentheses.BalancedParanthesis();
+                    break;
+                case 7:
+                    PrimeAnagramStack.PrimeAnagramsUsingStack();
+                    break;
+                case 8:
+                    BankingCashCounter.Customer();
+                    break;
+                case 9:
+                    PrimeAnagramQueue.PrimeUsingQueue();
                     break;
             }
         }

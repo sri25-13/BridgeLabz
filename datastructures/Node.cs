@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Nodes.cs" company="Bridgelabz">
+// <copyright file="Node.cs" company="Bridgelabz">
 //   Copyright © 2019 Company="BridgeLabz"
 // </copyright>
 // <creator name="sriharshini"/>
@@ -9,7 +9,7 @@ namespace DataStructures
     using System;
 
     /// <summary>
-    /// 
+    /// class for node
     /// </summary>
    public class Node
     {

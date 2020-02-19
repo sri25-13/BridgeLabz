@@ -1,14 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Node.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace DataStructures
 {
-    class Node
-    {
+    using System;
 
+    /// <summary>
+    /// class for node
+    /// </summary>
+   public class Node
+    {
         public Object data;
         public Node next;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Node"/> class.
+        /// </summary>
+        /// <param name="i">The i.</param>
         public Node(Object i)
         {
             this.data = i;
@@ -16,4 +27,3 @@ namespace DataStructures
         }
     }
 }
-

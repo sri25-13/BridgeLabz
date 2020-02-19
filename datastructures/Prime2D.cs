@@ -1,11 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Prime2D.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace DataStructures
 {
-    class Prime2D
+    using System;
+
+    /// <summary>
+    /// class for declaring primenumbers in 2d array
+    /// </summary>
+    public class Prime2D
     {
+        /// <summary>
+        /// Primes this instance.
+        /// </summary>
         public static void Prime()
         {
             Console.WriteLine("enter the range to find prime numbers");
@@ -13,12 +23,17 @@ namespace DataStructures
             TwoDArray(n);
         }
 
+        /// <summary>
+        /// Twoes the d array.
+        /// </summary>
+        /// <param name="range">The range.</param>
+        /// <returns></returns>
         public static int[,] TwoDArray(int range)
         {
             int row = range / 100;
             int incr = 100;
             int prev = 0;
-            int[,] Array = new int[row, 25];
+            int[,] array = new int[row, 25];
             for (int i = 0; i < row; i++)
             {
                 string[] s = FindNumber(prev, incr).Split(',');
@@ -29,32 +44,42 @@ namespace DataStructures
                 {
                     arr[k] = Convert.ToInt32(s[k]);
                 }
+
                 for (int j = 0; j < arr.Length; j++)
                 {
                     if (j <= arr.Length)
                     {
-                        Array[i, j] = arr[j];
+                        array[i, j] = arr[j];
                     }
                     else
                     {
-                        Array[i, j] = 0;
+                        array[i, j] = 0;
                     }
                 }
             }
+
             for (int i = 0; i < row; i++)
             {
                 for (int j = 0; j < 25; j++)
                 {
-                    Console.Write(Array[i, j] + " ");
+                    Console.Write(array[i, j] + " ");
                 }
+
                 Console.WriteLine();
             }
-            return Array;
+
+            return array;
         }
-      
+
+        /// <summary>
+        /// Finds the number.
+        /// </summary>
+        /// <param name="min">The minimum.</param>
+        /// <param name="num">The number.</param>
+        /// <returns></returns>
         public static string FindNumber(int min, int num)
         {
-            String s = "";
+            string s = "";
             for (int i = min; i < num; i++)
             {
                 int count = 0;
@@ -65,16 +90,14 @@ namespace DataStructures
                         count++;
                     }
                 }
+
                 if (count == 2)
                 {
                     s = s + i + ",";
                 }
             }
-            return s;
 
+            return s;
         }
     }
 }
-
-    
-

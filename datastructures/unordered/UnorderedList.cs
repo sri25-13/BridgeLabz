@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="UnorderedList.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace DataStructures
 {
-    class UnorderedList<T>
+    using System;
+    using System.IO;
+
+    /// <summary>
+    /// class for Unorderedlist
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+   public class UnorderedList<T>
     {
+        /// <summary>
+        /// Reads the file.
+        /// </summary>
         public static void ReadFile()
         {
             UnOrderedListMethods<string> unorderedlist = new UnOrderedListMethods<string>();
@@ -15,8 +26,8 @@ namespace DataStructures
             {
                 Console.WriteLine(s);
                 unorderedlist.Add(s);
-
             }
+
             Console.WriteLine("\n");
             Console.WriteLine("enter an option to be executed");
             Console.WriteLine("1.Size\n2.Search\n3.Index\n4.IsEmpty\n5.Append\n6.Remove\n7.Insert\n8.Pop at position\n9.Pop\n");
@@ -29,41 +40,42 @@ namespace DataStructures
                     break;
                 case 2:
                     Console.WriteLine("enter a string to search in the list");
-                    String s1 = Utility.ReadString();
-                    Boolean result =unorderedlist.Search(s1);
+                    string s1 = Utility.ReadString();
+                    bool result = unorderedlist.Search(s1);
                     Console.WriteLine(result);
                     break;
                 case 3:
                     Console.WriteLine("enter a string to check the index from the list");
-                    String s2 = Utility.ReadString();
+                    string s2 = Utility.ReadString();
                     int pos = unorderedlist.Index(s2);
                     Console.WriteLine(pos);
                     break;
                 case 4:
-                    Boolean res = unorderedlist.IsEmpty();
+                    bool res = unorderedlist.IsEmpty();
                     Console.WriteLine("list is not empty: " + res);
                     break;
                 case 5:
                     Console.WriteLine("enter a string to append into list");
-                    String s3 = Utility.ReadString();
+                    string s3 = Utility.ReadString();
                     unorderedlist.Append(s3);
-                    FileStream aFile = new FileStream(@"C:\Users\BridgeLabz\source\repos\Input.txt",
-                        FileMode.Append, FileAccess.Write);
-                    StreamWriter sw = new StreamWriter(aFile);
-                    sw.WriteLine(s3);
+                    /* FileStream aFile = new FileStream(@"C:\Users\BridgeLabz\source\repos\Input.txt",
+                         FileMode.Append, FileAccess.Write);
+                     StreamWriter sw = new StreamWriter(aFile);
+                     sw.WriteLine(s3);
+                     unorderedlist.Print();
+                     sw.Close();
+                     aFile.Close();*/
                     unorderedlist.Print();
-                    sw.Close();
-                    aFile.Close();
                     break;
                 case 6:
                     Console.WriteLine("enter a string to remove from the list");
-                    String s4 = Utility.ReadString();
+                    string s4 = Utility.ReadString();
                     unorderedlist.Remove(s4);
                     unorderedlist.Print();
                     break;
                 case 7:
                     Console.WriteLine("enter a string to insert at a specified position");
-                    String s5 = Utility.ReadString();
+                    string s5 = Utility.ReadString();
                     Console.WriteLine("enter position at which you want to insert the string");
                     int position = Utility.ReadInt();
                     unorderedlist.Insert(position, s5);
@@ -77,14 +89,13 @@ namespace DataStructures
                     break;
                 case 9:
                     string s6 = unorderedlist.Pop();
-                    Console.WriteLine("poped item  is" + s6);
                     unorderedlist.Print();
+                    Console.WriteLine("poped item  is" + s6);
                     break;
                 default:
                     Console.WriteLine("enter correct option");
                     break;
             }
         }
-      
     }
 }

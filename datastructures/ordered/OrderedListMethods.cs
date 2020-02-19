@@ -1,12 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="OrderedListMethods.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace DataStructures
 {
-    class OrderedListMethods<T>
+    using System;
+
+    /// <summary>
+    /// class for orderedlist methods
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class OrderedListMethods<T>
     {
         Node head;
+
+        /// <summary>
+        /// Adds the specified data.
+        /// </summary>
+        /// <param name="data">The data.</param>
         public void Add(int data)
         {
             Node n = head;
@@ -22,35 +35,50 @@ namespace DataStructures
                 {
                     n = n.next;
                 }
+
                 node.next = n.next;
                 n.next = node;
             }
         }
+
+        /// <summary>
+        /// Sizes this instance.
+        /// </summary>
+        /// <returns></returns>
         public int Size()
         {
-            Node node = head;
-            int ind = 1;
-            while (node.next != null)
+            Node n = head;
+            int count = 1;
+            while (n.next != null)
             {
-                node = node.next;
-                ind++;
+                n = n.next;
+                count++;
             }
-            return ind;
+
+            return count;
         }
+
+        /// <summary>
+        /// Prints this instance.
+        /// </summary>
         public void Print()
         {
-            Node node = head;
-
-            while (node != null)
+            Node n = head;
+            while (n != null)
             {
-                Console.WriteLine(node.data);
-                node = node.next;
+                Console.WriteLine(n.data);
+                n = n.next;
             }
-            node = null;
         }
+
+        /// <summary>
+        /// Removes the specified data.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <returns></returns>
         public int Remove(T data)
         {
-            Node node = head;
+            Node node = head.next;
             Node prev = null;
             if (head.data.Equals(data))
             {
@@ -59,27 +87,29 @@ namespace DataStructures
             }
             else
             {
-                
                 while (!node.data.Equals(data))
                 {
-                    
-                    prev = node;
                     node = node.next;
                 }
+
                 int ret = (int)node.data;
                 node = node.next;
                 prev.next = node;
-
                 return ret;
             }
         }
+
+        /// <summary>
+        /// Indexes the specified index.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <returns></returns>
         public int Index(T index)
         {
             int position = 1;
             Node n = head;
             if (n != null && n.data.Equals(index))
             {
-                n = n.next;
                 return position;
             }
             else
@@ -89,10 +119,17 @@ namespace DataStructures
                     n = n.next;
                     position++;
                 }
-                n = n.next;
             }
+
             return position;
         }
+
+        /// <summary>
+        /// Determines whether this instance is empty.
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if this instance is empty; otherwise, <c>false</c>.
+        /// </returns>
         public bool IsEmpty()
         {
             Node n = head;
@@ -100,26 +137,31 @@ namespace DataStructures
             {
                 return true;
             }
+
             return false;
         }
+
+        /// <summary>
+        /// Searches the specified data.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <returns></returns>
         public bool Search(T data)
         {
-            Node node = head;
-            if (head.data.Equals(data))
+            Node n = head;
+            while (n != null)
             {
-                return true;
-            }
-            else
-            {
-                while (!node.next.data.Equals(data))
+                if (n.data.Equals(data))
                 {
-                    node = node.next;
                     return true;
                 }
-                return false ;
+                else
+                {
+                    n = n.next;
+                }
             }
+
+            return false;
         }
-
-
     }
 }

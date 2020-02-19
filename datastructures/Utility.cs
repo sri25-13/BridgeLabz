@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace DataStructures
@@ -89,6 +90,28 @@ namespace DataStructures
                 }
                 if (count == 2)
                 {
+                    nums = nums + i + ",";
+                }
+            }
+            return nums;
+        }
+        public static String PrimeNumbers1(int n)
+        {
+            Collection<int> coll = new Collection<int>();
+            String nums = "";
+            for (int i = 1; i <= n; i++)
+            {
+                int count = 0;
+                for (int j = i; j >= 1; j--)
+                {
+                    if (i % j == 0)
+                    {
+                        count += 1;
+                    }
+                }
+                if (count == 2)
+                {
+                    coll.Add(i);
                     nums = nums + i + ",";
                 }
             }
