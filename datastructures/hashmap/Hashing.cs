@@ -1,12 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Hashing.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace DataStructures
 {
-    class Hashing
+    using System;
+    using System.IO;
+
+    /// <summary>
+    /// class for performing Hashing
+    /// </summary>
+    public class Hashing
     {
+        /// <summary>
+        /// Hashes the map.
+        /// </summary>
         public static void HashMap()
         {
             HashMap hm = new HashMap();
@@ -15,12 +25,13 @@ namespace DataStructures
             string input = sr.ReadLine();
             string[] str = input.Split(" ");
             int[] array = new int[str.Length];
-            for(int i=0;i<str.Length;i++)
+            for (int i = 0; i < str.Length; i++)
             {
                 array[i] = int.Parse(str[i]);
             }
+
             Array.Sort(array);
-            for(int i=0;i<array.Length;i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 hm.HashingFunction(array[i]);
                 hm.Print();
