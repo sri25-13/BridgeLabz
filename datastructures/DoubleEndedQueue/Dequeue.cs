@@ -9,7 +9,7 @@ namespace DataStructures.DoubleEndedQueue
     using System;
 
     /// <summary>
-    /// 
+    /// class for methods in Dequeue
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class Dequeue<T>
