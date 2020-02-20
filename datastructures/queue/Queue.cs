@@ -54,17 +54,17 @@ namespace DataStructures
         /// </summary>
         public void PrintQueue()
         {
-            Node current = front;
+            Node n = front;
             if (IsEmpty())
             {
                 return;
             }
             else
             {
-                while (current != null)
+                while (n != null)
                 {
-                    Console.WriteLine(current.data);
-                    current = current.next;
+                    Console.WriteLine(n.data);
+                    n = n.next;
                 }
             }
         }

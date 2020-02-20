@@ -42,6 +42,7 @@ namespace DataStructures
         }
 
         /// <summary>
+        /// 
         /// Sizes this instance.
         /// </summary>
         /// <returns></returns>
@@ -51,8 +52,8 @@ namespace DataStructures
             int count = 1;
             while (n.next != null)
             {
-                n = n.next;
                 count++;
+                n = n.next;
             }
 
             return count;
@@ -78,7 +79,7 @@ namespace DataStructures
         /// <returns></returns>
         public int Remove(T data)
         {
-            Node node = head.next;
+            Node n = head;
             Node prev = null;
             if (head.data.Equals(data))
             {
@@ -87,14 +88,14 @@ namespace DataStructures
             }
             else
             {
-                while (!node.data.Equals(data))
+                while (!n.data.Equals(data))
                 {
-                    node = node.next;
+                    prev = n;
+                    n = n.next;
                 }
-
-                int ret = (int)node.data;
-                node = node.next;
-                prev.next = node;
+                int ret = (int)n.data;
+                n = n.next;
+                prev.next = n;
                 return ret;
             }
         }

@@ -20,7 +20,7 @@ namespace DataStructures
         /// </summary>
         public static void BalancedParanthesis()
         {
-            string s = "(5+6)∗(7+8)/(4+3)(5+6)∗(7+8)/(4+3)";
+            string s = "(5+6)∗(7+8)/(4+3)(5+6)∗(7+8)/(4+3))";
             Console.WriteLine("expression is" + s);
             bool check = CheckIfBalanced(s);
             if (check)

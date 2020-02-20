@@ -36,7 +36,7 @@ namespace DataStructures
             int[,] array = new int[row, 25];
             for (int i = 0; i < row; i++)
             {
-                string[] s = FindNumber(prev, incr).Split(',');
+                string[] s =Utility.PrimeNumbers(prev, incr).Split(',');
                 prev = incr;
                 incr += 100;
                 int[] arr = new int[s.Length - 1];
@@ -77,7 +77,7 @@ namespace DataStructures
         /// <param name="min">The minimum.</param>
         /// <param name="num">The number.</param>
         /// <returns></returns>
-        public static string FindNumber(int min, int num)
+        /*public static string FindNumber(int min, int num)
         {
             string s = "";
             for (int i = min; i < num; i++)
@@ -98,6 +98,6 @@ namespace DataStructures
             }
 
             return s;
-        }
+        }*/
     }
 }

@@ -176,7 +176,6 @@ namespace DataStructures
                 }
 
                 prev.next = n.next;
-                n = n.next;
             }
         }
 

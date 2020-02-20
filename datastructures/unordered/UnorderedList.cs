@@ -70,7 +70,8 @@ namespace DataStructures
                 case 6:
                     Console.WriteLine("enter a string to remove from the list");
                     string s4 = Utility.ReadString();
-                    unorderedlist.Remove(s4);
+                   unorderedlist.Remove(s4);
+                    Console.WriteLine("  ");
                     unorderedlist.Print();
                     break;
                 case 7:
