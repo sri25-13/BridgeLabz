@@ -1,0 +1,53 @@
+  {
+    "rices": [
+      {
+        "name": "basmatirice",
+        "weight": 30,
+        "price": 2000
+      },
+      {
+        "name": "brown rice",
+        "weight": 40,
+        "price": 3000
+      },
+      {
+        "name": "red rice",
+        "weight": 20,
+        "price": 2000
+      }
+    ],
+    "pulses": [
+      {
+        "name": "black eyed beans",
+        "weight": 10,
+        "price": 1000
+      },
+      {
+        "name": "moongdal",
+        "weight": 20,
+        "price": 2000
+      },
+      {
+        "name": "greengram",
+        "weight": 12,
+        "price": 1500
+      }
+    ],
+    "wheats": [
+      {
+        "name": "durum",
+        "weight": 20,
+        "price": 1000
+      },
+      {
+        "name": "oats",
+        "weight": 10,
+        "price": 2000
+      },
+      {
+        "name": "jowar",
+        "weight": 30,
+        "price": 1200
+      }
+    ]
+  }
