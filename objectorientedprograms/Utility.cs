@@ -40,9 +40,9 @@ namespace ObjectOrientedPrograms
         public static void Display(Model model)
         {
             List<InventoryDetails>[] list = new List<InventoryDetails>[3];
-            list[0] = model.rices;
-            list[1] = model.wheats;
-            list[2] = model.pulses;
+            list[0] = model.Rices;
+            list[1] = model.Wheats;
+            list[2] = model.Pulses;
             Console.WriteLine("\n");
             Console.WriteLine("Name\t\t\tPrice\t\t\tWeight\t\t\tTotalPrice");
             foreach (var items in list)
@@ -51,6 +51,18 @@ namespace ObjectOrientedPrograms
                 {
                     Console.WriteLine(item.Name + "\t\t\t" + item.Price + "\t\t\t" + item.Weight + "\t\t\t" + (item.Price * item.Weight));
                 }
+            }
+        }
+        public static void Serializing(Model model, string jsonfile)
+        {
+            try
+            {
+                string jsonResultString = JsonConvert.SerializeObject(model);
+                File.WriteAllText(jsonfile, jsonResultString);
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message);
             }
         }
         public static Model Deserializing(string Jsonfile)
@@ -115,6 +127,104 @@ namespace ObjectOrientedPrograms
             for (int i = 0; i < 4; i++)
                 for (int j = 0; j < 9; j++)
                     Players[i, j] = Cards[i, j];
+        }
+        public static void AddRice(Model model)
+        {
+            List<InventoryDetails> rice = model.Rices;
+            InventoryDetails newitem = new InventoryDetails();
+            Console.WriteLine("enter the rice variety");
+            newitem.Name = Utility.ReadString();
+            Console.WriteLine("enter the price");
+            newitem.Price = Utility.ReadDouble();
+            Console.WriteLine("enter weight");
+            newitem.Weight = Utility.ReadDouble();
+            rice.Add(newitem);
+            model.Rices = rice;
+        }
+        public static void AddWheats(Model model)
+        {
+            List<InventoryDetails> wheat = model.Wheats;
+            InventoryDetails wheats = new InventoryDetails();
+            Console.WriteLine("enter the wheat variety name");
+            wheats.Name = Utility.ReadString();
+            Console.WriteLine("enter the price");
+            wheats.Price = Utility.ReadDouble();
+            Console.WriteLine("enter weight");
+            wheats.Weight = Utility.ReadDouble();
+            wheat.Add(wheats);
+            model.Wheats = wheat;
+        }
+       
+        public static void AddPulses(Model model)
+        {
+            List<InventoryDetails> pulses = model.Pulses;
+            InventoryDetails newpulses = new InventoryDetails();
+            Console.WriteLine("enter the pulses variety name");
+            newpulses.Name = Utility.ReadString();
+            Console.WriteLine("enter the price");
+            newpulses.Price = Utility.ReadDouble();
+            Console.WriteLine("enter weight");
+            newpulses.Weight = Utility.ReadDouble();
+            pulses.Add(newpulses);
+            model.Pulses = pulses;
+        }
+        public static void RemoveItem(Model model)
+        {
+            List<InventoryDetails>[] inventory = new List<InventoryDetails>[3];
+            inventory[0] = model.Rices;
+            inventory[1] = model.Wheats;
+            inventory[2] = model.Pulses;
+            Console.WriteLine("enter an item to get removed from the list");
+            String removeitem = Utility.ReadString();
+            foreach (var items in inventory)
+            {                                     
+                foreach (var item in items)
+                {                                
+                    if (item.Name == removeitem)
+                    {
+                        items.Remove(item);
+                        break;
+                    }
+                }
+            }
+        }
+        public static void UpdateData(Model model)
+        {
+            List<InventoryDetails>[] inventory = new List<InventoryDetails>[3];
+            inventory[0] = model.Rices;
+            inventory[1] = model.Wheats;
+            inventory[2] = model.Pulses;
+            Console.WriteLine("enter name of the item to get updated in the list");
+            String updateitem = Utility.ReadString();
+            foreach (var items in inventory)
+            {                                      
+                foreach (var item in items)
+                {                                  
+                    if (item.Name == updateitem)
+                    {
+                        Console.WriteLine("enter any property to get updated");
+                        String property = Utility.ReadString();
+                        if (property == "Name")
+                        {
+                            Console.WriteLine("enter a new name to get updated");
+                            String newName = Utility.ReadString();
+                            item.Name = newName;
+                        }
+                        if (property == "Weight")
+                        {
+                            Console.WriteLine("enter a new weight to get updated");
+                            double newWeight = Utility.ReadDouble();
+                            item.Weight = newWeight;
+                        }
+                        if (property == "Price")
+                        {
+                            Console.WriteLine("enter a new price to get updated");
+                            double newPrice = Utility.ReadDouble();
+                            item.Price = newPrice;
+                        }
+                    }
+                }
+            }
         }
 
     }
