@@ -5,7 +5,7 @@ namespace ObjectOrientedPrograms
     using System.Collections.Generic;
     using System.IO;
     using Newtonsoft.Json;
-    
+
 
     class Utility
     {
@@ -63,11 +63,23 @@ namespace ObjectOrientedPrograms
                 }
             }
         }
+        public static void DisplayStock(StockAccountManagement.Model model)
+        {
+            List<StockAccountManagement.StockDetails> stock = model.Stocks;
+            Console.WriteLine("\n");
+            Console.WriteLine("Stockname\tShare\tShareprice\tTotalPrice");
+            foreach (var data in stock)
+            {
+
+                Console.WriteLine(data.StockName + "\t\t\t" + data.Share + "\t\t\t" + data.SharePrice + "\t\t\t" + (data.Share * data.SharePrice));
+            }
+        }
+
         public static void Serializing(Model model, string jsonfile)
         {
             try
             {
-                string jsonResultString = JsonConvert.SerializeObject(model);
+                string jsonResultString = JsonConvert.SerializeObject();
                 File.WriteAllText(jsonfile, jsonResultString);
             }
             catch (Exception e)
@@ -81,6 +93,19 @@ namespace ObjectOrientedPrograms
             try
             {
                 file = JsonConvert.DeserializeObject<Model>(Jsonfile);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return file;
+        }
+        public static  StockAccountManagement.Model DeserializingStock(string Jsonfile)
+        {
+           StockAccountManagement.Model file = null;
+            try
+            {
+                file = JsonConvert.DeserializeObject<StockAccountManagement.Model>(Jsonfile);
             }
             catch (Exception e)
             {
