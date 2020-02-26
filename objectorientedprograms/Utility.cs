@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-using Newtonsoft.Json;
-
-
-
+﻿
 namespace ObjectOrientedPrograms
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using Newtonsoft.Json;
+    
+
     class Utility
     {
         public static string ReadString()
@@ -15,10 +14,21 @@ namespace ObjectOrientedPrograms
             string s = Console.ReadLine();
             return s;
         }
+
+        /// <summary>
+        /// Reads the double.
+        /// </summary>
+        /// <returns></returns>
         public static double ReadDouble()
         {
             return Convert.ToDouble(Console.ReadLine());
         }
+        public static long ReadLong()
+        {
+            return long.Parse(Console.ReadLine());
+        }
+
+
         public static int ReadInt()
         {
             return Convert.ToInt32(Console.ReadLine());
@@ -139,7 +149,6 @@ namespace ObjectOrientedPrograms
             Console.WriteLine("enter weight");
             newitem.Weight = Utility.ReadDouble();
             rice.Add(newitem);
-            model.Rices = rice;
         }
         public static void AddWheats(Model model)
         {
@@ -152,9 +161,8 @@ namespace ObjectOrientedPrograms
             Console.WriteLine("enter weight");
             wheats.Weight = Utility.ReadDouble();
             wheat.Add(wheats);
-            model.Wheats = wheat;
         }
-       
+
         public static void AddPulses(Model model)
         {
             List<InventoryDetails> pulses = model.Pulses;
@@ -166,7 +174,6 @@ namespace ObjectOrientedPrograms
             Console.WriteLine("enter weight");
             newpulses.Weight = Utility.ReadDouble();
             pulses.Add(newpulses);
-            model.Pulses = pulses;
         }
         public static void RemoveItem(Model model)
         {
@@ -177,9 +184,9 @@ namespace ObjectOrientedPrograms
             Console.WriteLine("enter an item to get removed from the list");
             String removeitem = Utility.ReadString();
             foreach (var items in inventory)
-            {                                     
+            {
                 foreach (var item in items)
-                {                                
+                {
                     if (item.Name == removeitem)
                     {
                         items.Remove(item);
@@ -197,9 +204,9 @@ namespace ObjectOrientedPrograms
             Console.WriteLine("enter name of the item to get updated in the list");
             String updateitem = Utility.ReadString();
             foreach (var items in inventory)
-            {                                      
+            {
                 foreach (var item in items)
-                {                                  
+                {
                     if (item.Name == updateitem)
                     {
                         Console.WriteLine("enter any property to get updated");
@@ -226,6 +233,5 @@ namespace ObjectOrientedPrograms
                 }
             }
         }
-
     }
 }
