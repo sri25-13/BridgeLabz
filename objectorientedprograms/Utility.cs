@@ -79,7 +79,7 @@ namespace ObjectOrientedPrograms
         {
             try
             {
-                string jsonResultString = JsonConvert.SerializeObject();
+                string jsonResultString = JsonConvert.SerializeObject(jsonfile);
                 File.WriteAllText(jsonfile, jsonResultString);
             }
             catch (Exception e)
@@ -118,50 +118,6 @@ namespace ObjectOrientedPrograms
             Random random = new Random();
             int value = random.Next(num);
             return value;
-        }
-        public static void ShufflingCards(String[,] CardsArray)
-        {
-            int row1, row2, column1, column2;
-            for (int i = 0; i < 52; i++)
-            {
-                row1 = RandomValues(CardsArray.GetLength(0));
-                column1 = RandomValues(CardsArray.GetLength(1));
-                row2 = RandomValues(CardsArray.GetLength(0));
-                column2 = RandomValues(CardsArray.GetLength(1));
-                Swap(CardsArray, row1, column1, row2, column2);
-            }
-        }
-        public static void CardArray(String[] Suits, String[,] Cards, String[] Rank)
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                for (int j = 0; j < 13; j++)
-                {
-                    Cards[i, j] = Suits[i] + "-" + Rank[j];
-                }
-
-            }
-        }
-        public static void PrintString2DArray(string[,] PlayersArray)
-        {
-            for (int i = 0; i < PlayersArray.GetLength(0); i++)
-            {
-                for (int j = 0; j < PlayersArray.GetLength(1); j++)
-                    Console.Write(PlayersArray[i, j]);
-                Console.WriteLine();
-            }
-        }
-        public static void Swap(string[,] CardsArray, int row1, int column1, int row2, int column2)
-        {
-            string temp = CardsArray[row1, column1];
-            CardsArray[row1, column1] = CardsArray[row2, column2];
-            CardsArray[row2, column2] = temp;
-        }
-        public static void DistributingCards(string[,] Cards, string[,] Players)
-        {
-            for (int i = 0; i < 4; i++)
-                for (int j = 0; j < 9; j++)
-                    Players[i, j] = Cards[i, j];
         }
         public static void AddRice(Model model)
         {
