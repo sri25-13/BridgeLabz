@@ -7,7 +7,7 @@ namespace ObjectOrientedPrograms
         {
 
             
-            Console.WriteLine("1.InventoryManagements\n2.DeckOfCards\n3.InventoryDataManagement\n4.AddressBookProblem\n5.StockAccountManagement");
+            Console.WriteLine("1.InventoryManagements\n2.InventoryDataManagement\n3.AddressBookProblem\n4.StockAccountManagement");
             Console.WriteLine("enter an option to be executed");
             int option = Utility.ReadInt();
             switch (option)
@@ -16,15 +16,12 @@ namespace ObjectOrientedPrograms
                     InventoryManagement.Test();
                     break;
                 case 2:
-                    DeckOfCards.DistributeCards();
-                    break;
-                case 3:
                     InventoryFactory.Test();
                     break;
-                case 4:
+                case 3:
                     AddressBookProblem.AddressBookImplementing.SerializingAndDeserializing();
                     break;
-                case 5:
+                case 4:
                     StockAccountManagement.StockAccountImplementation.Deserializing();
                     break;
                 
