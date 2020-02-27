@@ -6,6 +6,7 @@ namespace ObjectOrientedPrograms
         static void Main(string[] args)
         {
 
+            
             Console.WriteLine("1.InventoryManagements\n2.DeckOfCards\n3.InventoryDataManagement\n4.AddressBookProblem\n5.StockAccountManagement");
             Console.WriteLine("enter an option to be executed");
             int option = Utility.ReadInt();
@@ -26,6 +27,7 @@ namespace ObjectOrientedPrograms
                 case 5:
                     StockAccountManagement.StockAccountImplementation.Deserializing();
                     break;
+                
             }
         }
     }
