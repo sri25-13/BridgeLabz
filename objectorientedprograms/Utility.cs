@@ -100,6 +100,20 @@ namespace ObjectOrientedPrograms
             }
             return file;
         }
+            public static CommercialDataProcessing.StockModel DeserializingStockAccount(string Jsonfile)
+            {
+                CommercialDataProcessing.StockModel file = null;
+                try
+                {
+                    file = JsonConvert.DeserializeObject<CommercialDataProcessing.StockModels>(Jsonfile);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                return file;
+            }
+        
         public static  StockAccountManagement.Model DeserializingStock(string Jsonfile)
         {
            StockAccountManagement.Model file = null;
@@ -209,5 +223,6 @@ namespace ObjectOrientedPrograms
                 }
             }
         }
+
     }
 }
