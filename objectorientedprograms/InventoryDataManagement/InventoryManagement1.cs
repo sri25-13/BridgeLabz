@@ -6,7 +6,7 @@ namespace ObjectOrientedPrograms
 {
     class InventoryManagement1
     {
-        public void InventoryManagementMethod(Model model)
+        public void CallingMethods(Model model)
         {
             Console.WriteLine("1.Adding to Rice ");
             Console.WriteLine("2.Adding to Pulses ");
@@ -29,7 +29,6 @@ namespace ObjectOrientedPrograms
                 case 4:
                     Utility.RemoveItem(model);
                     break;
-
                 case 5:
                     Utility.UpdateData(model);
                     break;

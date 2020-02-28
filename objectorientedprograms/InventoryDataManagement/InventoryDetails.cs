@@ -42,6 +42,5 @@ namespace ObjectOrientedPrograms
                 return this.price;
             }
         }
-    
     }
 }

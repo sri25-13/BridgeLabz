@@ -9,7 +9,7 @@ namespace ObjectOrientedPrograms
     {
         public static void Test()
         {
-            string json = @"C:\Users\Bridgelabz\source\repos\ObjectOrientedPrograms\inventory.json";
+            string json = @"C:\Users\Bridgelabz\source\repos\ObjectOrientedPrograms\InventoryManagements\inventory.json";
             string jsonfile = Utility.ReadFile(json);
             Model m = Utility.Deserializing(jsonfile);
             Utility.Display(m);

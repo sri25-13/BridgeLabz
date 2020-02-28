@@ -24,6 +24,11 @@ namespace ObjectOrientedPrograms
                 case 4:
                     StockAccountManagement.StockAccountImplementation.Deserializing();
                     break;
+                case 5:
+                    DeckOfCards ab = new DeckOfCards();
+                    ab.PlayCards();
+                    break;
+               
                 
             }
         }

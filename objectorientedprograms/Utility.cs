@@ -113,12 +113,7 @@ namespace ObjectOrientedPrograms
             }
             return file;
         }
-        public static int RandomValues(int num)
-        {
-            Random random = new Random();
-            int value = random.Next(num);
-            return value;
-        }
+     
         public static void AddRice(Model model)
         {
             List<InventoryDetails> rice = model.Rices;
