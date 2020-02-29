@@ -1,12 +1,25 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="InventoryManagement.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace ObjectOrientedPrograms
 {
-    class InventoryManagement
+   /* using Newtonsoft.Json;
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+*/
+
+    /// <summary>
+    /// class for InventoryManagement
+    /// </summary>
+    public class InventoryManagement
     {
+        /// <summary>
+        /// Tests this instance.
+        /// </summary>
         public static void Test()
         {
             string json = @"C:\Users\Bridgelabz\source\repos\ObjectOrientedPrograms\InventoryDataManagement\InventoryData.json";
