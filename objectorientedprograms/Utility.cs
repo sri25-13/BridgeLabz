@@ -21,7 +21,7 @@ namespace ObjectOrientedPrograms
         /// <returns></returns>
         public static double ReadDouble()
         {
-            return Convert.ToDouble(Console.ReadLine());
+            return double.Parse(Console.ReadLine());
         }
         public static long ReadLong()
         {
@@ -79,7 +79,7 @@ namespace ObjectOrientedPrograms
         {
             try
             {
-                string jsonResultString = JsonConvert.SerializeObject(jsonfile);
+                string jsonResultString = JsonConvert.SerializeObject(model);
                 File.WriteAllText(jsonfile, jsonResultString);
             }
             catch (Exception e)
@@ -100,7 +100,7 @@ namespace ObjectOrientedPrograms
             }
             return file;
         }
-            public static CommercialDataProcessing.StockModel DeserializingStockAccount(string Jsonfile)
+          /*  public static CommercialDataProcessing.StockModel DeserializingStockAccount(string Jsonfile)
             {
                 CommercialDataProcessing.StockModel file = null;
                 try
@@ -112,7 +112,7 @@ namespace ObjectOrientedPrograms
                     Console.WriteLine(e.Message);
                 }
                 return file;
-            }
+            }*/
         
         public static  StockAccountManagement.Model DeserializingStock(string Jsonfile)
         {

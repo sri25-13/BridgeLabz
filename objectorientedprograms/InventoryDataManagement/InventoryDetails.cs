@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ObjectOrientedPrograms
 {
-    class InventoryDetails
+   public class InventoryDetails
     {
         private string name;
         private double weight;
