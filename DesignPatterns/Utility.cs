@@ -10,5 +10,10 @@ namespace DesignPatterns
         {
             return Convert.ToInt32(Console.ReadLine());
         }
+        public static string ReadString()
+        {
+            string s = Console.ReadLine();
+            return s;
+        }
     }
     }

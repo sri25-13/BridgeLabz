@@ -4,30 +4,23 @@ using System.Text;
 
 namespace DesignPatterns.CreationalDesignPatterns.Singleton
 {
-    class ThreadSafeSingleton
+    class LazyInitialization
     {
+        private static LazyInitialization instance;
         private static int counter = 0;
-        private static readonly object Instancelock = new object();
-        private ThreadSafeSingleton()
+        private LazyInitialization()
         {
             counter++;
             Console.WriteLine("Counter Value " + counter.ToString());
         }
-        private static ThreadSafeSingleton instance = null;
 
-        public static ThreadSafeSingleton GetInstance
+        public static LazyInitialization Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    lock (Instancelock)
-                    {
-                        if (instance == null)
-                        {
-                            instance = new ThreadSafeSingleton();
-                        }
-                    }
+                    instance = new LazyInitialization();
                 }
                 return instance;
             }
@@ -37,6 +30,5 @@ namespace DesignPatterns.CreationalDesignPatterns.Singleton
             Console.WriteLine(message);
         }
     }
-
 }
 
