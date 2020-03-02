@@ -1,10 +1,12 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace ObjectOrientedPrograms.CommercialDataProcessing
 {
-    class StockAccount : IStockAccountInterface
+   public class StockAccount : IStockAccountInterface
     {
         StockModel model = null;
         public StockModel NewAccount(string path)
@@ -14,7 +16,7 @@ namespace ObjectOrientedPrograms.CommercialDataProcessing
             model = Utility.DeserializingStockAccount(jsonString);
             return model;
         }
-        double ValueOf()
+      public  double ValueOf()
         {
             double totalValue = 0.0;
             IList<Stock> list = model.CompanyShares;
@@ -23,17 +25,18 @@ namespace ObjectOrientedPrograms.CommercialDataProcessing
             return totalValue;
         }
 
-    void Buy(StockModel model)
+   public void Buy(StockModel model)
         {
 
         }
-        void sell()
+       public void Sell()
         {
 
         }
-        void Save()
+       public void Save(string filename)
         {
-
+            string jsonResultString = JsonConvert.SerializeObject(model);
+            File.WriteAllText(filename, jsonResultString);
         }
         void PrintReport()
         {
@@ -41,4 +44,3 @@ namespace ObjectOrientedPrograms.CommercialDataProcessing
         }
     }
 }
-*/

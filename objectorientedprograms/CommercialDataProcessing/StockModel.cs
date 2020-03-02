@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ObjectOrientedPrograms.CommercialDataProcessing
 {
-    class StockModel
+   public class StockModel
     {
         public List<Stock> CompanyShares;
     }
