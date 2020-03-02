@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.
+
 
 namespace DesignPatterns.CreationalDesignPatterns.FactoryDesignPattern
 {
@@ -9,14 +9,14 @@ namespace DesignPatterns.CreationalDesignPatterns.FactoryDesignPattern
     {
         public static Computer getComputer(String obj)
         {
-            Computer object = null;
+          Computer obje= null;
             if ("PC".Equals(obj))
             {
                 Console.WriteLine("enter RAM,HDD,CPU values for Pc");
                 string ram = Utility.ReadString();
                 string hdd = Utility.ReadString();
                 string cpu = Utility.ReadString();
-                object= new PC(ram, hdd, cpu);
+                obje = new PC(ram, hdd, cpu);
             }
 
             else if ("Server".Equals(obj))
@@ -25,10 +25,10 @@ namespace DesignPatterns.CreationalDesignPatterns.FactoryDesignPattern
                 string ram = Utility.ReadString();
                 string hdd = Utility.ReadString();
                 string cpu = Utility.ReadString();
-                object = new Server(ram, hdd, cpu);
+                obje = new Server(ram, hdd, cpu);
             }
 
-            return object;
+            return obje;
         }
     }
 }
