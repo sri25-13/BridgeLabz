@@ -1,9 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Employee.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.CreationalDesignPatterns.PrototypeDesignPattern
 {
+    /// <summary>
+    /// employee class
+    /// </summary>
+    /// <seealso cref="DesignPatterns.CreationalDesignPatterns.PrototypeDesignPattern.EmployeeDetails" />
     public class Employee : EmployeeDetails
     {
         public string employeeName;
