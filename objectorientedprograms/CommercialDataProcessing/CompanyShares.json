@@ -1,18 +1,18 @@
 {
     "CompanyShares": [
       {
-        "StockSymbol": "Fastrack",
-        "NumberOfShares": 30,
+        "stockSymbol": "Fastrack",
+        "numberOfShares": 30,
         "sharePrice": 20000
       },
       {
-        "StockSymbol": "Revlon",
-        " NumberOfShares": 15,
+        "stockSymbol": "Revlon",
+        " numberOfShares": 15,
         "sharePrice": 10000
       },
       {
-        "StockSymbol": "Philips",
-        "NumberOfShares": 20,
+        "stockSymbol": "Philips",
+        "numberOfShares": 20,
         "sharePrice": 25000
       }
     ]

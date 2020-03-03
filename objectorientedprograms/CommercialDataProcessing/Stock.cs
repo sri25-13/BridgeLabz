@@ -6,29 +6,29 @@ namespace ObjectOrientedPrograms.CommercialDataProcessing
 {
    public class Stock
     {
-        private string stocksymbol;
-        private int numberofshares;
+        private string stockSymbol;
+        private int numberOfShares;
         private int sharePrice;
         public string StockSymbol
         {
             set 
             {
-                this.stocksymbol = value;
+                this.stockSymbol = value;
             }
             get
             {
-                return this.stocksymbol;
+                return this.stockSymbol;
             }
         }
         public int NumberOfShares
         {
             set
             {
-                this.numberofshares = value;
+                this.numberOfShares = value;
             }
             get
             {
-                return this.numberofshares;
+                return this.numberOfShares;
             }
         }
         public int SharePrice

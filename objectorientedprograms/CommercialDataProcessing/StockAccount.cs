@@ -38,7 +38,7 @@ namespace ObjectOrientedPrograms.CommercialDataProcessing
             string jsonResultString = JsonConvert.SerializeObject(model);
             File.WriteAllText(filename, jsonResultString);
         }
-        void PrintReport()
+       public void PrintReport()
         {
 
         }

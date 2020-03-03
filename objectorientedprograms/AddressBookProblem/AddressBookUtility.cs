@@ -1,13 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Newtonsoft.Json;
-using System.IO;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="AddressBookUtility.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace ObjectOrientedPrograms.AddressBookProblem
 {
-    class AddressBookUtility
+    using System;
+    using System.Collections.Generic;
+    using Newtonsoft.Json;
+    using System.IO;
+
+    /// <summary>
+    /// utility class for AddressBook
+    /// </summary>
+    public class AddressBookUtility
     {
+        /// <summary>
+        /// Serializings the specified model.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <param name="jsonfile">The jsonfile.</param>
         public static void Serializing(Model model, string jsonfile)
         {
             try
@@ -20,19 +33,33 @@ namespace ObjectOrientedPrograms.AddressBookProblem
                 Console.Write(e.Message);
             }
         }
-        public static Model Deserializing(string Jsonfile)
+
+        /// <summary>
+        /// Deserializings the specified jsonfile.
+        /// </summary>
+        /// <param name="jsonfile">The jsonfile.</param>
+        /// <returns>
+        /// returns modelclass object
+        /// </returns>
+        public static Model Deserializing(string jsonfile)
         {
             Model file = null;
             try
             {
-                file = JsonConvert.DeserializeObject<Model>(Jsonfile);
+                file = JsonConvert.DeserializeObject<Model>(jsonfile);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
+
             return file;
         }
+
+        /// <summary>
+        /// Adds the person.
+        /// </summary>
+        /// <param name="model">The model.</param>
         public static void AddPerson(Model model)
         {
             List<AddressBookDetails> ad = model.Person;
@@ -54,6 +81,11 @@ namespace ObjectOrientedPrograms.AddressBookProblem
             data.PhoneNumber = Utility.ReadLong();
             ad.Add(data);
         }
+
+        /// <summary>
+        /// Deletes the person.
+        /// </summary>
+        /// <param name="model">The model.</param>
         public static void DeletePerson(Model model)
         {
             List<AddressBookDetails> ad = model.Person;
@@ -68,6 +100,11 @@ namespace ObjectOrientedPrograms.AddressBookProblem
                 }
             }
         }
+
+        /// <summary>
+        /// Displays the specified model.
+        /// </summary>
+        /// <param name="model">The model.</param>
         public static void Display(Model model)
         {
             List<AddressBookDetails> ad = model.Person;
@@ -82,14 +119,17 @@ namespace ObjectOrientedPrograms.AddressBookProblem
             }
         }
 
+        /// <summary>
+        /// Updates the data.
+        /// </summary>
+        /// <param name="model">The model.</param>
         public static void UpdateData(Model model)
         {
             List<AddressBookDetails> ad = model.Person;
             Console.WriteLine("enter lastname of a person");
-            String lastname = Utility.ReadString();
+            string lastname = Utility.ReadString();
             foreach (var name in ad)
             {
-
                 if (name.Lastname == lastname)
                 {
                     Console.WriteLine("enter any property to get updated");
@@ -100,36 +140,42 @@ namespace ObjectOrientedPrograms.AddressBookProblem
                         string newName = Utility.ReadString();
                         name.Firstname = newName;
                     }
+
                     if (property == "Lastname")
                     {
                         Console.WriteLine("enter a new lastname to get updated");
                         string newLastName = Utility.ReadString();
                         name.Lastname = newLastName;
                     }
+
                     if (property == "Address")
                     {
                         Console.WriteLine("enter a new address to get updated");
                         string newAddress = Utility.ReadString();
                         name.Address = newAddress;
                     }
+
                     if (property == "State")
                     {
                         Console.WriteLine("enter new state to be updated");
                         string newState = Utility.ReadString();
                         name.State = newState;
                     }
+
                     if (property == "City")
                     {
                         Console.WriteLine("enter a new city to get updated");
                         string newCity = Utility.ReadString();
                         name.City = newCity;
                     }
+
                     if (property == "Zip")
                     {
                         Console.WriteLine("enter a new zip to get updated");
                         int newZip = Utility.ReadInt();
                         name.Zip = newZip;
                     }
+
                     if (property == "PhoneNumber")
                     {
                         Console.WriteLine("enter a new phonenumber to get updated");
@@ -141,6 +187,3 @@ namespace ObjectOrientedPrograms.AddressBookProblem
         }
     }
 }
-
-
-
