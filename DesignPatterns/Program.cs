@@ -26,6 +26,12 @@ namespace DesignPatterns
                 case 5:
                     CreationalDesignPatterns.PrototypeDesignPattern.PrototypeDesignPatternImplementation.PrototypeImplementing();
                     break;
+                case 6:
+                    StructuralDesignPatterns.AdapterDesignPatternImplementation.AdapterImplementation();
+                    break;
+                case 7:
+                    StructuralDesignPatterns.FacadeDesignPattern.AddressBook.AddressBookMethods();
+                    break;
             }
         }
     }
