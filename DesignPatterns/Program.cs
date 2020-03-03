@@ -23,6 +23,9 @@ namespace DesignPatterns
                 case 4:
                     CreationalDesignPatterns.FactoryDesignPattern.FactoryDesignPatternImplementation.Implementation();
                     break;
+                case 5:
+                    CreationalDesignPatterns.PrototypeDesignPattern.PrototypeDesignPatternImplementation.PrototypeImplementing();
+                    break;
             }
         }
     }
