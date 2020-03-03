@@ -1,45 +1,74 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="InventoryDetails.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace ObjectOrientedPrograms
 {
-   public class InventoryDetails
+    /// <summary>
+    /// class for InventoryDetails
+    /// </summary>
+    public class InventoryDetails
     {
         private string name;
         private double weight;
         private double price;
+
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string Name
         {
-            set
-            {
-                this.name = value;
-            }
             get
             {
                 return this.name;
             }
-        }
-        public double Weight
-        {
+
             set
             {
-                this.weight = value;
+                this.name = value;
             }
+        }
+
+        /// <summary>
+        /// Gets or sets the weight.
+        /// </summary>
+        /// <value>
+        /// The weight.
+        /// </value>
+        public double Weight
+        {
             get
             {
                 return this.weight;
             }
-        }
-        public double Price
-        {
+
             set
             {
-                this.price = value;
+                this.weight = value;
             }
+        }
+
+        /// <summary>
+        /// Gets or sets the price.
+        /// </summary>
+        /// <value>
+        /// The price.
+        /// </value>
+        public double Price
+        {
             get
             {
                 return this.price;
+            }
+
+            set
+            {
+                this.price = value;
             }
         }
     }

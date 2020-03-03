@@ -1,11 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="InventoryFactory.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace ObjectOrientedPrograms
 {
-    class InventoryFactory
+    /// <summary>
+    /// class for Inventory
+    /// </summary>
+    public class InventoryFactory
     {
+        /// <summary>
+        /// Tests this instance.
+        /// </summary>
         public static void Test()
         {
             string json = @"C:\Users\Bridgelabz\source\repos\ObjectOrientedPrograms\InventoryDataManagement\InventoryData.json";

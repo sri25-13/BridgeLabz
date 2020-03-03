@@ -1,10 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Model.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace ObjectOrientedPrograms
 {
-   public class Model
+    using System.Collections.Generic;
+
+    /// <summary>
+    /// model class
+    /// </summary>
+    public class Model
     {
         public List<InventoryDetails> Rices;
         public List<InventoryDetails> Pulses;

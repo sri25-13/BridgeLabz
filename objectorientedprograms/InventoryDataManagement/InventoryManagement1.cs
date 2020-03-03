@@ -1,11 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="InventoryManagement1.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace ObjectOrientedPrograms
 {
-    class InventoryManagement1
+    using System;
+
+    /// <summary>
+    /// class for InventoryManagement
+    /// </summary>
+    public class InventoryManagement1
     {
+        /// <summary>
+        /// Callings the methods.
+        /// </summary>
+        /// <param name="model">The model.</param>
         public void CallingMethods(Model model)
         {
             Console.WriteLine("1.Adding to Rice ");
@@ -36,9 +47,6 @@ namespace ObjectOrientedPrograms
                     Console.WriteLine("enter correct option");
                     break;
             }
-
         }
     }
 }
-
-
