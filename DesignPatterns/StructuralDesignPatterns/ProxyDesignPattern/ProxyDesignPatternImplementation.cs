@@ -1,12 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ProxyDesignPatternImplementation.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.StructuralDesignPatterns.ProxyDesignPattern
 {
+    using System;
+
+    /// <summary>
+    /// 
+    /// </summary>
     public class ProxyDesignPatternImplementation
     {
-       public static void ProxyDesignPattern()
+        /// <summary>
+        /// Proxies the design pattern.
+        /// </summary>
+        public static void ProxyDesignPattern()
         {
             MathProxy proxy = new MathProxy();
             Console.WriteLine(proxy.Adding(4, 2));

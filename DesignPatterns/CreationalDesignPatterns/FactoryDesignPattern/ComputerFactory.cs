@@ -1,15 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ComputerFactory.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.CreationalDesignPatterns.FactoryDesignPattern
 {
-    class ComputerFactory
+    using System;
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class ComputerFactory
     {
-        public static Computer getComputer(String obj)
+        /// <summary>
+        /// Gets the computer.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <returns></returns>
+        public static Computer GetComputer(string obj)
         {
-          Computer obje= null;
+            Computer obje = null;
             if ("PC".Equals(obj))
             {
                 Console.WriteLine("enter RAM,HDD,CPU values for Pc");
@@ -18,7 +29,6 @@ namespace DesignPatterns.CreationalDesignPatterns.FactoryDesignPattern
                 string cpu = Utility.ReadString();
                 obje = new PC(ram, hdd, cpu);
             }
-
             else if ("Server".Equals(obj))
             {
                 Console.WriteLine("enter RAM,HDD,CPU values for Server");

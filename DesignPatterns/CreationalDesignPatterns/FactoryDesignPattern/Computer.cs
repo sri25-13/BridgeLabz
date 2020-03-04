@@ -38,9 +38,9 @@ namespace DesignPatterns.CreationalDesignPatterns.FactoryDesignPattern
     /// <seealso cref="DesignPatterns.CreationalDesignPatterns.FactoryDesignPattern.Computer" />
     class PC : Computer
     {
-        private String ram;
-        private String hdd;
-        private String cpu;
+        private string ram;
+        private string hdd;
+        private string cpu;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PC"/> class.
@@ -48,7 +48,7 @@ namespace DesignPatterns.CreationalDesignPatterns.FactoryDesignPattern
         /// <param name="ram">The ram.</param>
         /// <param name="hdd">The HDD.</param>
         /// <param name="cpu">The cpu.</param>
-        public PC(String ram, String hdd, String cpu)
+        public PC(string ram, string hdd, string cpu)
         {
             this.ram = ram;
             this.hdd = hdd;
@@ -82,37 +82,55 @@ namespace DesignPatterns.CreationalDesignPatterns.FactoryDesignPattern
             return this.ram;
         }
     }
+
     /// <summary>
     /// 
     /// </summary>
     /// <seealso cref="DesignPatterns.CreationalDesignPatterns.FactoryDesignPattern.Computer" />
     class Server : Computer
     {
-        private String ram;
-        private String hdd;
-        private String cpu;
+        private string ram;
+        private string hdd;
+        private string cpu;
 
-        public Server(String ram, String hdd, String cpu)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Server"/> class.
+        /// </summary>
+        /// <param name="ram">The ram.</param>
+        /// <param name="hdd">The HDD.</param>
+        /// <param name="cpu">The cpu.</param>
+        public Server(string ram, string hdd, string cpu)
         {
             this.ram = ram;
             this.hdd = hdd;
             this.cpu = cpu;
         }
+
+        /// <summary>
+        /// Gets the cpu.
+        /// </summary>
+        /// <returns></returns>
         public override string GetCPU()
         {
             return this.cpu;
         }
 
+        /// <summary>
+        /// Gets the HDD.
+        /// </summary>
+        /// <returns></returns>
         public override string GetHDD()
         {
             return this.hdd;
         }
 
+        /// <summary>
+        /// Gets the ram.
+        /// </summary>
+        /// <returns></returns>
         public override string GetRAM()
         {
             return this.ram;
         }
     }
 }
-
-
