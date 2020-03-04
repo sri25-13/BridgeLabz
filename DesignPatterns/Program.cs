@@ -32,6 +32,16 @@ namespace DesignPatterns
                 case 7:
                     StructuralDesignPatterns.FacadeDesignPattern.AddressBook.AddressBookMethods();
                     break;
+                case 8:
+                    BehavioralDesignPatterns.ObserverDesignPatternImplementation.ObserverPattern();
+                    break;
+                case 9:
+                    BehavioralDesignPatterns.MediatorDesignPattern.MediatorDesignPatternImplementation.MediatorDesignPattern();
+                    break;
+                case 10:
+                    StructuralDesignPatterns.ProxyDesignPattern.ProxyDesignPatternImplementation.ProxyDesignPattern();
+                    break;
+                    
             }
         }
     }

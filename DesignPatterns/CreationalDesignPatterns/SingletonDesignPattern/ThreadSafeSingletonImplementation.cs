@@ -1,24 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ThreadSafeSingletonImplementation.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.CreationalDesignPatterns.Singleton
 {
-   public class ThreadSafeSingletonImplementation
+    using System.Threading.Tasks;
+
+    /// <summary>
+    /// class for implementing ThreadSafeImplementation
+    /// </summary>
+    public class ThreadSafeSingletonImplementation
     {
+        /// <summary>
+        /// Singletons this instance.
+        /// </summary>
         public static void Singleton()
         {
             Parallel.Invoke(
                     () => PrintStudentName(),
-                    () => PrintStudentId()
-                    );
+                    () => PrintStudentId());
         }
+
+        /// <summary>
+        /// Prints the name of the student.
+        /// </summary>
         private static void PrintStudentName()
         {
             ThreadSafeSingleton studentname = ThreadSafeSingleton.GetInstance;
             studentname.PrintDetails("sriharshini");
         }
+
+        /// <summary>
+        /// Prints the student identifier.
+        /// </summary>
         private static void PrintStudentId()
         {
             ThreadSafeSingleton studentId = ThreadSafeSingleton.GetInstance;
@@ -26,4 +42,3 @@ namespace DesignPatterns.CreationalDesignPatterns.Singleton
         }
     }
 }
-

@@ -1,11 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="EagerInitializationImplementation.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.CreationalDesignPatterns.Singleton
 {
-    class EagerInitializationImplementation
+    /// <summary>
+    /// class for implementing EagerInitialization
+    /// </summary>
+    public class EagerInitializationImplementation
     {
+        /// <summary>
+        /// Eagers the initializing implementing.
+        /// </summary>
         public static void EagerInitializingImplementing()
         {
             EagerInitialization lazyInitialization = EagerInitialization.Instance;
