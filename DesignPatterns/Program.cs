@@ -1,7 +1,16 @@
-﻿using System;
+﻿
 
 namespace DesignPatterns
 {
+    using System;
+    using CreationalDesignPatterns.Singleton;
+    using CreationalDesignPatterns.FactoryDesignPattern;
+    using CreationalDesignPatterns.PrototypeDesignPattern;
+    using StructuralDesignPatterns.FacadeDesignPattern;
+    using StructuralDesignPatterns.ProxyDesignPattern;
+    using BehavioralDesignPatterns.MediatorDesignPattern;
+    using BehavioralDesignPatterns.VisitorDesignPattern;
+
    public class Program
     {
         static void Main(string[] args)
@@ -12,37 +21,43 @@ namespace DesignPatterns
             switch(option)
             {
                 case 1:
-                    CreationalDesignPatterns.Singleton.ThreadSafeSingletonImplementation.Singleton();
+                    ThreadSafeSingletonImplementation.Singleton();
                     break;
                 case 2:
-                    CreationalDesignPatterns.Singleton.LazyInitializationImplementation.LazyInitializingImplementing();
+                    LazyInitializationImplementation.LazyInitializingImplementing();
                     break;
                 case 3:
-                    CreationalDesignPatterns.Singleton.EagerInitializationImplementation.EagerInitializingImplementing();
+                   EagerInitializationImplementation.EagerInitializingImplementing();
                     break;
                 case 4:
-                    CreationalDesignPatterns.FactoryDesignPattern.FactoryDesignPatternImplementation.Implementation();
+                    FactoryDesignPatternImplementation.Implementation();
                     break;
                 case 5:
-                    CreationalDesignPatterns.PrototypeDesignPattern.PrototypeDesignPatternImplementation.PrototypeImplementing();
+                    PrototypeDesignPatternImplementation.PrototypeImplementing();
                     break;
                 case 6:
                     StructuralDesignPatterns.AdapterDesignPatternImplementation.AdapterImplementation();
                     break;
                 case 7:
-                    StructuralDesignPatterns.FacadeDesignPattern.AddressBook.AddressBookMethods();
+                    AddressBook.AddressBookMethods();
                     break;
                 case 8:
-                    BehavioralDesignPatterns.ObserverDesignPatternImplementation.ObserverPattern();
+                 BehavioralDesignPatterns.ObserverDesignPatternImplementation.ObserverPattern();
                     break;
                 case 9:
-                    BehavioralDesignPatterns.MediatorDesignPattern.MediatorDesignPatternImplementation.MediatorDesignPattern();
+                    MediatorDesignPatternImplementation.MediatorDesignPattern();
                     break;
                 case 10:
-                    StructuralDesignPatterns.ProxyDesignPattern.ProxyDesignPatternImplementation.ProxyDesignPattern();
+                    ProxyDesignPatternImplementation.ProxyDesignPattern();
                     break;
                 case 11:
-                    BehavioralDesignPatterns.VisitorDesignPattern.ShoppingCartClient.ShoppingCart();
+                    ShoppingCartClient.ShoppingCart();
+                    break;
+                case 12:
+                    Reflection.Reflection.ReflectionImplementing();
+                    break;
+                case 13:
+                  DependencyInjection.DependencyInjection.DependencyInjectionImplementation();
                     break;
             }
         }
