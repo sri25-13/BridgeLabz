@@ -10,9 +10,11 @@ namespace DesignPatterns
     using StructuralDesignPatterns.ProxyDesignPattern;
     using BehavioralDesignPatterns.MediatorDesignPattern;
     using BehavioralDesignPatterns.VisitorDesignPattern;
+    using AutoMappers;
 
    public class Program
     {
+        [Obsolete]
         static void Main(string[] args)
         {
             Console.WriteLine("1.ThreadSafeSingleton\n2.LazyInitializingSingleton\n3.EagerInitializingSingleton");
@@ -58,6 +60,9 @@ namespace DesignPatterns
                     break;
                 case 13:
                   DependencyInjection.DependencyInjection.DependencyInjectionImplementation();
+                    break;
+                case 14:
+                    AutoMapperImplementation.AutoMapperImplementing();
                     break;
             }
         }

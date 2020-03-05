@@ -16,10 +16,10 @@ namespace DesignPatterns.CreationalDesignPatterns.Singleton
         /// </summary>
         public static void EagerInitializingImplementing()
         {
-            EagerInitialization lazyInitialization = EagerInitialization.Instance;
-            lazyInitialization.PrintDetails("firstname");
-            EagerInitialization lazyInitialization1 = EagerInitialization.Instance;
-            lazyInitialization1.PrintDetails("secondname");
+            EagerInitialization eagerInitialization = EagerInitialization.Instance;
+            eagerInitialization.PrintDetails("firstname");
+            EagerInitialization eagerInitialization1 = EagerInitialization.Instance;
+            eagerInitialization1.PrintDetails("secondname");
         }
     }
 }
