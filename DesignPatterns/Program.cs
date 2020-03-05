@@ -41,7 +41,9 @@ namespace DesignPatterns
                 case 10:
                     StructuralDesignPatterns.ProxyDesignPattern.ProxyDesignPatternImplementation.ProxyDesignPattern();
                     break;
-                    
+                case 11:
+                    BehavioralDesignPatterns.VisitorDesignPattern.ShoppingCartClient.ShoppingCart();
+                    break;
             }
         }
     }
