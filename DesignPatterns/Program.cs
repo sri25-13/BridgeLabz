@@ -1,5 +1,9 @@
-﻿
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Program.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns
 {
     using System;
@@ -12,15 +16,22 @@ namespace DesignPatterns
     using BehavioralDesignPatterns.VisitorDesignPattern;
     using AutoMappers;
 
-   public class Program
+    /// <summary>
+    /// class for main program
+    /// </summary>
+    public class Program
     {
+        /// <summary>
+        /// Defines the entry point of the application.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
         [Obsolete]
-        static void Main(string[] args)
+       public static void Main(string[] args)
         {
-            Console.WriteLine("1.ThreadSafeSingleton\n2.LazyInitializingSingleton\n3.EagerInitializingSingleton");
+            Console.WriteLine("1.ThreadSafeSingleton\n2.LazyInitializingSingleton\n3.EagerInitializingSingleton\n4.FactoryDesignPattern\n5.PrototypeDesignPatter\n6.AdapterDesignPattern\n7.FacadeDesignPattern\n8.ObserverDesignPattern\n9.MediatorDesignPattern\n10.ProxyDesignPattern\n11.VisitorDesignPattern\n12.Reflection\n13.DependencyInjection\n14.AutoMapper");
             Console.WriteLine("enter an option to be executed");
             int option = Utility.ReadInt();
-            switch(option)
+            switch (option)
             {
                 case 1:
                     ThreadSafeSingletonImplementation.Singleton();
@@ -29,7 +40,7 @@ namespace DesignPatterns
                     LazyInitializationImplementation.LazyInitializingImplementing();
                     break;
                 case 3:
-                   EagerInitializationImplementation.EagerInitializingImplementing();
+                    EagerInitializationImplementation.EagerInitializingImplementing();
                     break;
                 case 4:
                     FactoryDesignPatternImplementation.Implementation();
@@ -41,10 +52,10 @@ namespace DesignPatterns
                     StructuralDesignPatterns.AdapterDesignPatternImplementation.AdapterImplementation();
                     break;
                 case 7:
-                    AddressBook.AddressBookMethods();
+                    FacadeDesignPattern.FacadeDesignPatternImplementation();
                     break;
                 case 8:
-                 BehavioralDesignPatterns.ObserverDesignPatternImplementation.ObserverPattern();
+                    BehavioralDesignPatterns.ObserverDesignPatternImplementation.ObserverPattern();
                     break;
                 case 9:
                     MediatorDesignPatternImplementation.MediatorDesignPattern();
@@ -53,13 +64,13 @@ namespace DesignPatterns
                     ProxyDesignPatternImplementation.ProxyDesignPattern();
                     break;
                 case 11:
-                    ShoppingCartClient.ShoppingCart();
+                    VisitorDesignPattern.VisitorDesignPatternImplementation();
                     break;
                 case 12:
                     Reflection.Reflection.ReflectionImplementing();
                     break;
                 case 13:
-                  DependencyInjection.DependencyInjection.DependencyInjectionImplementation();
+                    DependencyInjection.DependencyInjection.DependencyInjectionImplementation();
                     break;
                 case 14:
                     AutoMapperImplementation.AutoMapperImplementing();

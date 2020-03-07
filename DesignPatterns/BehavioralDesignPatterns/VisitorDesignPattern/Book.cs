@@ -1,37 +1,66 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Book.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// -------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.BehavioralDesignPatterns.VisitorDesignPattern
 {
-   public class Book :IItemElement
-    {
-        private int price;
-        private String isbnNumber;
+    using System;
 
-        public Book(int cost, String isbn)
+    /// <summary>
+    /// Class book
+    /// </summary>
+    /// <seealso cref="DesignPatterns.BehavioralDesignPatterns.VisitorDesignPattern.IItemElement" />
+    public class Book : IItemElement
+    {
+        /// <summary>
+        /// The price
+        /// </summary>
+        private readonly int price;
+
+        /// <summary>
+        /// The isbn number
+        /// </summary>
+        private readonly string isbnNumber;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Book"/> class.
+        /// </summary>
+        /// <param name="cost">The cost.</param>
+        /// <param name="isbn">The isbn.</param>
+        public Book(int cost, string isbn)
         {
             this.price = cost;
             this.isbnNumber = isbn;
         }
 
-        public int getPrice()
+        /// <summary>
+        /// Gets the price.
+        /// </summary>
+        /// <returns></returns>
+        public int GetPrice()
         {
-            return price;
+            return this.price;
         }
 
-        public String getIsbnNumber()
+        /// <summary>
+        /// Gets the isbn number.
+        /// </summary>
+        /// <returns></returns>
+        public string GetIsbnNumber()
         {
-            return isbnNumber;
+            return this.isbnNumber;
         }
 
-      
-    public int accept(IShoppingCartVisitor visitor)
+        /// <summary>
+        /// Accepts the specified visitor.
+        /// </summary>
+        /// <param name="visitor">The visitor.</param>
+        /// <returns></returns>
+        public int Accept(IShoppingCartVisitor visitor)
         {
-            return visitor.visit(this);
+            return visitor.Visit(this);
         }
-
     }
-
 }
-

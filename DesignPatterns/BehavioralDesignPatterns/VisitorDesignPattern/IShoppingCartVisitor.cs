@@ -1,12 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="IShoppingCartVisitor.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// -------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.BehavioralDesignPatterns.VisitorDesignPattern
 {
-   public interface IShoppingCartVisitor
+    /// <summary>
+    /// Interface IShoppingCartVisitor
+    /// </summary>
+    public interface IShoppingCartVisitor
     {
-        int visit(Book book);
-        int visit(Fruit fruit);
+        /// <summary>
+        /// Visits the specified book.
+        /// </summary>
+        /// <param name="book">The book.</param>
+        /// <returns></returns>
+        public int Visit(Book book);
+
+        /// <summary>
+        /// Visits the specified fruit.
+        /// </summary>
+        /// <param name="fruit">The fruit.</param>
+        /// <returns></returns>
+        public int Visit(Fruit fruit);
     }
 }

@@ -1,16 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Client.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.DependencyInjection
 {
-   public class Client
+    using System;
+
+    /// <summary>
+    /// class for Client
+    /// </summary>
+    public class Client
     {
-         IService service;
-        public void start(IService service)
+        /// <summary>
+        /// Starts the specified service.
+        /// </summary>
+        /// <param name="service">The service.</param>
+        public void Start(IService service)
         {
-            Console.WriteLine("start");
-           service.Serve();
+            service.Serve();
         }
     }
 }

@@ -1,12 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Socket.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.StructuralDesignPatterns
 {
-   public class Socket
+    /// <summary>
+    /// class for Socket
+    /// </summary>
+    public class Socket
     {
-        public  Volt GetVolts()
+        /// <summary>
+        /// Gets the volts.
+        /// </summary>
+        /// <returns></returns>
+        public Volt GetVolts()
         {
             return new Volt();
         }

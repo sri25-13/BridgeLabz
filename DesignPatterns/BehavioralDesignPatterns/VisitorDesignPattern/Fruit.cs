@@ -1,43 +1,82 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Fruit.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// -------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.BehavioralDesignPatterns.VisitorDesignPattern
 {
-  public  class Fruit :IItemElement
-    {
-        private int pricePerKg;
-        private int weight;
-        private String name;
+    using System;
 
-        public Fruit(int priceKg, int wt, String nm)
+    /// <summary>
+    /// class fruit 
+    /// </summary>
+    /// <seealso cref="DesignPatterns.BehavioralDesignPatterns.VisitorDesignPattern.IItemElement" />
+    public class Fruit : IItemElement
+    {
+        /// <summary>
+        /// The price per kg
+        /// </summary>
+        private readonly int pricePerKg;
+
+        /// <summary>
+        /// The weight
+        /// </summary>
+        private readonly int weight;
+
+        /// <summary>
+        /// The name
+        /// </summary>
+        private readonly string name;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Fruit"/> class.
+        /// </summary>
+        /// <param name="priceKg">The price kg.</param>
+        /// <param name="wt">The wt.</param>
+        /// <param name="nm">The nm.</param>
+        public Fruit(int priceKg, int wt, string nm)
         {
             this.pricePerKg = priceKg;
             this.weight = wt;
             this.name = nm;
         }
 
-        public int getPricePerKg()
+        /// <summary>
+        /// Gets the price per kg.
+        /// </summary>
+        /// <returns></returns>
+        public int GetPricePerKg()
         {
-            return pricePerKg;
+            return this.pricePerKg;
         }
 
-        public int getWeight()
+        /// <summary>
+        /// Gets the weight.
+        /// </summary>
+        /// <returns></returns>
+        public int GetWeight()
         {
-            return weight;
+            return this.weight;
         }
 
-        public String getName()
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        /// <returns></returns>
+        public string GetName()
         {
             return this.name;
         }
 
-        
-    public int accept(IShoppingCartVisitor visitor)
+        /// <summary>
+        /// Accepts the specified visitor.
+        /// </summary>
+        /// <param name="visitor">The visitor.</param>
+        /// <returns></returns>
+        public int Accept(IShoppingCartVisitor visitor)
         {
-            return visitor.visit(this);
+            return visitor.Visit(this);
         }
-
     }
 }
-

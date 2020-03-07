@@ -1,23 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="FirstPerson.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.StructuralDesignPatterns.FacadeDesignPattern
 {
-   public class FirstPerson:IAddressbookDetails
+    using System;
+
+    /// <summary>
+    /// Class for Person
+    /// </summary>
+    /// <seealso cref="DesignPatterns.StructuralDesignPatterns.FacadeDesignPattern.IAddressbookDetails" />
+    public class FirstPerson : IAddressBookDetails
     {
-       public void PersonName()
+        /// <summary>
+        /// Persons the name.
+        /// </summary>
+        public void PersonName()
         {
             Console.WriteLine("Harshini");
         }
+
+        /// <summary>
+        /// Persons the age.
+        /// </summary>
         public void PersonAge()
         {
             Console.WriteLine("22 years old");
         }
+
+        /// <summary>
+        /// Persons the city.
+        /// </summary>
         public void PersonCity()
         {
             Console.WriteLine("Bangalore");
         }
     }
 }
-

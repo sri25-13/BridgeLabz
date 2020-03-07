@@ -14,7 +14,7 @@ namespace DesignPatterns.CreationalDesignPatterns.Singleton
     /// </summary>
     public class EagerInitialization
     {
-        private static readonly EagerInitialization instance = new EagerInitialization();
+        private static readonly EagerInitialization Instance = new EagerInitialization();
         private static int counter = 0;
 
         /// <summary>
@@ -32,11 +32,11 @@ namespace DesignPatterns.CreationalDesignPatterns.Singleton
         /// <value>
         /// The instance.
         /// </value>
-        public static EagerInitialization Instance
+        public static EagerInitialization instance
         {
             get
             {
-                return instance;
+                return Instance;
             }
         }
 

@@ -1,14 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using AutoMapper;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="AutoMapperImplementation.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.AutoMappers
 {
+    using System;
+    using AutoMapper;
 
+    /// <summary>
+    /// class for implementing AutoMapper
+    /// </summary>
     public class AutoMapperImplementation
     {
-        
+        /// <summary>
+        /// Automatics the mapper implementing.
+        /// </summary>
         public static void AutoMapperImplementing()
         {
             Mapper.Initialize(c =>
@@ -18,16 +26,15 @@ namespace DesignPatterns.AutoMappers
                               .ForMember(p => p.EmployeeId, e => e.MapFrom(a => a.PersonId))
                               .ForMember(p => p.EmployeeAddress, e => e.MapFrom(a => a.PersonAddress));
             });
-            Person person = new Person();
+            Person person = new Person
             {
-                person.PersonName = "harshini";
+                PersonName = "harshini",
 
-                person.PersonId = "15wj";
+                PersonId = "15wj",
 
-                person.PersonAddress = "Pratap nagar";
+                PersonAddress = "Pratap nagar"
             };
-
-           var emp = Mapper.Map<Person, Employee>(person);
+            var emp = Mapper.Map<Person, Employee>(person);
             Console.WriteLine("name:" + emp.EmployeeName + ", id :" + emp.EmployeeId + ", address :" + emp.EmployeeAddress);
         }
     }

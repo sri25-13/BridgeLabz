@@ -9,7 +9,7 @@ namespace DesignPatterns.StructuralDesignPatterns.ProxyDesignPattern
     using System;
 
     /// <summary>
-    /// 
+    /// class for implementing  ProxyDesignPattern
     /// </summary>
     public class ProxyDesignPatternImplementation
     {

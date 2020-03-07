@@ -12,7 +12,14 @@ namespace DesignPatterns.CreationalDesignPatterns.PrototypeDesignPattern
     /// <seealso cref="DesignPatterns.CreationalDesignPatterns.PrototypeDesignPattern.EmployeeDetails" />
     public class Employee : EmployeeDetails
     {
+        /// <summary>
+        /// The employee name
+        /// </summary>
         public string employeeName;
+
+        /// <summary>
+        /// The employee identifier
+        /// </summary>
         public int employeeId;
 
         /// <summary>
@@ -39,7 +46,7 @@ namespace DesignPatterns.CreationalDesignPatterns.PrototypeDesignPattern
         /// </returns>
         public override string ToString()
         {
-            return string.Format("employeeName : {0}" + "   " + "employeeId : {1}", EmployeeName, EmployeeId);
+            return string.Format("employeeName : {0}" + "   " + "employeeId : {1}", this.EmployeeName, this.EmployeeId);
         }
 
         /// <summary>

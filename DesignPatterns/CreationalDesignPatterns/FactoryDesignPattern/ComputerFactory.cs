@@ -9,7 +9,7 @@ namespace DesignPatterns.CreationalDesignPatterns.FactoryDesignPattern
     using System;
 
     /// <summary>
-    /// 
+    /// class for ComputerFactory
     /// </summary>
     public class ComputerFactory
     {

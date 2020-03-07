@@ -1,12 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="IItemElement.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// -------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.BehavioralDesignPatterns.VisitorDesignPattern
 {
+    /// <summary>
+    /// Interface IItemElement
+    /// </summary>
     public interface IItemElement
     {
-        public int accept(IShoppingCartVisitor visitor);
+        /// <summary>
+        /// Accepts the specified visitor.
+        /// </summary>
+        /// <param name="visitor">The visitor.</param>
+        /// <returns></returns>
+        public int Accept(IShoppingCartVisitor visitor);
     }
 }
-

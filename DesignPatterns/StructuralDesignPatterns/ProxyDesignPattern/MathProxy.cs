@@ -7,12 +7,15 @@
 namespace DesignPatterns.StructuralDesignPatterns.ProxyDesignPattern
 {
     /// <summary>
-    /// 
+    /// class for MathProxy
     /// </summary>
     /// <seealso cref="DesignPatterns.StructuralDesignPatterns.ProxyDesignPattern.IMath" />
     public class MathProxy : IMath
     {
-        private Math math = new Math();
+        /// <summary>
+        /// The math
+        /// </summary>
+        private readonly Math math = new Math();
 
         /// <summary>
         /// Adding the specified x.
@@ -22,7 +25,7 @@ namespace DesignPatterns.StructuralDesignPatterns.ProxyDesignPattern
         /// <returns></returns>
         public int Adding(int x, int y)
         {
-            return math.Adding(x, y);
+            return this.math.Adding(x, y);
         }
 
         /// <summary>
@@ -33,7 +36,7 @@ namespace DesignPatterns.StructuralDesignPatterns.ProxyDesignPattern
         /// <returns></returns>
         public int Subtracting(int x, int y)
         {
-            return math.Subtracting(x, y);
+            return this.math.Subtracting(x, y);
         }
     }
 }

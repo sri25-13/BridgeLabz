@@ -16,9 +16,9 @@ namespace DesignPatterns.CreationalDesignPatterns.Singleton
         /// </summary>
         public static void EagerInitializingImplementing()
         {
-            EagerInitialization eagerInitialization = EagerInitialization.Instance;
+            EagerInitialization eagerInitialization = EagerInitialization.instance;
             eagerInitialization.PrintDetails("firstname");
-            EagerInitialization eagerInitialization1 = EagerInitialization.Instance;
+            EagerInitialization eagerInitialization1 = EagerInitialization.instance;
             eagerInitialization1.PrintDetails("secondname");
         }
     }

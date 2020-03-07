@@ -19,8 +19,8 @@ namespace DesignPatterns.CreationalDesignPatterns.Singleton
         public static void Singleton()
         {
             Parallel.Invoke(
-                    () => PrintStudentName(),
-                    () => PrintStudentId());
+                    () => PrintStudentId(),
+            () => PrintStudentName());
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace DesignPatterns.CreationalDesignPatterns.Singleton
         private static void PrintStudentName()
         {
             ThreadSafeSingleton studentname = ThreadSafeSingleton.GetInstance;
-            studentname.PrintDetails("sriharshini");
+            studentname.PrintDetails("StudentName is sriharshini");
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace DesignPatterns.CreationalDesignPatterns.Singleton
         private static void PrintStudentId()
         {
             ThreadSafeSingleton studentId = ThreadSafeSingleton.GetInstance;
-            studentId.PrintDetails("15");
+            studentId.PrintDetails("StudentId is 15");
         }
     }
 }

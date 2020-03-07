@@ -9,11 +9,18 @@ namespace DesignPatterns.CreationalDesignPatterns.Singleton
     using System;
 
     /// <summary>
-    /// class for LazyIniatialization
+    /// class for LazyInitialization
     /// </summary>
     public class LazyInitialization
     {
+        /// <summary>
+        /// The instance
+        /// </summary>
         private static LazyInitialization instance;
+
+        /// <summary>
+        /// The counter
+        /// </summary>
         private static int counter = 0;
 
         /// <summary>

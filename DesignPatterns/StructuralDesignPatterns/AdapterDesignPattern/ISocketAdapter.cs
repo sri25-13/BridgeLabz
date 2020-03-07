@@ -1,13 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ISocketAdapter.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.StructuralDesignPatterns
 {
-     interface ISocketAdapter
+    /// <summary>
+    /// Interface for SocketAdapter
+    /// </summary>
+   public interface ISocketAdapter
     {
-       public Volt Get120volt();
-      public Volt Get12volt();
+        /// <summary>
+        /// Get120volts this instance.
+        /// </summary>
+        /// <returns></returns>
+        public Volt Get120volt();
+
+        /// <summary>
+        /// Get12volts this instance.
+        /// </summary>
+        /// <returns></returns>
+        public Volt Get12volt();
+
+        /// <summary>
+        /// Get3volts this instance.
+        /// </summary>
+        /// <returns></returns>
         public Volt Get3volt();
     }
 }

@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="IObserver.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// -------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.BehavioralDesignPatterns
 {
-   public interface IObserver
+    /// <summary>
+    /// interface for Observer
+    /// </summary>
+    public interface IObserver
     {
-       public void Update(string availability);
-     
+        /// <summary>
+        /// Updates the specified availability.
+        /// </summary>
+        /// <param name="availability">The availability.</param>
+        public void Update(string availability);
     }
 }

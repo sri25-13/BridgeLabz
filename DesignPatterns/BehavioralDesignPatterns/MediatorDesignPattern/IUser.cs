@@ -1,13 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="IUser.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// -------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.BehavioralDesignPatterns.MediatorDesignPattern
 {
-    interface IUser
+    /// <summary>
+    /// Interface IUser
+    /// </summary>
+    public interface IUser
     {
-        void SendMessage(string message);
-        void ReceiveMessage(string message);
-    
-}
+        /// <summary>
+        /// Sends the message.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        public void SendMessage(string message);
+
+        /// <summary>
+        /// Receives the message.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        public void ReceiveMessage(string message);
+    }
 }

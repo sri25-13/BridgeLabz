@@ -27,7 +27,7 @@ namespace DesignPatterns.CreationalDesignPatterns.PrototypeDesignPattern
             Employee employee1 = employee.Clone();
             Console.WriteLine("enter another employeename");
             employee1.EmployeeName = Utility.ReadString();
-            //sConsole.WriteLine(employee1.GetDetails());
+            //Console.WriteLine(employee1.GetDetails());
             Console.WriteLine("--------------");
             Console.WriteLine(employee.GetDetails());
             Console.WriteLine(employee1.GetDetails());

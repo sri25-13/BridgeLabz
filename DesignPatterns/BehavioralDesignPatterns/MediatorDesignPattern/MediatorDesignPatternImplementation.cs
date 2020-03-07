@@ -1,11 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="MediatorDesignPatternImplementation.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// -------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns.BehavioralDesignPatterns.MediatorDesignPattern
 {
-    class MediatorDesignPatternImplementation
+    /// <summary>
+    /// class for implementing MediatorDesignPattern
+    /// </summary>
+    public class MediatorDesignPatternImplementation
     {
+        /// <summary>
+        /// Mediators the design pattern.
+        /// </summary>
         public static void MediatorDesignPattern()
         {
             IChatMediator chatMediator = new GroupChatMediator();
@@ -15,7 +23,6 @@ namespace DesignPatterns.BehavioralDesignPatterns.MediatorDesignPattern
             chatMediator.AddUser(john);
             chatMediator.AddUser(tina);
             chatMediator.AddUser(lara);
-            // send message
             lara.SendMessage("Hello Everyone!");
         }
     }
