@@ -63,16 +63,16 @@ namespace ObjectOrientedPrograms
         public void Print()
         {
             string[,] strArr1 = new string[4, 13];
-            int counterTemp = 0;
+           
             for (int x = 0; x < 4; x += 1)
             {
                 for (int y = 0; y < 9; y += 1)
                 {
-                    strArr1[x, y] = deck[x + y + counterTemp];
+                    strArr1[x, y] = deck[x + y];
                     Console.Write(strArr1[x, y] + " ");
                 }
 
-                counterTemp += 2;
+            
                 Console.WriteLine();
             }
         }

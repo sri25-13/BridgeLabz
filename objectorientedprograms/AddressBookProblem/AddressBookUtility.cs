@@ -41,12 +41,12 @@ namespace ObjectOrientedPrograms.AddressBookProblem
         /// <returns>
         /// returns modelclass object
         /// </returns>
-        public static Model Deserializing(string jsonfile)
+        public static Model Deserializing(string json)
         {
             Model file = null;
             try
             {
-                file = JsonConvert.DeserializeObject<Model>(jsonfile);
+                file = JsonConvert.DeserializeObject<Model>(json);
             }
             catch (Exception e)
             {

@@ -100,23 +100,11 @@ namespace ObjectOrientedPrograms
             }
             return file;
         }
-           public static CommercialDataProcessing.StockModel DeserializingStockAccount(string Jsonfile)
-            {
-                CommercialDataProcessing.StockModel file = null;
-                try
-                {
-                    file = JsonConvert.DeserializeObject<CommercialDataProcessing.StockModel>(Jsonfile);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-                return file;
-            }
-        
-        public static  StockAccountManagement.Model DeserializingStock(string Jsonfile)
+
+
+        public static StockAccountManagement.Model DeserializingStock(string Jsonfile)
         {
-           StockAccountManagement.Model file = null;
+            StockAccountManagement.Model file = null;
             try
             {
                 file = JsonConvert.DeserializeObject<StockAccountManagement.Model>(Jsonfile);
@@ -127,7 +115,7 @@ namespace ObjectOrientedPrograms
             }
             return file;
         }
-     
+
         public static void AddRice(Model model)
         {
             List<InventoryDetails> rice = model.Rices;
@@ -223,6 +211,5 @@ namespace ObjectOrientedPrograms
                 }
             }
         }
-
     }
 }

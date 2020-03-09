@@ -43,6 +43,10 @@ namespace ObjectOrientedPrograms
                 case 6:
                     Delegates.Delegate.MultiCasting();
                     break;
+                case 7:
+                    CommercialDataProcessing.StockOptions stockOptions = new CommercialDataProcessing.StockOptions();
+                    stockOptions.StockOptionsMethod();
+                    break;
             }
         }
     }
