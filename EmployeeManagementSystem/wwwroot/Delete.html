@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="StyleSheet.css" type="text/css" rel="stylesheet" />
+    <script src="JavaScript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#delete").click(function () {
+                var formdata = new FormData;
+                formdata.append("id", $("#Id").val());
+                $.ajax({
+                    url: 'api/delete',
+                    type: 'Delete',
+                    data: formdata,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success:( function (response) {
+                        alert("successfully deleted");
+                        window.location.href = "https://localhost:44330/Options.html";
+                    }),
+                        error: (function (response) {
+                        alert("Invalid id");
+                    }),
+                });
+
+            });s
+        });
+    </script>s
+</head>
+<body>
+    <center>
+        <input type="text" id="Id" placeholder="Id" /><br><br />
+        <input type="button" value="Delete" name="delete" id="delete" />
+    </center>
+</body>
+</html>

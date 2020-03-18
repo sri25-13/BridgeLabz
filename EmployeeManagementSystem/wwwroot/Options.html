@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="StyleSheet.css" type="text/css" rel="stylesheet" />
+    <script src="JavaScript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: 'api/get',
+                type: 'Get',
+
+                success: function (data) {
+                    var list = $("#employee tbody");
+                    $(data).each(function (index, emp) {
+                        list.append('<tr><td>' + emp.id + '</td><td>' + emp.firstName + '</td><td>' + emp.lastName + '</td><td>' + emp.email + '</td><td>' + emp.password + '</td></tr>');
+                    });
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <table border="1" align="center" id="employee">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <div>
+        <center>
+            <input type="button" id="update" onclick="window.location.href='https://localhost:44330/Update.html'" value="Update" />
+            <input type="button" id="delete" onclick="window.location.href='https://localhost:44330/Delete.html'" value="Delete" />
+        </center>
+    </div>
+</body>
+</html>

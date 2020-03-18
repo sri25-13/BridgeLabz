@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="StyleSheet.css" type="text/css" rel="stylesheet" />
+    <script src="JavaScript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#login").click(function () {
+                var data = new FormData;
+                data.append("email", $("#Email").val());
+                data.append("password", $("#Password").val());
+                $.ajax({
+                    url: 'api/login',
+                    type: 'Post',
+                    data: data,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        alert("successfully logged in");
+                        window.location.href = "https://localhost:44330/Options.html";
+                    },
+                    error: function (response) {
+                        alert("Invalid email or password");
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <center>
+        <div class="form">
+            <form class="loginform">
+                <h1>EmployeeManagementSystem</h1>
+                <input type="text" id="Email" placeholder="Email" /><br><br />
+                <input type="text" id="Password" placeholder="Password" /><br><br />
+                <input type="button" value="Login" name="login" id="login" />
+                <p class="Message">not yet registered?<a href="Register.html">Register</a></p>
+            </form>
+        </div>
+    </center>
+</body>
+</html>

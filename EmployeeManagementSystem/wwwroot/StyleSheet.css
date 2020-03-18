@@ -1,0 +1,27 @@
+﻿body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.form {
+    position: relative;
+    background: #ffffff;
+    padding: 55px;
+}
+
+    .form input {
+        font-family: sans-serif;
+        background: #ffffff;
+    }
+
+    .form button {
+        font-family: sans-serif;
+        text-transform: uppercase;
+        background: #000000;
+        font-size: 14px;
+    }
+
+    .form registerationform {
+        display: none;
+    }
