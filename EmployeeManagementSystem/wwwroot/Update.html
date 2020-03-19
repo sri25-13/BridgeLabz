@@ -9,21 +9,38 @@
     <script>
         $(document).ready(function () {
             $("#update").click(function () {
-                var data = new FormData;
-                data.append("Id", $("#Id").val());
-                data.append("FirstName", $("#Firstname").val());
-                data.append("LastName", $("#Lastname").val());
-                data.append("Email", $("#Email").val());
-                data.append("Password", $("#Password").val());
+                //debugger;
+                event.preventDefault();
+                var a = document.getElementById("Id").value;
+                var b = document.getElementById("Firstname").value;
+                var c = document.getElementById("Lastname").value;
+                var d = document.getElementById("Email").value;
+                var e = document.getElementById("Password").value;
+                //var formData = new FormData();
+                //formData.append("id", a);
+                //formData.append("firstName", b);
+                //formData.append("lastName",c);
+                //formData.append("email", d);
+                //formData.append("password", e);
+                //console.log("<------------data is------->>>>>", formData);//here data is null 
+                //console.log("<------------data is------->>>>>", a, b, c, d, e);
+                var data = {
+                    "id": a,
+                    "firstName": b,
+                    "lastName": c,
+                    "email": d,
+                    "password":e
+                }
+                console.log(JSON.stringify(data),);
                 $.ajax({
                     url: 'api/update',
-                    type: 'Put',
-                    data: data,
+                    type: 'PUT',
+                    data: JSON.stringify(data),
                     cache: false,
-                    contentType: false,
+                    contentType: "application / JSON",
                     processData: false,
                     success: function (response) {
-                        alert("successfully updated");
+                        alert("successfully registered");
                         window.location.href = "https://localhost:44330/Options.html";
                     },
                     error: function (response) {

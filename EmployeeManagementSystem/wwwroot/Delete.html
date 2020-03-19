@@ -7,29 +7,28 @@
     <script src="JavaScript.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $("#delete").click(function () {
-                var formdata = new FormData;
-                formdata.append("id", $("#Id").val());
-                $.ajax({
-                    url: 'api/delete',
-                    type: 'Delete',
-                    data: formdata,
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-                    success:( function (response) {
+        $("#delete").click(function () {
+            var formdata = new FormData;
+            formdata.append("id", $("#Id").val());
+            $.ajax({
+                url: 'api/delete',
+                type: 'Delete',
+                data: formdata,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: (function (response) {
+                    if (response == 'success') {
                         alert("successfully deleted");
                         window.location.href = "https://localhost:44330/Options.html";
-                    }),
-                        error: (function (response) {
-                        alert("Invalid id");
-                    }),
-                });
-
-            });s
+                    }
+                    else {
+                        alert("invalid id");
+                    }
+                })
+            });
         });
-    </script>s
+    </script>
 </head>
 <body>
     <center>

@@ -32,7 +32,7 @@ namespace EmployeeManagementSystem.Controller
 
         [HttpPut]
         [Route("api/update")]
-        public IActionResult UpdateEmployee(Employee employee)
+        public IActionResult UpdateEmployee([FromBody]Employee employee)
         {
             try
             {

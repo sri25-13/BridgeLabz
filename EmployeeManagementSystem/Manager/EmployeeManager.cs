@@ -34,5 +34,15 @@ namespace EmployeeManagementSystem.Manager
         {
             return this.employee.UpdateEmployee(employee);
         }
+
+        internal int DeleteEmployee(Employee employee)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal object Login(Employee employee)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
