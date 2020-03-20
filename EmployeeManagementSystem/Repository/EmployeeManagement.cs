@@ -29,7 +29,7 @@ namespace EmployeeManagementSystem.Repository
                 return "added new employee";
             }
         }
-        public string UpdateEmployee(Employee employee)
+        public bool UpdateEmployee(Employee employee)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -43,11 +43,15 @@ namespace EmployeeManagementSystem.Repository
                 cmd.Parameters.AddWithValue("@Password", employee.Password);
                 con.Open();
                 int i=cmd.ExecuteNonQuery();
+                if(i>=1)
+                {
+                    return true;
+                }
                 con.Close();
-                return "updated";
+                return false;
             }
         }
-        public string DeleteEmployee(int id)
+        public bool DeleteEmployee(int id)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -55,9 +59,13 @@ namespace EmployeeManagementSystem.Repository
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Id", id);
                 con.Open();
-                cmd.ExecuteNonQuery();
+                int i=cmd.ExecuteNonQuery();
+                if(i==1)
+                {
+                    return true;
+                }
                 con.Close();
-                return "deleted employee";
+                return false; ;
             }
         }
         public List<Employee> GetAllEmployee()

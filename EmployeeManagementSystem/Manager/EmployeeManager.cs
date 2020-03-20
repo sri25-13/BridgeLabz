@@ -15,7 +15,7 @@ namespace EmployeeManagementSystem.Manager
             return this.employee.AddEmployee(employee);
         }
 
-        public string DeleteEmployee(int id)
+        public bool DeleteEmployee(int id)
         {
             return this.employee.DeleteEmployee(id);
         }
@@ -30,19 +30,11 @@ namespace EmployeeManagementSystem.Manager
             return this.employee.Login(email, password);
         }
 
-        public string UpdateEmployee(Employee employee)
+        public bool UpdateEmployee(Employee employee)
         {
             return this.employee.UpdateEmployee(employee);
         }
 
-        internal int DeleteEmployee(Employee employee)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal object Login(Employee employee)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

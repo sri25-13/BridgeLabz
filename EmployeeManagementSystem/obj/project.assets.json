@@ -11848,9 +11848,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sriha\\source\\repos\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj",
-      "projectName": "EmployeeManagementSystem",
-      "projectPath": "C:\\Users\\sriha\\source\\repos\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj",
+      "projectUniqueName": "C:\\Users\\sriha\\source\\repos\\EmployeeManagementSystem\\EmployeeManagement.csproj",
+      "projectName": "EmployeeManagement",
+      "projectPath": "C:\\Users\\sriha\\source\\repos\\EmployeeManagementSystem\\EmployeeManagement.csproj",
       "packagesPath": "C:\\Users\\sriha\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\sriha\\source\\repos\\EmployeeManagementSystem\\obj\\",
       "projectStyle": "PackageReference",

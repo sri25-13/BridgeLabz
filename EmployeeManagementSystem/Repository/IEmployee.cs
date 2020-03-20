@@ -11,8 +11,8 @@ namespace EmployeeManagementSystem.Repository
     {
         List<Employee> GetAllEmployee();
          string AddEmployee(Employee employee);
-         string UpdateEmployee(Employee employee);
-         string DeleteEmployee(int id);
+         bool UpdateEmployee(Employee employee);
+         bool DeleteEmployee(int id);
 
          bool Login(string email, string password);
 

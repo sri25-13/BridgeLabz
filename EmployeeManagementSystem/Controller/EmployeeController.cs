@@ -37,7 +37,14 @@ namespace EmployeeManagementSystem.Controller
             try
             {
                 var result = this.employeeManager.UpdateEmployee(employee);
-                return this.Ok(result);
+                if(result)
+                {
+                     return this.Ok(result);
+                }
+                else
+                {
+                    return this.BadRequest(" invalid id");
+                }
             }
             catch (Exception e)
             {
@@ -51,7 +58,14 @@ namespace EmployeeManagementSystem.Controller
             try
             {
                 var result = this.employeeManager.DeleteEmployee(id);
-                return this.Ok(result);
+                if (result)
+                {
+                    return this.Ok(result);
+                }
+                else
+                {
+                    return this.BadRequest("invalid id");
+                }
             }
             catch (Exception e)
             {
