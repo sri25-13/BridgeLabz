@@ -22,7 +22,14 @@ namespace EmployeeManagementSystem.Controller
             try
             {
                 var result = this.employeeManager.AddEmployee(employee);
-                return this.Ok(result);
+                if (result)
+                {
+                    return this.Ok(result);
+                }
+                else
+                {
+                    return this.BadRequest("invalid");
+                }
             }
             catch (Exception e)
             {

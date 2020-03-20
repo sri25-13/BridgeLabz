@@ -10,7 +10,7 @@ namespace EmployeeManagementSystem.Manager
     public class EmployeeManager : IEmployeeManager
     {
         IEmployee employee = new EmployeeManagement();
-        public string AddEmployee(Employee employee)
+        public bool AddEmployee(Employee employee)
         {
             return this.employee.AddEmployee(employee);
         }

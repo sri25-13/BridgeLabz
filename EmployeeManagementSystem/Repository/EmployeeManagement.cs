@@ -11,7 +11,7 @@ namespace EmployeeManagementSystem.Repository
     public class EmployeeManagement : IEmployee
     {
          string connectionString = (@"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=EmployeeManagementSystem; Integrated Security=true");
-        public string AddEmployee(Employee employee)
+        public bool AddEmployee(Employee employee)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -24,9 +24,14 @@ namespace EmployeeManagementSystem.Repository
                 cmd.Parameters.AddWithValue("@Email", employee.Email);
                 cmd.Parameters.AddWithValue("@Password", employee.Password);
                 con.Open();
-                cmd.ExecuteNonQuery();
+                int i=cmd.ExecuteNonQuery();
+                if(i>=1)
+                {
+                    return false;
+                }
                 con.Close();
-                return "added new employee";
+                return true;
+                
             }
         }
         public bool UpdateEmployee(Employee employee)
