@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title></title>
     <link href="StyleSheet.css" type="text/css" rel="stylesheet" />
-    <script src="JavaScript.js"></script>
+    <script type="text/javascript" src="JavaScript.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -22,16 +22,15 @@
                 //formData.append("lastName",c);
                 //formData.append("email", d);
                 //formData.append("password", e);
-                //console.log("<------------data is------->>>>>", formData);//here data is null 
-                //console.log("<------------data is------->>>>>", a, b, c, d, e);
+                //console.log("
                 var data = {
                     "id": a,
                     "firstName": b,
                     "lastName": c,
                     "email": d,
-                    "password":e
+                    "password": e
                 }
-                console.log(JSON.stringify(data),);
+                console.log(JSON.stringify(data));
                 $.ajax({
                     url: 'api/update',
                     type: 'PUT',
@@ -40,11 +39,11 @@
                     contentType: "application / JSON",
                     processData: false,
                     success: function (response) {
-                        alert("successfully registered");
+                        alert("successfully updated");
                         window.location.href = "https://localhost:44330/Options.html";
                     },
                     error: function (response) {
-                        alert("invalid details");
+                        alert("invalid id ");
                     }
                 });
             });
@@ -53,13 +52,15 @@
 </head>
 <body>
     <center>
-        <h1>EmployeeManagementSystem</h1>
-        <input type="text" id="Id" placeholder="Id" /><br><br />
-        <input type="text" id="Firstname" placeholder="firstname" /><br><br />
-        <input type="text" id="Lastname" placeholder="lastname" /><br><br />
-        <input type="text" id="Email" placeholder="Email" /><br><br />
-        <input type="text" id="Password" placeholder="Password" /><br><br />
-        <input type="button" value="Update" name="update" id="update" >
+        <form class="form" onchange="return validate()">
+            <h1>EmployeeManagementSystem</h1>
+            <input type="text" id="Id" placeholder="Id" /><br><br />
+            <input type="text" id="Firstname" placeholder="firstname" /><br><br />
+            <input type="text" id="Lastname" placeholder="lastname" /><br><br />
+            <input type="text" id="Email" placeholder="Email" /><br><br />
+            <input type="text" id="Password" placeholder="Password" /><br><br />
+            <input type="button" value="Update" name="update" id="update">
+        </form>
     </center>
 </body>
 </html>

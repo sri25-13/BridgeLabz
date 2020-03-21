@@ -11,27 +11,22 @@ namespace EmployeeManagementSystem.Repository
     public class EmployeeManagement : IEmployee
     {
          string connectionString = (@"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=EmployeeManagementSystem; Integrated Security=true");
-        public bool AddEmployee(Employee employee)
+        public string AddEmployee(Employee employee)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("AddEmployee", con)
-                {
-                    CommandType = CommandType.StoredProcedure
-                };
+                SqlCommand cmd = new SqlCommand("AddEmployee", con);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                
                 cmd.Parameters.AddWithValue("@FirstName", employee.FirstName);
                 cmd.Parameters.AddWithValue("@LastName", employee.LastName);
                 cmd.Parameters.AddWithValue("@Email", employee.Email);
                 cmd.Parameters.AddWithValue("@Password", employee.Password);
                 con.Open();
                 int i=cmd.ExecuteNonQuery();
-                if(i>=1)
-                {
-                    return false;
-                }
                 con.Close();
-                return true;
-                
+                return "updated";
             }
         }
         public bool UpdateEmployee(Employee employee)

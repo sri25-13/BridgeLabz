@@ -9,7 +9,7 @@ namespace EmployeeManagementSystem.Manager
     public interface IEmployeeManager
     {
          List<Employee> GetAllEmployee();
-        bool AddEmployee(Employee employee);
+        string AddEmployee(Employee employee);
         bool UpdateEmployee(Employee employee);
         bool DeleteEmployee(int id);
 

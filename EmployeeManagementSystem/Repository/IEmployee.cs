@@ -10,7 +10,7 @@ namespace EmployeeManagementSystem.Repository
    public interface IEmployee
     {
         List<Employee> GetAllEmployee();
-         bool AddEmployee(Employee employee);
+         string AddEmployee(Employee employee);
          bool UpdateEmployee(Employee employee);
          bool DeleteEmployee(int id);
 
