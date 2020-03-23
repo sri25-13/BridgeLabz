@@ -1,41 +1,58 @@
 ﻿function validate() {
-    var fname = $('#Firstname').val();
-    var lname = $('#Lastname').val();
-    var email = $('#Email').val();
-    var password = $('#Password').val();
-    if (fname()) {
-
-        if (lname()) {
-            if (email()) {
-
-                if (password()) {
+    if (idvalidation()) {
+        if (fnamevalidation()) {
+            if (lnamevalidation()) {
+                if (emailvalid()) {
+                    if (emailvalidation()) {
+                        if (passwordvalidation()) {
+                        }
+                    }
                 }
             }
         }
     }
 }
-function fname() {
+function idvalidation() {
+    var id = $('#Id').val();
+    if (id.length < 1) {
+        alert("firstname is required");
+        return false;
+    }
+}
+function fnamevalidation() {
+    var fname = $('#Firstname').val();
     if (fname.length < 1) {
         alert("firstname is required");
+        return false;
     }
 }
-function lname() {
+function lnamevalidation() {
+    var lname = $('#Lastname').val();
     if (lname.length < 1) {
         alert("lastname is required");
+        return false;
     }
 }
-function email() {
-    var regex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+function emailvalid() {
+    var email = $('#Email').val();
     if (email.length < 1) {
         alert("email is required");
-
-        if (regex.test(email) == false) {
-            alert("Invalid Email Address");
-        }
+        return false;
     }
 }
-function password() {
+function emailvalidation() {
+    var email = $('#Email').val();
+    var regex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    if (regex.test(email) == false) {
+        alert("Invalid Email Address");
+        return false;
+    }
+}
+
+function passwordvalidation() {
+    var password = $('#Password').val();
     if (password.length < 5) {
         alert("password should have minimum 5 characters");
+        return false;
     }
 }

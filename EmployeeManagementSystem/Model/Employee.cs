@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file=Employee.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace EmployeeManagementSystem.Model
 {
+    /// <summary>
+    /// model class for employee
+    /// </summary>
     public class Employee
     {
         private int id;
@@ -12,6 +16,10 @@ namespace EmployeeManagementSystem.Model
         private string lastName;
         private string email;
         private string password;
+
+        /// <summary>
+        /// get and sets the lastname
+        /// </summary>
         public int Id
         {
             get
@@ -20,9 +28,13 @@ namespace EmployeeManagementSystem.Model
             }
             set
             {
-                 this.id = value;
+                this.id = value;
             }
         }
+
+        /// <summary>
+        /// get and sets the firstname
+        /// </summary>
         public string FirstName
         {
             get
@@ -34,6 +46,10 @@ namespace EmployeeManagementSystem.Model
                 this.firstName = value;
             }
         }
+
+        /// <summary>
+        /// Get and Set the lastname
+        /// </summary>
         public string LastName
         {
             get
@@ -45,6 +61,9 @@ namespace EmployeeManagementSystem.Model
                 this.lastName = value;
             }
         }
+        /// <summary>
+        /// Get and Set the Email
+        /// </summary>
         public string Email
         {
             get
@@ -56,6 +75,10 @@ namespace EmployeeManagementSystem.Model
                 this.email = value;
             }
         }
+
+        /// <summary>
+        /// Get and set the Password
+        /// </summary>
         public string Password
         {
             get

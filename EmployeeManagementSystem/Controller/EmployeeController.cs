@@ -1,20 +1,38 @@
-﻿using EmployeeManagementSystem.Manager;
-using EmployeeManagementSystem.Model;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file=EmployeeController.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace EmployeeManagementSystem.Controller
 {
+    using EmployeeManagementSystem.Manager;
+    using EmployeeManagementSystem.Model;
+    using Microsoft.AspNetCore.Mvc;
+    using System;
+    using System.Collections.Generic;
+
+    /// <summary>
+    /// controller class
+    /// </summary>
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeManager employeeManager;
+
+        /// <summary>
+        /// Constructor for employeecontroller
+        /// </summary>
+        /// <param name="employeeManager"></param>
         public EmployeeController(IEmployeeManager employeeManager)
         {
             this.employeeManager = employeeManager;
         }
 
+        /// <summary>
+        /// Actionmethod for adding the employee
+        /// </summary>
+        /// <param name="employee"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("api/create")]
         public IActionResult AddEmployee(Employee employee)
@@ -22,9 +40,7 @@ namespace EmployeeManagementSystem.Controller
             try
             {
                 var result = this.employeeManager.AddEmployee(employee);
-                
-                    return this.Ok(result);
-                
+                return this.Ok(result);
             }
             catch (Exception e)
             {
@@ -32,6 +48,11 @@ namespace EmployeeManagementSystem.Controller
             }
         }
 
+        /// <summary>
+        /// Actionmethod for updating the employeedata
+        /// </summary>
+        /// <param name="employee"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("api/update")]
         public IActionResult UpdateEmployee([FromBody]Employee employee)
@@ -39,9 +60,9 @@ namespace EmployeeManagementSystem.Controller
             try
             {
                 var result = this.employeeManager.UpdateEmployee(employee);
-                if(result)
+                if (result)
                 {
-                     return this.Ok(result);
+                    return this.Ok(result);
                 }
                 else
                 {
@@ -53,6 +74,12 @@ namespace EmployeeManagementSystem.Controller
                 return this.BadRequest(e.Message);
             }
         }
+
+        /// <summary>
+        /// actionmethod for deleting the employee
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("api/delete")]
         public IActionResult DeleteEmployee(int id)
@@ -74,6 +101,11 @@ namespace EmployeeManagementSystem.Controller
                 return this.BadRequest(e.Message);
             }
         }
+
+        /// <summary>
+        /// actionmethod to get all the employeedata
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("api/get")]
         public IActionResult GetAllEmployee()
@@ -88,6 +120,13 @@ namespace EmployeeManagementSystem.Controller
                 return this.BadRequest(e.Message);
             }
         }
+
+        /// <summary>
+        /// action method for logging in
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("api/login")]
         public IActionResult Login(string email, string password)
@@ -111,4 +150,3 @@ namespace EmployeeManagementSystem.Controller
         }
     }
 }
-
