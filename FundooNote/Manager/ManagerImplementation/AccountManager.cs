@@ -1,16 +1,14 @@
-﻿using Model.Account;
-using Repository.AccountContext;
-using Repository.RepositoryInterface;
+﻿using Manager.ManagerInterface;
+using Model.Account;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repository.RepositoryImplementation
+namespace Manager.ManagerImplementation
 {
-    public class AccountRepository : IAccountRepository
+    public class AccountManager : IAccountManager
     {
-        public Context context;
         public Task<Register> EmailLogin(Login login)
         {
             throw new NotImplementedException();
@@ -33,16 +31,7 @@ namespace Repository.RepositoryImplementation
 
         public Task<int> RegisterAccount(Register register)
         {
-            Register register1 = new Register()
-            {
-                Firstname = register.Firstname,
-                Lastname=register.Lastname,
-                Email=register.Email,
-                Password=register.Password
-            };
-            var reg = this.context.Accountregister.Add(register);
-            var result = this.context.SaveChanges();
-            return Task.Run(() => result);
+            throw new NotImplementedException();
         }
 
         public Task<string> ResetPassword(ResetPassword resetPassword)

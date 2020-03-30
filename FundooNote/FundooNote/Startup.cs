@@ -14,6 +14,7 @@ using Microsoft.Extensions.Options;
 using Repository.AccountContext;
 using Repository.RepositoryImplementation;
 using Repository.RepositoryInterface;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace FundooNote
 {
@@ -32,6 +33,14 @@ namespace FundooNote
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContextPool<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DBConnection")));
             services.AddTransient<IAccountRepository, AccountRepository>();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info
+                {
+                    Version = "v1",
+                    Title = "FundooNoteAPI",
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +57,11 @@ namespace FundooNote
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "FundooNoteAPI v1");
+            });
         }
     }
 }
