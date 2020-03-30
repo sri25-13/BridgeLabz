@@ -1,5 +1,6 @@
 ﻿using Manager.ManagerInterface;
 using Model.Account;
+using Repository.RepositoryInterface;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,12 +10,21 @@ namespace Manager.ManagerImplementation
 {
     public class AccountManager : IAccountManager
     {
-        public Task<Register> EmailLogin(Login login)
+        private readonly IAccountRepository accountRepository;
+        public AccountManager()
+        {
+
+        }
+        public AccountManager(IAccountRepository repository)
+        {
+            this.accountRepository = repository;
+        }
+        public Task<RegisterModel> EmailLogin(LoginModel login)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Register> FacebookLogin(Login login)
+        public Task<RegisterModel> FacebookLogin(LoginModel login)
         {
             throw new NotImplementedException();
         }
@@ -24,14 +34,15 @@ namespace Manager.ManagerImplementation
             throw new NotImplementedException();
         }
 
-        public Task<string> Login(Login login)
+        public Task<string> Login(LoginModel login)
         {
             throw new NotImplementedException();
         }
 
-        public Task<int> RegisterAccount(Register register)
+        public async Task<bool> Register(RegisterModel register)
         {
-            throw new NotImplementedException();
+            await this.accountRepository.RegisterAccount(register);
+            return true;
         }
 
         public Task<string> ResetPassword(ResetPassword resetPassword)

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Manager.ManagerImplementation;
+using Manager.ManagerInterface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,6 +35,7 @@ namespace FundooNote
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContextPool<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DBConnection")));
             services.AddTransient<IAccountRepository, AccountRepository>();
+            services.AddTransient<IAccountManager, AccountManager>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info

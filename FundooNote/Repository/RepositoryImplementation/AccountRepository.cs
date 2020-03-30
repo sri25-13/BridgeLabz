@@ -11,12 +11,17 @@ namespace Repository.RepositoryImplementation
     public class AccountRepository : IAccountRepository
     {
         public Context context;
-        public Task<Register> EmailLogin(Login login)
+        public AccountRepository(Context context)
+        {
+            this.context = context;
+        }
+        
+        public Task<RegisterModel> EmailLogin(LoginModel login)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Register> FacebookLogin(Login login)
+        public Task<RegisterModel> FacebookLogin(LoginModel login)
         {
             throw new NotImplementedException();
         }
@@ -26,14 +31,14 @@ namespace Repository.RepositoryImplementation
             throw new NotImplementedException();
         }
 
-        public Task<string> Login(Login login)
+        public Task<string> Login(LoginModel login)
         {
             throw new NotImplementedException();
         }
 
-        public Task<int> RegisterAccount(Register register)
+        public Task<int> RegisterAccount(RegisterModel register)
         {
-            Register register1 = new Register()
+            RegisterModel register1 = new RegisterModel()
             {
                 Firstname = register.Firstname,
                 Lastname=register.Lastname,

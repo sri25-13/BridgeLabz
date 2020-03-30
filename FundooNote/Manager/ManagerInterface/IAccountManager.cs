@@ -8,12 +8,12 @@ namespace Manager.ManagerInterface
 {
    public interface IAccountManager
     {
-        Task<int> RegisterAccount(Register register);
-        Task<string> Login(Login login);
+        Task<bool> Register(RegisterModel register);
+        Task<string> Login(LoginModel login);
         Task<string> ForgotPassword(ForgotPassword forgotPassword);
         Task<string> ResetPassword(ResetPassword resetPassword);
-        Task<Register> EmailLogin(Login login);
-        Task<Register> FacebookLogin(Login login);
+        Task<RegisterModel> EmailLogin(LoginModel login);
+        Task<RegisterModel> FacebookLogin(LoginModel login);
     }
 }
 

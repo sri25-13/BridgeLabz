@@ -12,7 +12,7 @@ namespace Repository.AccountContext
         {
 
         }
-        public DbSet<Register> Accountregister { get; set; }
+        public DbSet<RegisterModel> Accountregister { get; set; }
     }
 }
 
