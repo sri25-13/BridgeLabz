@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Model.Account
@@ -8,6 +9,7 @@ namespace Model.Account
     {
         private string email;
         private string password;
+        [Key]
         public string Email
         {
             get

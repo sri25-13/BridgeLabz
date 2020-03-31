@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Repository.AccountContext
 {
-  public  class Context :DbContext
+  public  class Context : DbContext
     {
         public Context(DbContextOptions<Context> contextOptions) : base(contextOptions)
         {

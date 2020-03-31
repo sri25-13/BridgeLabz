@@ -29,12 +29,12 @@ namespace Manager.ManagerImplementation
             throw new NotImplementedException();
         }
 
-        public Task<string> ForgotPassword(ForgotPassword forgotPassword)
+        public async Task<string> ForgotPassword(ForgotPassword forgotPassword)
         {
-            throw new NotImplementedException();
+            return await this.accountRepository.ForgotPassword(forgotPassword);
         }
 
-        public Task<string> Login(LoginModel login)
+        public Task<bool> Login(LoginModel login)
         {
             return this.accountRepository.Login(login);
         }

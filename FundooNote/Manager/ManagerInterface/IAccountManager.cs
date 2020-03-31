@@ -9,7 +9,7 @@ namespace Manager.ManagerInterface
    public interface IAccountManager
     {
         Task<bool> Register(RegisterModel register);
-        Task<string> Login(LoginModel login);
+        Task<bool> Login(LoginModel login);
         Task<string> ForgotPassword(ForgotPassword forgotPassword);
         Task<string> ResetPassword(ResetPassword resetPassword);
         Task<RegisterModel> EmailLogin(LoginModel login);
