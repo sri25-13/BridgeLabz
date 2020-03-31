@@ -26,5 +26,24 @@ namespace FundooNote.Controllers
                 return BadRequest(exception.Message);
             }
         }
+        [HttpPost]
+        [Route ("api/login")]
+        public ActionResult Login([FromBody]LoginModel loginModel)
+        {
+            try
+            {
+                var result = accountManager.Login(loginModel);
+                if(result)
+                {
+                    return true;
+                }
+                return false;
+                
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }

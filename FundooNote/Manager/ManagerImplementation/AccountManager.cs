@@ -36,7 +36,7 @@ namespace Manager.ManagerImplementation
 
         public Task<string> Login(LoginModel login)
         {
-            throw new NotImplementedException();
+            return this.accountRepository.Login(login);
         }
 
         public async Task<bool> Register(RegisterModel register)

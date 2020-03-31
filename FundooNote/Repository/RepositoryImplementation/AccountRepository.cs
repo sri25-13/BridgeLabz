@@ -1,8 +1,12 @@
-﻿using Model.Account;
+﻿using Microsoft.IdentityModel.Tokens;
+using Model.Account;
 using Repository.AccountContext;
 using Repository.RepositoryInterface;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,12 +35,56 @@ namespace Repository.RepositoryImplementation
             throw new NotImplementedException();
         }
 
-        public Task<string> Login(LoginModel login)
+        public async Task<bool> Login(LoginModel login)
         {
-            throw new NotImplementedException();
+            LoginModel loginModel = new LoginModel(); 
+            var check = FindEmailid(login.Email);
+            var result = CheckPassword(login.Email, login.Password);
+            var tokenHandler = new JwtSecurityTokenHandler(); 
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new Claim[]
+                {
+                    new Claim("Email", login.Email),
+                    new Claim("Password", login.Password) 
+                }),
+            };
+            var descriptor = tokenHandler.CreateToken(tokenDescriptor);
+            var securityToken = tokenHandler.WriteToken(descriptor);
+            var res = this.context.SaveChangesAsync(); 
+            await Task.Run(() => context.SaveChanges());
+            return true;
         }
 
-        public Task<int> RegisterAccount(RegisterModel register)
+    
+    public bool FindEmailid(string email)
+        {
+            var result = context.Accountregister.Where(obj => obj.Email == email).FirstOrDefault();
+            if(result!=null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool CheckPassword(string email, string password)
+        {
+            var result = context.Accountregister.Where(obj => obj.Password == password && obj.Email == email).FirstOrDefault();
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+
+            public Task<int> RegisterAccount(RegisterModel register)
         {
             RegisterModel register1 = new RegisterModel()
             {
