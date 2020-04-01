@@ -19,9 +19,9 @@ namespace Manager.ManagerImplementation
         {
             this.accountRepository = repository;
         }
-        public Task<RegisterModel> EmailLogin(LoginModel login)
+        public async Task<RegisterModel> EmailLogin(LoginModel login)
         {
-            throw new NotImplementedException();
+            return await this.accountRepository.EmailLogin(login);
         }
 
         public Task<RegisterModel> FacebookLogin(LoginModel login)
@@ -45,9 +45,9 @@ namespace Manager.ManagerImplementation
             return true;
         }
 
-        public Task<string> ResetPassword(ResetPassword resetPassword)
+        public async Task<string> ResetPassword(ResetPassword resetPassword)
         {
-            throw new NotImplementedException();
+            return await this.accountRepository.ResetPassword(resetPassword);
         }
     }
 }

@@ -11,6 +11,7 @@ namespace Model.Account
         private string lastname;
         private string email;
         private string password;
+        public bool Status;
         public string Firstname
         {
             get

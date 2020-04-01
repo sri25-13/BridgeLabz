@@ -6,17 +6,16 @@ using Manager.ManagerImplementation;
 using Manager.ManagerInterface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using Model.Account;
 using Repository.AccountContext;
 using Repository.RepositoryImplementation;
 using Repository.RepositoryInterface;
 using Swashbuckle.AspNetCore.Swagger;
+using StackExchange.Redis;
 
 namespace FundooNote
 {
@@ -36,6 +35,7 @@ namespace FundooNote
             services.AddDbContextPool<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DBConnection")));
             services.AddTransient<IAccountRepository, AccountRepository>();
             services.AddTransient<IAccountManager, AccountManager>();
+            services.AddSingleton<JwtSettings>();
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
                {
                    builder.AllowAnyOrigin()

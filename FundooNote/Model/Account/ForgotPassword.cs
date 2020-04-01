@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Model.Account
 {
-   public class ForgotPassword
+    public class ForgotPassword
     {
         private string email;
+        [EmailAddress]
         public string Email
         {
             get

@@ -16,6 +16,20 @@ namespace FundooNote.Controllers
             this.accountManager = manager;
         }
         [HttpPost]
+        [Route("api/emaillogin")]
+        public ActionResult EmailLogin([FromBody]LoginModel loginModel)
+        {
+            try
+            {
+                var result = this.accountManager.EmailLogin(loginModel);
+                return Ok();
+            }
+            catch (Exception exception)
+            {
+                return BadRequest(exception.Message);
+            }
+        }
+        [HttpPost]
         [Route("api/register")]
         public ActionResult Register([FromBody]RegisterModel register)
         {
@@ -35,7 +49,7 @@ namespace FundooNote.Controllers
         {
             try
             {
-                bool result =await  this.accountManager.Login(loginModel);
+                bool result = await this.accountManager.Login(loginModel);
                 if (result)
                 {
                     return this.Ok("login successfull");
@@ -44,7 +58,7 @@ namespace FundooNote.Controllers
                 {
                     return BadRequest("invalid data");
                 }
-               
+
             }
             catch (Exception e)
             {
@@ -52,12 +66,26 @@ namespace FundooNote.Controllers
             }
         }
         [HttpPut]
-        [Route ("api/forget")]
+        [Route("api/forget")]
         public async Task<IActionResult> ForgotPassword([FromBody]ForgotPassword forgotPassword)
         {
             try
             {
                 var result = await this.accountManager.ForgotPassword(forgotPassword);
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+        [HttpPut]
+        [Route("api/reset")]
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPassword resetPassword)
+        {
+            try
+            {
+                var result = await this.accountManager.ResetPassword(resetPassword);
                 return Ok(result);
             }
             catch (Exception e)

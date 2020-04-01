@@ -10,6 +10,7 @@ using System.Net.Mail;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using StackExchange.Redis;  
 
 
 namespace Repository.RepositoryImplementation
@@ -22,10 +23,34 @@ namespace Repository.RepositoryImplementation
             this.context = context;
         }
 
-        public Task<RegisterModel> EmailLogin(LoginModel login)
+        public async Task<RegisterModel> EmailLogin(LoginModel login)
         {
-            throw new NotImplementedException();
+            var jwtSetting = new JwtSettings(); 
+            var result = this.context.Accountregister.Where(option => option.Email == login.Email).SingleOrDefault();
+            if (result != null)
+            {
+                try 
+                {
+                    var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("jwtSetting.Secret"));
+                    var credential = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+                    var token = new JwtSecurityToken(expires: DateTime.Now.AddDays(1), signingCredentials: credential); 
+                    var cacheKey = login.Email;
+                    ConnectionMultiplexer multiplexer = ConnectionMultiplexer.Connect("127.0.0.1:6379");
+                    IDatabase data = multiplexer.GetDatabase();
+                    data.StringSet(cacheKey, token.ToString());
+                    data.StringGet(cacheKey); 
+                    result.Status = true;
+                    await this.context.SaveChangesAsync();
+                    return result;
+                }
+                catch (Exception exception) 
+                {
+                    throw new Exception(exception.Message);
+                }
+            }
+            return null;
         }
+    
 
         public Task<RegisterModel> FacebookLogin(LoginModel login)
         {
@@ -41,7 +66,7 @@ namespace Repository.RepositoryImplementation
                 var fromPassword = "8897287474";
                 var toAddress = new MailAddress(forgotPassword.Email);
                 string subject = "Reset Password";
-                string body = "To reset your password click the below given link :- " + " http:";
+                string body = "To reset your password click the below given link :- " + " http://localhost:44387/api/reset";
                 SmtpClient smtp = new SmtpClient
                 {
                     Host = "smtp.gmail.com",
@@ -72,22 +97,27 @@ namespace Repository.RepositoryImplementation
 
         public async Task<bool> Login(LoginModel login)
         {
-            var check = CheckEmail(login.Email);
-            var result = CheckPassword(login.Email, login.Password);
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var tokenDescriptor = new SecurityTokenDescriptor
+            if (CheckEmail(login.Email))
             {
-                Subject = new ClaimsIdentity(new Claim[]
+                if (CheckPassword(login.Email, login.Password))
                 {
+                    var tokenHandler = new JwtSecurityTokenHandler();
+                    var tokenDescriptor = new SecurityTokenDescriptor
+                    {
+                        Subject = new ClaimsIdentity(new Claim[]
+                        {
                     new Claim("Email", login.Email),
                     new Claim("Password", login.Password)
-                }),
-            };
-            var descriptor = tokenHandler.CreateToken(tokenDescriptor);
-            var securityToken = tokenHandler.WriteToken(descriptor);
-            var res = this.context.SaveChangesAsync();
-            await Task.Run(() => context.SaveChanges());
-            return true;
+                        }),
+                    };
+                    var descriptor = tokenHandler.CreateToken(tokenDescriptor);
+                    var securityToken = tokenHandler.WriteToken(descriptor);
+                    var res = this.context.SaveChangesAsync();
+                    await Task.Run(() => context.SaveChanges());
+                    return true;
+                }
+            }
+            return false;
         }
 
         public bool CheckEmail(string email)
@@ -131,9 +161,20 @@ namespace Repository.RepositoryImplementation
             return Task.Run(() => result);
         }
 
-        public Task<string> ResetPassword(ResetPassword resetPassword)
+        public async Task<string> ResetPassword(ResetPassword resetPassword)
         {
-            throw new NotImplementedException();
+            string password = resetPassword.Password;
+            RegisterModel registerModel = this.context.Accountregister.Where<RegisterModel>(option =>
+              option.Password == password).FirstOrDefault();
+            if(registerModel!=null)
+            {
+                string pass = resetPassword.ConfirmPassword;
+                registerModel.Password = pass;
+                this.context.Update(registerModel);
+                await Task.Run(() => this.context.SaveChangesAsync());
+                return "success";
+            }
+            return null;
         }
     }
 }
