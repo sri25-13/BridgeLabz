@@ -1,6 +1,7 @@
 using Manager.ManagerImplementation;
 using Model.Account;
 using NUnit.Framework;
+using System.Threading.Tasks;
 
 namespace FundooNoteTesting
 {
@@ -13,12 +14,12 @@ namespace FundooNoteTesting
         [Test]
         public void LoginTest()
         {
-            LoginModel login = new LoginModel
-            {
-                Email = "sriharshinirao25@gmail.com",
-                Password = "harshini@25@"
-            };
+            LoginModel login = new LoginModel();
+
+            login.Email = "sriharshinirao25@gmail.com";
+            login.Password = "harshini@25@";
             AccountManager manager = new AccountManager();
+            
             Assert.IsNotNull(manager.Login(login));
         }
 
