@@ -35,7 +35,6 @@ namespace FundooNote
             services.AddDbContextPool<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DBConnection")));
             services.AddTransient<IAccountRepository, AccountRepository>();
             services.AddTransient<IAccountManager, AccountManager>();
-            services.AddSingleton<JwtSettings>();
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
                {
                    builder.AllowAnyOrigin()

@@ -52,10 +52,34 @@ namespace Repository.RepositoryImplementation
         }
     
 
-        public Task<RegisterModel> FacebookLogin(LoginModel login)
+        public async Task<RegisterModel> FacebookLogin(LoginModel login)
         {
-            throw new NotImplementedException();
+            var jwt = new JwtSettings();
+            var result = this.context.Accountregister.Where(option => option.Email == login.Email).SingleOrDefault();
+            if (result != null) 
+            {
+                try
+                {
+                    var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("jwt.Secret")); 
+                    var credential = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+                    var token = new JwtSecurityToken(expires: DateTime.Now.AddDays(1), signingCredentials: credential);
+                    var cacheKey = login.Email; 
+                    ConnectionMultiplexer multiplexer = ConnectionMultiplexer.Connect("127.0.0.1:6379");
+                    IDatabase data = multiplexer.GetDatabase();
+                    data.StringSet(cacheKey, token.ToString()); 
+                    data.StringGet(cacheKey);
+                    result.Status = true;
+                    await this.context.SaveChangesAsync(); 
+                    return result;
+                }
+                catch (Exception exception) 
+                {
+                    throw new Exception(exception.Message);
+                }
+            }
+            return default;
         }
+    
 
         public async Task<string> ForgotPassword(ForgotPassword forgotPassword)
         {

@@ -19,14 +19,14 @@ namespace Manager.ManagerImplementation
         {
             this.accountRepository = repository;
         }
-        public async Task<RegisterModel> EmailLogin(LoginModel login)
+        public  Task<RegisterModel> EmailLogin(LoginModel login)
         {
-            return await this.accountRepository.EmailLogin(login);
+            return  this.accountRepository.EmailLogin(login);
         }
 
         public Task<RegisterModel> FacebookLogin(LoginModel login)
         {
-            throw new NotImplementedException();
+            return this.accountRepository.FacebookLogin(login);
         }
 
         public async Task<string> ForgotPassword(ForgotPassword forgotPassword)

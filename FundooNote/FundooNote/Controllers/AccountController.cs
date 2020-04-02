@@ -93,5 +93,20 @@ namespace FundooNote.Controllers
                 return BadRequest(e.Message);
             }
         }
+        [HttpPost]
+        [Route("api/fblogin")]
+        public async Task<IActionResult> FacebookLogin([FromBody] LoginModel login)
+        {
+            try
+            {
+                var result = await this.accountManager.FacebookLogin(login);
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
     }
 }
