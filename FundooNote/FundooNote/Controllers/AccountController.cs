@@ -17,12 +17,19 @@ namespace FundooNote.Controllers
         }
         [HttpPost]
         [Route("api/emaillogin")]
-        public ActionResult EmailLogin([FromBody]LoginModel loginModel)
+        public async Task<ActionResult> EmailLogin([FromBody]LoginModel loginModel)
         {
             try
             {
-                var result = this.accountManager.EmailLogin(loginModel);
-                return Ok();
+                bool result = await this.accountManager.EmailLogin(loginModel);
+                if (result)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return BadRequest();
+                }
             }
             catch (Exception exception)
             {

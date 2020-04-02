@@ -12,7 +12,7 @@ namespace Manager.ManagerInterface
         Task<bool> Login(LoginModel login);
         Task<string> ForgotPassword(ForgotPassword forgotPassword);
         Task<string> ResetPassword(ResetPassword resetPassword);
-        Task<RegisterModel> EmailLogin(LoginModel login);
+        Task<bool> EmailLogin(LoginModel login);
         Task<RegisterModel> FacebookLogin(LoginModel login);
     }
 }

@@ -1,0 +1,15 @@
+C:\Users\sriha\source\repos\Repository\bin\Debug\netcoreapp2.0\Repository.deps.json
+C:\Users\sriha\source\repos\Repository\bin\Debug\netcoreapp2.0\Repository.runtimeconfig.json
+C:\Users\sriha\source\repos\Repository\bin\Debug\netcoreapp2.0\Repository.runtimeconfig.dev.json
+C:\Users\sriha\source\repos\Repository\bin\Debug\netcoreapp2.0\Repository.dll
+C:\Users\sriha\source\repos\Repository\bin\Debug\netcoreapp2.0\Repository.pdb
+C:\Users\sriha\source\repos\Repository\bin\Debug\netcoreapp2.0\Model.dll
+C:\Users\sriha\source\repos\Repository\bin\Debug\netcoreapp2.0\Model.pdb
+C:\Users\sriha\source\repos\Repository\obj\Debug\netcoreapp2.0\Repository.csprojAssemblyReference.cache
+C:\Users\sriha\source\repos\Repository\obj\Debug\netcoreapp2.0\Repository.AssemblyInfoInputs.cache
+C:\Users\sriha\source\repos\Repository\obj\Debug\netcoreapp2.0\Repository.AssemblyInfo.cs
+C:\Users\sriha\source\repos\Repository\obj\Debug\netcoreapp2.0\Repository.csproj.CopyComplete
+C:\Users\sriha\source\repos\Repository\obj\Debug\netcoreapp2.0\Repository.dll
+C:\Users\sriha\source\repos\Repository\obj\Debug\netcoreapp2.0\Repository.pdb
+C:\Users\sriha\source\repos\Repository\obj\Debug\netcoreapp2.0\Repository.genruntimeconfig.cache
+C:\Users\sriha\source\repos\Repository\obj\Debug\netcoreapp2.0\Repository.csproj.CoreCompileInputs.cache

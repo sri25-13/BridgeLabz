@@ -19,7 +19,7 @@ namespace Manager.ManagerImplementation
         {
             this.accountRepository = repository;
         }
-        public  Task<RegisterModel> EmailLogin(LoginModel login)
+        public  Task<bool> EmailLogin(LoginModel login)
         {
             return  this.accountRepository.EmailLogin(login);
         }
