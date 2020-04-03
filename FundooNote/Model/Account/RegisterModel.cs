@@ -1,17 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file=RegisterModel.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace Model.Account
 {
-   public class RegisterModel
+    using System.ComponentModel.DataAnnotations;
+
+    /// <summary>
+    /// Model class for registering
+    /// </summary>
+    public class RegisterModel
     {
         private string firstname;
         private string lastname;
         private string email;
         private string password;
         public bool Status;
+
+        /// <summary>
+        /// Get and sets the Firstname
+        /// </summary>
         public string Firstname
         {
             get
@@ -23,6 +33,10 @@ namespace Model.Account
                 this.firstname = value;
             }
         }
+
+        /// <summary>
+        /// get and sets the Lastname
+        /// </summary>
         public string Lastname
         {
             get
@@ -34,6 +48,10 @@ namespace Model.Account
                 this.lastname = value;
             }
         }
+
+        /// <summary>
+        /// Get and sets the Lastname
+        /// </summary>
         [Key]
         public string Email
         {
@@ -46,6 +64,10 @@ namespace Model.Account
                 this.email = value;
             }
         }
+
+        /// <summary>
+        /// get and sets the Password
+        /// </summary>
         public string Password
         {
             get
@@ -57,6 +79,5 @@ namespace Model.Account
                 this.password = value;
             }
         }
-   
     }
 }

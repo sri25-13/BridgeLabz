@@ -1,13 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file=ForgotPassword.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace Model.Account
 {
+    using System.ComponentModel.DataAnnotations;
+
+    /// <summary>
+    /// Model class for ForgotPassword
+    /// </summary>
     public class ForgotPassword
     {
         private string email;
+
+        /// <summary>
+        /// get and sets the Email
+        /// </summary>
         [EmailAddress]
         public string Email
         {
