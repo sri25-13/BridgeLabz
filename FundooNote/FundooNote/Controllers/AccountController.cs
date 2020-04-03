@@ -1,11 +1,20 @@
-﻿using Manager.ManagerInterface;
-using Microsoft.AspNetCore.Mvc;
-using Model.Account;
-using System;
-using System.Threading.Tasks;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file=AccountController.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace FundooNote.Controllers
 {
+    using Manager.ManagerInterface;
+    using Microsoft.AspNetCore.Mvc;
+    using Model.Account;
+    using System;
+    using System.Threading.Tasks;
+
+    /// <summary>
+    /// controller class for Fundoo
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class AccountController : ControllerBase
@@ -15,6 +24,12 @@ namespace FundooNote.Controllers
         {
             this.accountManager = manager;
         }
+
+        /// <summary>
+        /// Controllermethod for EmailLogin
+        /// </summary>
+        /// <param name="loginModel"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("api/emaillogin")]
         public async Task<ActionResult> EmailLogin([FromBody]LoginModel loginModel)
@@ -36,6 +51,12 @@ namespace FundooNote.Controllers
                 return BadRequest(exception.Message);
             }
         }
+
+        /// <summary>
+        /// method for Registering
+        /// </summary>
+        /// <param name="register"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("api/register")]
         public ActionResult Register([FromBody]RegisterModel register)
@@ -50,6 +71,12 @@ namespace FundooNote.Controllers
                 return BadRequest(exception.Message);
             }
         }
+
+        /// <summary>
+        /// controller method for login
+        /// </summary>
+        /// <param name="loginModel"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("api/login")]
         public async Task<ActionResult> Login([FromBody]LoginModel loginModel)
@@ -65,13 +92,18 @@ namespace FundooNote.Controllers
                 {
                     return BadRequest("invalid data");
                 }
-
             }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
             }
         }
+
+        /// <summary>
+        /// Controller method  implementation for forgotpassword
+        /// </summary>
+        /// <param name="forgotPassword"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("api/forget")]
         public async Task<IActionResult> ForgotPassword([FromBody]ForgotPassword forgotPassword)
@@ -86,6 +118,12 @@ namespace FundooNote.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        /// <summary>
+        /// Controller method  implementation for resetpassword
+        /// </summary>
+        /// <param name="resetPassword"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("api/reset")]
         public async Task<IActionResult> ResetPassword([FromBody] ResetPassword resetPassword)
@@ -100,6 +138,12 @@ namespace FundooNote.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        /// <summary>
+        /// method for loggingIn Facebook
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("api/fblogin")]
         public async Task<IActionResult> FacebookLogin([FromBody] LoginModel login)
@@ -114,6 +158,5 @@ namespace FundooNote.Controllers
                 return BadRequest(e.Message);
             }
         }
-
     }
 }
