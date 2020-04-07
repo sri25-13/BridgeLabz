@@ -35,6 +35,8 @@ namespace FundooNote
             services.AddDbContextPool<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DBConnection")));
             services.AddTransient<IAccountRepository, AccountRepository>();
             services.AddTransient<IAccountManager, AccountManager>();
+            services.AddTransient<ILabelRepository, LabelRepository>();
+            services.AddTransient<ILabelManager, LabelManager>();
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
                {
                    builder.AllowAnyOrigin()
@@ -69,7 +71,6 @@ namespace FundooNote
             {
                 app.UseHsts();
             }
-
             app.UseHttpsRedirection();
             app.UseMvcWithDefaultRoute();
             app.UseSwagger();

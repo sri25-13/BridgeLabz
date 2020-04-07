@@ -18,6 +18,10 @@ namespace Manager.ManagerImplementation
     {
         private readonly IAccountRepository accountRepository;
 
+        public AccountManager()
+        {
+        }
+
         /// <summary>
         /// constructor for AccountManager
         /// </summary>

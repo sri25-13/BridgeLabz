@@ -1,5 +1,6 @@
 ﻿using Model.Label;
 using Repository.AccountContext;
+using Repository.RepositoryInterface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository.RepositoryImplementation
 {
-    public class LabelRepository
+    public class LabelRepository : ILabelRepository
     {
         private readonly Context context;
         public LabelRepository(Context context)
@@ -17,34 +18,38 @@ namespace Repository.RepositoryImplementation
         }
         public Task AddLabel(string name, int id)
         {
-            Labelmodel label1 = new Labelmodel()
+
+            Labelmodel label = new Labelmodel()
             {
                 LabelName = name,
-                Noteid = id,
+
             };
-            this.context.labels.Add(label1);
+            this.context.labels.Add(label);
             var res = Task.Run(() => context.SaveChanges());
             return res;
+
+
         }
-        /// <summary> /// Purpose:Create the Deletelabel using label id. /// </summary> /// <param name="id"></param> /// <returns></returns> 
-        public async Task Delete(int id)
+        public  Task DeleteLabel(int id)
         {
-            var result = this.context.labels.Where(op => op.LabelId == id).FirstOrDefault();
-            if (result != null)
+            var label = context.labels.Where(r => r.LabelId == id).SingleOrDefault();
+            if (label != null)
             {
-                this.context.labels.Remove(result);
+                this.context.labels.Remove(label);
+
+                var res= Task.Run(() => context.SaveChanges());
+                return res;
             }
-            await Task.Run(() => context.SaveChanges());
+            return default;
         }
-        /// <summary> /// Purpose:create the Getlabel using get the all the label list. /// </summary> /// <returns></returns> 
-        public List<Labelmodel> Getlabel()
+        public List<Labelmodel> GetAllLabels()
         {
             return this.context.labels.ToList();
         }
-        /// <summary> /// Purpose:Create the Update label using specific part of upadated. /// </summary> /// <param name="id"></param> /// <param name="name"></param> /// <returns></returns> 
-        public Task Update(int id, string name)
+        
+        public Task UpdateLabel(string name, int id)
         {
-            var result = this.context.labels.Where(op => op.LabelId == id).FirstOrDefault();
+            var result = this.context.labels.Where(op => op.LabelId == id).SingleOrDefault();
             if (result != null)
             {
                 result.LabelName = name;
@@ -52,9 +57,8 @@ namespace Repository.RepositoryImplementation
                 return res;
             }
             return default;
+            
         }
     }
 }
-
-
 
