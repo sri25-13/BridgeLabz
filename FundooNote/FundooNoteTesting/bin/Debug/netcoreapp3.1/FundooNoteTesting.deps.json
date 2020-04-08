@@ -18,6 +18,17 @@
           "FundooNoteTesting.dll": {}
         }
       },
+      "CloudinaryDotNet/1.10.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/CloudinaryDotNet.dll": {
+            "assemblyVersion": "1.10.0.0",
+            "fileVersion": "1.10.0.0"
+          }
+        }
+      },
       "Experimental.System.Messaging/1.1.0": {
         "runtime": {
           "lib/netstandard2.0/Experimental.System.Messaging.dll": {
@@ -369,7 +380,7 @@
       "Microsoft.TestPlatform.TestHost/16.4.0": {
         "dependencies": {
           "Microsoft.TestPlatform.ObjectModel": "16.4.0",
-          "Newtonsoft.Json": "9.0.1"
+          "Newtonsoft.Json": "12.0.1"
         },
         "runtime": {
           "lib/netcoreapp2.1/Microsoft.TestPlatform.CommunicationUtilities.dll": {
@@ -531,35 +542,11 @@
           "Microsoft.NETCore.Platforms": "2.0.0"
         }
       },
-      "Newtonsoft.Json/9.0.1": {
-        "dependencies": {
-          "Microsoft.CSharp": "4.5.0",
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Dynamic.Runtime": "4.0.11",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Linq.Expressions": "4.1.0",
-          "System.ObjectModel": "4.0.12",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Serialization.Primitives": "4.1.1",
-          "System.Text.Encoding": "4.3.0",
-          "System.Text.Encoding.Extensions": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Tasks": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0",
-          "System.Xml.XDocument": "4.0.11"
-        },
+      "Newtonsoft.Json/12.0.1": {
         "runtime": {
-          "lib/netstandard1.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.1.19813"
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.1.22727"
           }
         }
       },
@@ -852,32 +839,6 @@
           "runtime.native.System": "4.3.0"
         }
       },
-      "System.Diagnostics.Tools/4.0.1": {
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "2.0.0",
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "System.Runtime": "4.3.0"
-        }
-      },
-      "System.Dynamic.Runtime/4.0.11": {
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Linq.Expressions": "4.1.0",
-          "System.ObjectModel": "4.0.12",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Emit": "4.0.1",
-          "System.Reflection.Emit.ILGeneration": "4.0.1",
-          "System.Reflection.Primitives": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Threading": "4.3.0"
-        }
-      },
       "System.Globalization/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
@@ -1109,12 +1070,6 @@
           "runtime.native.System": "4.3.0"
         }
       },
-      "System.Runtime.Serialization.Primitives/4.1.1": {
-        "dependencies": {
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0"
-        }
-      },
       "System.Security.AccessControl/4.5.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
@@ -1231,22 +1186,6 @@
           "System.Threading.Tasks.Extensions": "4.3.0"
         }
       },
-      "System.Xml.XDocument/4.0.11": {
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Diagnostics.Tools": "4.0.1",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0"
-        }
-      },
       "System.Xml.XmlDocument/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -1310,6 +1249,7 @@
       },
       "Repository/1.0.0": {
         "dependencies": {
+          "CloudinaryDotNet": "1.10.0",
           "Experimental.System.Messaging": "1.1.0",
           "Microsoft.EntityFrameworkCore": "2.1.1",
           "Microsoft.EntityFrameworkCore.Relational": "2.1.1",
@@ -1330,6 +1270,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "CloudinaryDotNet/1.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-y4C2BkacylKVAzXFFUBpLOTkevGJgxAYMxGbAghj4wJmlf8F7BG2m9Dg9+SOR6xKcMOXbu2kRw2/UdqP9GSbvA==",
+      "path": "cloudinarydotnet/1.10.0",
+      "hashPath": "cloudinarydotnet.1.10.0.nupkg.sha512"
     },
     "Experimental.System.Messaging/1.1.0": {
       "type": "package",
@@ -1548,12 +1495,12 @@
       "path": "netstandard.library/2.0.0",
       "hashPath": "netstandard.library.2.0.0.nupkg.sha512"
     },
-    "Newtonsoft.Json/9.0.1": {
+    "Newtonsoft.Json/12.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-U82mHQSKaIk+lpSVCbWYKNavmNH1i5xrExDEquU1i6I5pV6UMOqRnJRSlKO3cMPfcpp0RgDY+8jUXHdQ4IfXvw==",
-      "path": "newtonsoft.json/9.0.1",
-      "hashPath": "newtonsoft.json.9.0.1.nupkg.sha512"
+      "sha512": "sha512-pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
+      "path": "newtonsoft.json/12.0.1",
+      "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
     },
     "NuGet.Frameworks/5.0.0": {
       "type": "package",
@@ -1751,20 +1698,6 @@
       "path": "system.diagnostics.process/4.3.0",
       "hashPath": "system.diagnostics.process.4.3.0.nupkg.sha512"
     },
-    "System.Diagnostics.Tools/4.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-xBfJ8pnd4C17dWaC9FM6aShzbJcRNMChUMD42I6772KGGrqaFdumwhn9OdM68erj1ueNo3xdQ1EwiFjK5k8p0g==",
-      "path": "system.diagnostics.tools/4.0.1",
-      "hashPath": "system.diagnostics.tools.4.0.1.nupkg.sha512"
-    },
-    "System.Dynamic.Runtime/4.0.11": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-db34f6LHYM0U0JpE+sOmjar27BnqTVkbLJhgfwMpTdgTigG/Hna3m2MYVwnFzGGKnEJk2UXFuoVTr8WUbU91/A==",
-      "path": "system.dynamic.runtime/4.0.11",
-      "hashPath": "system.dynamic.runtime.4.0.11.nupkg.sha512"
-    },
     "System.Globalization/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1954,13 +1887,6 @@
       "path": "system.runtime.interopservices.runtimeinformation/4.3.0",
       "hashPath": "system.runtime.interopservices.runtimeinformation.4.3.0.nupkg.sha512"
     },
-    "System.Runtime.Serialization.Primitives/4.1.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-HZ6Du5QrTG8MNJbf4e4qMO3JRAkIboGT5Fk804uZtg3Gq516S7hAqTm2UZKUHa7/6HUGdVy3AqMQKbns06G/cg==",
-      "path": "system.runtime.serialization.primitives/4.1.1",
-      "hashPath": "system.runtime.serialization.primitives.4.1.1.nupkg.sha512"
-    },
     "System.Security.AccessControl/4.5.0": {
       "type": "package",
       "serviceable": true,
@@ -2072,13 +1998,6 @@
       "sha512": "sha512-GrprA+Z0RUXaR4N7/eW71j1rgMnEnEVlgii49GZyAjTH7uliMnrOU3HNFBr6fEDBCJCIdlVNq9hHbaDR621XBA==",
       "path": "system.xml.readerwriter/4.3.0",
       "hashPath": "system.xml.readerwriter.4.3.0.nupkg.sha512"
-    },
-    "System.Xml.XDocument/4.0.11": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Mk2mKmPi0nWaoiYeotq1dgeNK1fqWh61+EK+w4Wu8SWuTYLzpUnschb59bJtGywaPq7SmTuPf44wrXRwbIrukg==",
-      "path": "system.xml.xdocument/4.0.11",
-      "hashPath": "system.xml.xdocument.4.0.11.nupkg.sha512"
     },
     "System.Xml.XmlDocument/4.3.0": {
       "type": "package",

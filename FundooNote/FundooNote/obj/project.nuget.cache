@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "GK93k0gR7fmfqxmJ9Kque7uCnNs6Jv1lXF4zRQ09rIFq43yAss4xxwQkMkjfy4NsZ2hL0fx9Osrxiae0GoAO3g==",
+  "dgSpecHash": "x4m2ctiBV83wxXqBDvd5662NGW0DnB4zYkoXIhYNjAuJqLoQXR4qosshM2aViWBhzQBm+iqIdooI1GHff/TsTA==",
   "success": true,
   "projectFilePath": "C:\\Users\\sriha\\source\\repos\\FundooNote\\FundooNote.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\sriha\\.nuget\\packages\\cloudinarydotnet\\1.10.0\\cloudinarydotnet.1.10.0.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\experimental.system.messaging\\1.1.0\\experimental.system.messaging.1.1.0.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\microsoft.aspnetcore\\2.1.1\\microsoft.aspnetcore.2.1.1.nupkg.sha512",
@@ -182,7 +183,7 @@
     "C:\\Users\\sriha\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\2.1.10\\microsoft.visualstudio.web.codegenerators.mvc.2.1.10.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\sriha\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\sriha\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\pipelines.sockets.unofficial\\1.0.0\\pipelines.sockets.unofficial.1.0.0.nupkg.sha512",

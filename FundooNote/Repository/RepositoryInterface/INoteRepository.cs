@@ -6,21 +6,26 @@ using System.Threading.Tasks;
 
 namespace Repository.RepositoryInterface
 {
-    interface INoteRepository
+   public interface INoteRepository
     {
-        Task<string> AddNote(NotesModel noteModel); 
-        Task<int> DeleteNote(int NoteID);
-        Task<string> UpdateNote(NotesModel notemodel);
-        List<NotesModel> GetNote(int NoteID);
-        Task Trash(int noteid); 
-        List<NotesModel> GetTrash();
-        Task RemoveTrash(int NoteId);
-        Task RestoreTrash(int NoteId);
-        Task RestoreAllTrash(int NoteId);
-        int Remainder(int NoteId);
-        Task Archieve(int NoteId);
-        Task UnArchieve(int NoteId); 
-        List<NotesModel> GetArchieveList(); 
+        Task AddNotes(NotesModel notesModel);
+        List<NotesModel> GetNotes();
+        List<NotesModel> GetNote(int id);
+        Task Update(int id, string tittle, string Decription, string color, string img);
+        Task Delete(int id);
+        Task<string> UploadImg(int id, string img);
+        Task Color(int id, string color);
+        Task Ispin(int id);
+        Task Unpin(int id);
+        Task IsArchive(int id);
+        Task UnArchive(int id);
+        Task Reminder(int id, string Reminder);
+        List<NotesModel> GetArcheive();
+        Task Trash(int id);
+        List<NotesModel> TrashList();
+        Task RemoveTrash(int id);
+        Task Restore(int id);
+        Task RestoreAll();
 
     }
 }

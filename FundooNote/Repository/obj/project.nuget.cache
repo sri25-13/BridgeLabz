@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Jg8UqkaBY1fg2XnIkvCd3t/9bsJcrTmzoM4Z/TpQbbkWorDE0dOnCHLLKPsPiQjU2Mn7Rr9g5t/F/ry3lVFZYQ==",
+  "dgSpecHash": "rERq9vovcFz4YXkZLgFZHjXqfxo3jkj0EqD4WHCf/gWxX3fjdDdFqBjhDplFKMzzXmlBmjB1NjRZsT7Vb3q5Ig==",
   "success": true,
   "projectFilePath": "C:\\Users\\sriha\\source\\repos\\Repository\\Repository.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\sriha\\.nuget\\packages\\cloudinarydotnet\\1.10.0\\cloudinarydotnet.1.10.0.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\experimental.system.messaging\\1.1.0\\experimental.system.messaging.1.1.0.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\microsoft.entityframeworkcore\\2.1.1\\microsoft.entityframeworkcore.2.1.1.nupkg.sha512",
@@ -35,6 +36,7 @@
     "C:\\Users\\sriha\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\sriha\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\pipelines.sockets.unofficial\\1.0.0\\pipelines.sockets.unofficial.1.0.0.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\remotion.linq\\2.2.0\\remotion.linq.2.2.0.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

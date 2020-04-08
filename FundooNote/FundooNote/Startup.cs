@@ -28,7 +28,6 @@ namespace FundooNote
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -37,6 +36,8 @@ namespace FundooNote
             services.AddTransient<IAccountManager, AccountManager>();
             services.AddTransient<ILabelRepository, LabelRepository>();
             services.AddTransient<ILabelManager, LabelManager>();
+            services.AddTransient<INoteRepository, NoteRepository>();
+            services.AddTransient<INoteManager, NoteManager>();
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
                {
                    builder.AllowAnyOrigin()

@@ -7,24 +7,31 @@ namespace Model.Notes
 {
     public class NotesModel
     {
-        private int noteID;
-        private bool pinNote;
-        private bool archive;
-        private string description;
+        private int noteId;
         private string title;
+        private string email;
+        private string description;
+        private DateTime? createdate;
+        private DateTime? modifieddate;
+        private bool archeive;
+        private bool pin;
+        private string changeColor;
         private string addImg;
-        private string remainder;
-        private string addColor;
+        private string reminder;
         private bool trash;
-        private string emailid;
         [Key]
-        public int NoteID { get => noteID; set => noteID = value; }
-        public string Emailid { get => emailid; set => emailid = value; }
-        public string Title { get => title; set => title = value; }
-        public string Description { get => description; set => description = value; }
-        public bool Archive { get; set; }
-        public string AddImg { get => addImg; set => addImg = value; }
-        public string Remainder { get => remainder; set => remainder = value; }
-        public string AddColor { get => addColor; set => addColor = value; }
+        public int NoteId { get => this.noteId; set => this.noteId = value; }
+        public bool Trash { get => this.trash; set => this.trash = value; }
+        public string Title { get => this.title; set => this.title = value; }
+        public string Description { get => this.description; set => this.description = value; }
+        public DateTime? Createdate1 { get => this.createdate; set => this.createdate = value; }
+        public DateTime? Modifieddate { get => this.modifieddate; set => this.modifieddate = value; }
+        public bool Archeive { get => this.archeive; set => this.archeive = value; }
+        public bool Pin { get => this.pin; set => this.pin = value; }
+        public string ChangeColor { get => this.changeColor; set => this.changeColor = value; }
+        public string AddImg { get => this.addImg; set => this.addImg = value; }
+        public string Email { get => this.email; set => this.email = value; }
+        public string Reminder { get => reminder; set => reminder = value; }
     }
 }
+

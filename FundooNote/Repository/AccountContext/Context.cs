@@ -9,6 +9,7 @@ namespace Repository.AccountContext
     using Microsoft.EntityFrameworkCore;
     using Model.Account;
     using Model.Label;
+    using Model.Notes;
 
     /// <summary>
     /// context class for database connection
@@ -20,6 +21,6 @@ namespace Repository.AccountContext
         }
         public DbSet<RegisterModel> Accountregister { get; set; }
         public DbSet<Labelmodel> labels { get; set; }
-
+        public DbSet<NotesModel> Notes { get; set; }
     }
 }

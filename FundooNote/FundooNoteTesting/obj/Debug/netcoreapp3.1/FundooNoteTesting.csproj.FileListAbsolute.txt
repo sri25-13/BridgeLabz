@@ -137,3 +137,4 @@ C:\Users\sriha\source\repos\FundooNoteTesting\obj\Debug\netcoreapp3.1\FundooNote
 C:\Users\sriha\source\repos\FundooNoteTesting\obj\Debug\netcoreapp3.1\FundooNoteTesting.pdb
 C:\Users\sriha\source\repos\FundooNoteTesting\obj\Debug\netcoreapp3.1\FundooNoteTesting.genruntimeconfig.cache
 C:\Users\sriha\source\repos\FundooNoteTesting\bin\Debug\netcoreapp3.1\Experimental.System.Messaging.dll
+C:\Users\sriha\source\repos\FundooNoteTesting\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll
