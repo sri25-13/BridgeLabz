@@ -12,6 +12,11 @@ namespace Repository.RepositoryImplementation
     public class LabelRepository : ILabelRepository
     {
         private readonly Context context;
+
+        public LabelRepository()
+        {
+        }
+
         public LabelRepository(Context context)
         {
             this.context = context;
