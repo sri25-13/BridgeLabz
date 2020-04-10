@@ -18,6 +18,11 @@ namespace Repository.RepositoryImplementation
         {
             this.context = context;
         }
+
+        public NoteRepository()
+        {
+        }
+
         public Task AddNotes(NotesModel notesModel)
         {
             NotesModel notesModel1 = new NotesModel()
@@ -32,6 +37,7 @@ namespace Repository.RepositoryImplementation
                 Pin = notesModel.Pin,
                 ChangeColor = notesModel.ChangeColor,
                 AddImg = notesModel.AddImg, 
+                Trash=notesModel.Trash
             };
             this.context.Notes.Add(notesModel1);
             var s = Task.Run(() => context.SaveChanges());

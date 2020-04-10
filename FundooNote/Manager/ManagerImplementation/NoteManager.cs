@@ -15,6 +15,11 @@ namespace Manager.ManagerImplementation
         {
             this.noteRepository = noteRepository;
         }
+
+        public NoteManager()
+        {
+        }
+
         public async Task AddNotes(NotesModel notesModel) 
         {
             await this.noteRepository.AddNotes(notesModel);

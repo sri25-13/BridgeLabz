@@ -196,13 +196,14 @@ namespace FundooNote.Controllers
                 return BadRequest(e.Message);
             }
         }
+
         [HttpPost]
         [Route("Trash")]
-        public IActionResult Trash(int id)
+        public async Task<IActionResult> Trash(int id)
         {
             try
             {
-                var result = this.noteManager.Trash(id);
+                await this.noteManager.Trash(id);
                 return Ok();
             }
             catch (Exception e)
@@ -223,6 +224,12 @@ namespace FundooNote.Controllers
             {
                 return BadRequest(e.Message);
             }
+        }
+        [HttpGet]
+        [Route("trashlist")]
+        public List<NotesModel> TrashList()
+        {
+            return this.noteManager.GetTrashList();
         }
         [HttpGet]
         [Route("RestoreallTrash")]

@@ -11,6 +11,11 @@ namespace Manager.ManagerImplementation
     public class LabelManager : ILabelManager
     {
         public readonly ILabelRepository labelRepository;
+
+        public LabelManager()
+        {
+        }
+
         public LabelManager(ILabelRepository labelRepository)
         {
             this.labelRepository = labelRepository;
