@@ -8,6 +8,7 @@ namespace FundooNoteTesting
 {
     using Manager.ManagerImplementation;
     using Model.Account;
+    using Model.Collaborators;
     using Model.Label;
     using Model.Notes;
     using NUnit.Framework;
@@ -169,7 +170,25 @@ namespace FundooNoteTesting
             LabelManager manager = new LabelManager();
             Assert.IsNotNull(manager.UpdateLabel(labelmodel.LabelName, labelmodel.LabelId));
         }
-
+        [Test]
+        public void AddCollaboratorTest()
+        {
+            CollaboratorModel model = new CollaboratorModel();
+            model.Id = 1;
+            model.NoteId = 2;
+            model.SenderEmail = "abc@gmail.com";
+            model.ReceiverEmail = "harsh@gmail.com";
+            CollaboratorManager manager = new CollaboratorManager();
+            Assert.IsNotNull(manager.AddCollaborator(model));
+        }
+        [Test]
+        public void DeleteCollaborator()
+        {
+            CollaboratorModel model = new CollaboratorModel();
+            model.Id = 1;
+            CollaboratorManager manager = new CollaboratorManager();
+            Assert.IsNotNull(manager.DeleteCollaborator(model.Id));
+        }
     }
 }
 

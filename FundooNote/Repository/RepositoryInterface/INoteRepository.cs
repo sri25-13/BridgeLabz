@@ -13,7 +13,7 @@ namespace Repository.RepositoryInterface
         List<NotesModel> GetNote(int id);
         Task Update(int id, string tittle, string Decription, string color, string img);
         Task Delete(int id);
-        Task<string> UploadImg(int id, string img);
+        Task UploadImg(int id, string img);
         Task Color(int id, string color);
         Task Ispin(int id);
         Task Unpin(int id);

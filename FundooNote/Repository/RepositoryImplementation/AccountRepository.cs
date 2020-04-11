@@ -77,7 +77,6 @@ namespace Repository.RepositoryImplementation
         /// <returns></returns>
         public async Task<RegisterModel> FacebookLogin(LoginModel login)
         {
-            var jwt = new JwtSettings();
             var result = this.context.Accountregister.Where(option => option.Email == login.Email).SingleOrDefault();
             if (result != null)
             {

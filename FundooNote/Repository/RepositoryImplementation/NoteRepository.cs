@@ -80,29 +80,24 @@ namespace Repository.RepositoryImplementation
             }
             return default;
         }
-        public async Task<string> UploadImg(int id, string img)
+        public  Task UploadImg(int id, string img)
         {
-            // var stream = img.OpenReadStream(); 
-            var Filename = img;
-            Account account = new Account("dp0053lac", "599234279678327", "zimXDzrf5DAW_L90NebMgGOJw6o");
-            Cloudinary cloudinary = new Cloudinary(account); 
-            var UploadFile = new ImageUploadParams()
-            {
-                File = new FileDescription(Filename)
-            };
-            var Result = cloudinary.Upload(UploadFile);
             var file = this.context.Notes.Where(op => op.NoteId == id).SingleOrDefault();
-            file.AddImg = Result.Uri.ToString();
-            try
+            if (file != null)
             {
-                var res = this.context.Update(file.AddImg);
-                await Task.Run(() => context.SaveChanges());
-                return file.AddImg;
+                var Filename = img;
+                Account account = new Account("dp0053lac", "599234279678327", "zimXDzrf5DAW_L90NebMgGOJw6o");
+                Cloudinary cloudinary = new Cloudinary(account);
+                var UploadFile = new ImageUploadParams()
+                {
+                    File = new FileDescription(Filename)
+                };
+                var Result = cloudinary.Upload(UploadFile);
+                file.AddImg = Result.Uri.ToString();
+                    var res= Task.Run(() => context.SaveChanges());
+                    return res;
             }
-            catch (Exception e)
-            {
-                return e.Message;
-            }
+            return default;
         }
         public  Task Color(int id, string color)
         {

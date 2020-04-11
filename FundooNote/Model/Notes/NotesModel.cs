@@ -32,6 +32,7 @@ namespace Model.Notes
         public string AddImg { get => this.addImg; set => this.addImg = value; }
         public string Email { get => this.email; set => this.email = value; }
         public string Reminder { get => reminder; set => reminder = value; }
+       
     }
 }
 

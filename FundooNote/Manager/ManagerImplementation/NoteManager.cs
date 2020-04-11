@@ -82,9 +82,9 @@ namespace Manager.ManagerImplementation
         {
             await this.noteRepository.Update(noteId, title, description, changeColor, addImg);
         }
-        public Task<string> UploadImg(int id,string img)
+        public async Task UploadImg(int id,string img)
         {
-            return this.noteRepository.UploadImg(id, img);
+            await this.noteRepository.UploadImg(id, img);
         }
 
         public Task Trash(int id)

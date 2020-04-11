@@ -13,7 +13,7 @@ namespace Manager.ManagerInterface
          List<NotesModel> GetNote(int id); 
         Task Delete(int id);
         Task Update(int nodeId, string tittle, string description, string changeColor, string addImg);
-        Task<string> UploadImg(int id, string img);
+        Task UploadImg(int id, string img);
          Task<string> Color(int id, string color); 
         Task<string> Ispin(int id);
         Task Unpin(int id);

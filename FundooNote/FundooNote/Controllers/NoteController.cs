@@ -91,7 +91,7 @@ namespace FundooNote.Controllers
             try
             {
                 await this.noteManager.UploadImg(id, img);
-                return Ok(id);
+                return Ok();
             }
             catch (Exception e)
             {
