@@ -144,6 +144,10 @@ namespace FundooNoteTesting
             NoteManager noteManager = new NoteManager();
             Assert.IsNotNull(noteManager.Delete(model.NoteId));
         }
+
+        /// <summary>
+        /// Test method for addLabel
+        /// </summary>
         [Test]
         public void AddLabelTest()
         {
@@ -153,6 +157,10 @@ namespace FundooNoteTesting
             LabelManager manager = new LabelManager();
             Assert.IsNotNull(manager.AddLabel(labelmodel.LabelName,labelmodel.LabelId));
         }
+
+        /// <summary>
+        /// Test method for DeletingLabel
+        /// </summary>
         [Test]
         public void DeleteLabelTest()
         {
@@ -161,6 +169,10 @@ namespace FundooNoteTesting
             LabelManager manager = new LabelManager();
             Assert.IsNotNull(manager.DeleteLabel(labelmodel.LabelId));
         }
+
+        /// <summary>
+        /// TestMethod for Updating Label
+        /// </summary>
         [Test]
         public void UpdateLabelTest()
         {

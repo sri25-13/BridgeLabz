@@ -1,16 +1,47 @@
-﻿using Model.Label;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file=ILabelManager.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="sriharshini"/>
+// --------------------------------------------------------------------------------------------------------------------
 namespace Manager.ManagerInterface
 {
-   public interface ILabelManager
+    using Model.Label;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
+    /// <summary>
+    /// Interface for LabelManager
+    /// </summary>
+    public interface ILabelManager
     {
-        Task AddLabel(string name,int id);
+        /// <summary>
+        /// Adds the Label
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task AddLabel(string name, int id);
+
+        /// <summary>
+        /// Gets all the labels
+        /// </summary>
+        /// <returns></returns>
         List<Labelmodel> GetAllLabels();
+
+        /// <summary>
+        /// Updates the Label
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         Task UpdateLabel(string name, int id);
+
+        /// <summary>
+        /// Deletes the label
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         Task DeleteLabel(int id);
     }
 }
