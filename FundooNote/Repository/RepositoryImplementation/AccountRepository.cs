@@ -18,6 +18,7 @@ namespace Repository.RepositoryImplementation
     using System.Text;
     using System.Threading.Tasks;
     using StackExchange.Redis;
+    using Experimental.System.Messaging;
 
     /// <summary>
     /// class for AccountRepository
@@ -111,13 +112,34 @@ namespace Repository.RepositoryImplementation
         /// <returns></returns>
         public async Task<string> ForgotPassword(ForgotPassword forgotPassword)
         {
-            JwtSettings jwt = new JwtSettings();
+            string email = forgotPassword.Email;
             var user = CheckEmail(forgotPassword.Email);
             if (user == true)
             {
-                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("jwt.Secret"));
-                var credential = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
-                var token = new JwtSecurityToken(expires: DateTime.Now.AddDays(1), signingCredentials: credential);
+                string message = forgotPassword.Email;
+                MessageQueue queue;
+                if(MessageQueue.Exists(@".\private$\queue"))
+                {
+                    queue = new MessageQueue(@".\private$\queue");
+                }
+                else
+                {
+                queue=MessageQueue.Create(@".\private$\queue");
+                }
+                Message message1 = new Message
+                {
+                    Formatter = new BinaryMessageFormatter(),
+                    Body = user,
+                    Label = "msmqMessage"
+                };
+                if (message.Contains(email))
+                {
+                    message1.Priority = MessagePriority.High;
+                }
+                else
+                {
+                    message1.Priority = MessagePriority.Low;
+                }
                 var fromAddress = new MailAddress("sriharshinirao25@gmail.com");
                 var fromPassword = "harshini@25@";
                 var toAddress = new MailAddress(forgotPassword.Email);
@@ -132,14 +154,14 @@ namespace Repository.RepositoryImplementation
                     UseDefaultCredentials = false,
                     Credentials = new System.Net.NetworkCredential(fromAddress.Address, fromPassword)
                 };
-                using (var message = new MailMessage(fromAddress, toAddress)
+                using (var msg = new MailMessage(fromAddress, toAddress)
                 {
                     Subject = subject,
                     Body = body
                 })
                     try
                     {
-                        smtp.Send(message);
+                        smtp.Send(msg);
                     }
                     catch (Exception e)
                     {
