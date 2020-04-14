@@ -42,14 +42,14 @@ namespace Repository.RepositoryImplementation
         /// <returns></returns>
         public async Task<bool> EmailLogin(LoginModel login)
         {
-            var jwtSetting = new JwtSettings();
             if (CheckEmail(login.Email))
             {
                 if (CheckPassword(login.Email, login.Password))
                 {
                     try
                     {
-                        var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("jwtSetting.Secret"));
+                        JwtSettings jwt = new JwtSettings();
+                        var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("jwt.Secret"));
                         var credential = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
                         var token = new JwtSecurityToken(expires: DateTime.Now.AddDays(1), signingCredentials: credential);
                         var cacheKey = login.Email;
@@ -77,6 +77,7 @@ namespace Repository.RepositoryImplementation
         /// <returns></returns>
         public async Task<RegisterModel> FacebookLogin(LoginModel login)
         {
+            JwtSettings jwt = new JwtSettings();
             var result = this.context.Accountregister.Where(option => option.Email == login.Email).SingleOrDefault();
             if (result != null)
             {
@@ -110,9 +111,13 @@ namespace Repository.RepositoryImplementation
         /// <returns></returns>
         public async Task<string> ForgotPassword(ForgotPassword forgotPassword)
         {
+            JwtSettings jwt = new JwtSettings();
             var user = CheckEmail(forgotPassword.Email);
             if (user == true)
             {
+                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("jwt.Secret"));
+                var credential = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+                var token = new JwtSecurityToken(expires: DateTime.Now.AddDays(1), signingCredentials: credential);
                 var fromAddress = new MailAddress("sriharshinirao25@gmail.com");
                 var fromPassword = "harshini@25@";
                 var toAddress = new MailAddress(forgotPassword.Email);
@@ -240,6 +245,10 @@ namespace Repository.RepositoryImplementation
         /// <returns></returns>
         public async Task<string> ResetPassword(ResetPassword resetPassword)
         {
+            JwtSettings jwt = new JwtSettings();
+            var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("jwt.Secret"));
+            var credential = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+            var token = new JwtSecurityToken(expires: DateTime.Now.AddDays(1), signingCredentials: credential);
             string password = resetPassword.Password;
             RegisterModel registerModel = this.context.Accountregister.Where<RegisterModel>(option =>
               option.Password == password).FirstOrDefault();
