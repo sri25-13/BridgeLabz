@@ -38,7 +38,7 @@ namespace FundooRepository.RepositoryImplementation
         /// <param name="name"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Task AddLabel(Labelmodel labelmodel)
+        public string AddLabel(Labelmodel labelmodel)
         {
             Labelmodel label = new Labelmodel()
             {
@@ -48,8 +48,9 @@ namespace FundooRepository.RepositoryImplementation
                 NoteId = labelmodel.NoteId
 
             };
-            var res = Task.Run(() => context.SaveChangesAsync());
-            return res;
+            this.context.Labels.Add(label);
+            var res = this.context.SaveChanges();
+            return "added";
         }
 
         /// <summary>

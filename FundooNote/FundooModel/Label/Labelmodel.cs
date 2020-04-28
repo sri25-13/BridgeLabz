@@ -29,7 +29,6 @@ namespace FundooModel.Label
         /// get and set labelname
         /// </summary>
         public string LabelName { get => this.labelname; set => this.labelname = value; }
-        [ForeignKey("RegisterModel")]
         public string Email { get => this.email; set => this.email = value; }
     }
 }

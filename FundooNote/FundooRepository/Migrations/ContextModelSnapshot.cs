@@ -66,7 +66,7 @@ namespace FundooRepository.Migrations
 
                     b.HasKey("LabelId");
 
-                    b.ToTable("labels");
+                    b.ToTable("Labels");
                 });
 
             modelBuilder.Entity("FundooModel.Notes.NotesModel", b =>

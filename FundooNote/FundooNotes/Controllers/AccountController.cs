@@ -39,8 +39,8 @@ namespace FundooNote.Controllers
         {
             try
             {
-                bool result = await this.accountManager.EmailLogin(loginModel);
-                if (result)
+                string result = await this.accountManager.EmailLogin(loginModel);
+                if (result!=null)
                 {
                     return Ok();
                 }

@@ -6,7 +6,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace FundooRepository.RepositoryImplementation
 {
-    
+
     using Microsoft.Extensions.Configuration;
     using Microsoft.IdentityModel.Tokens;
     using FundooModel.Account;
@@ -19,6 +19,7 @@ namespace FundooRepository.RepositoryImplementation
     using System.Net.Mail;
     using System.Text;
     using System.Threading.Tasks;
+    using Experimental.System.Messaging;
 
     /// <summary>
     /// class for AccountRepository
@@ -43,34 +44,32 @@ namespace FundooRepository.RepositoryImplementation
         /// </summary>
         /// <param name="login"></param>
         /// <returns></returns>
-        public async Task<bool> EmailLogin(LoginModel login)
+        public async Task<string> EmailLogin(LoginModel login)
         {
             if (CheckEmail(login.Email))
             {
                 if (CheckPassword(login.Email, login.Password))
                 {
-                    try
-                    {
-                        JwtSettings jwt = new JwtSettings();
-                        var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("jwt.Secret"));
-                        var credential = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
-                        var token = new JwtSecurityToken(expires: DateTime.Now.AddDays(1), signingCredentials: credential);
-                        var cacheKey = login.Email;
-                        ConnectionMultiplexer multiplexer = ConnectionMultiplexer.Connect("127.0.0.1:6379");
-                        IDatabase data = multiplexer.GetDatabase();
-                        data.StringSet(cacheKey, token.ToString());
-                        data.StringGet(cacheKey);
-                        await this.context.SaveChangesAsync();
-                        return true;
-                    }
-                    catch (Exception exception)
-                    {
-                        throw new Exception(exception.Message);
-                    }
+                    var key = configuration["Jwt:Key"];
+                    var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
+                    var signInCr = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+                    var token = new JwtSecurityToken(
+                        issuer: configuration["Jwt:url"],
+                        audience: configuration["Jwt:url"],
+                        expires: DateTime.Now.AddMinutes(60),
+                        signingCredentials: signInCr
+                        );
+                    var securityToken = new JwtSecurityTokenHandler().WriteToken(token);
+                    var cacheKey = login.Email;
+                    ConnectionMultiplexer multiplexer = ConnectionMultiplexer.Connect("127.0.0.1:6379");
+                    IDatabase data = multiplexer.GetDatabase();
+                    data.StringSet(cacheKey, token.ToString());
+                    data.StringGet(cacheKey);
+                    await this.context.SaveChangesAsync();
+                    return securityToken;
                 }
             }
-
-            return false;
+            return "invalid";
         }
 
         /// <summary>
@@ -78,32 +77,31 @@ namespace FundooRepository.RepositoryImplementation
         /// </summary>
         /// <param name="login"></param>
         /// <returns></returns>
-        public async Task<RegisterModel> FacebookLogin(LoginModel login)
+        public async Task<string> FacebookLogin(LoginModel login)
         {
-            JwtSettings jwt = new JwtSettings();
-            var result = this.context.Accountregister.Where(option => option.Email == login.Email).SingleOrDefault();
-            if (result != null)
+            if (CheckEmail(login.Email))
             {
-                try
+                if (CheckPassword(login.Email, login.Password))
                 {
-                    var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("jwt.Secret"));
-                    var credential = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
-                    var token = new JwtSecurityToken(expires: DateTime.Now.AddDays(1), signingCredentials: credential);
+                    var key = configuration["Jwt:Key"];
+                    var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
+                    var signInCr = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+                    var token = new JwtSecurityToken(
+                        issuer: configuration["Jwt:url"],
+                        audience: configuration["Jwt:url"],
+                        expires: DateTime.Now.AddMinutes(60),
+                        signingCredentials: signInCr
+                        );
+                    var securityToken = new JwtSecurityTokenHandler().WriteToken(token);
                     var cacheKey = login.Email;
                     ConnectionMultiplexer multiplexer = ConnectionMultiplexer.Connect("127.0.0.1:6379");
                     IDatabase data = multiplexer.GetDatabase();
                     data.StringSet(cacheKey, token.ToString());
                     data.StringGet(cacheKey);
-                    result.Status = true;
                     await this.context.SaveChangesAsync();
-                    return result;
-                }
-                catch (Exception exception)
-                {
-                    throw new Exception(exception.Message);
+                    return securityToken;
                 }
             }
-
             return default;
         }
 
@@ -119,7 +117,7 @@ namespace FundooRepository.RepositoryImplementation
             if (user == true)
             {
                 string message = forgotPassword.Email;
-               /* MessageQueue queue;
+                MessageQueue queue;
                 if (MessageQueue.Exists(@".\private$\queue"))
                 {
                     queue = new MessageQueue(@".\private$\queue");
@@ -141,7 +139,7 @@ namespace FundooRepository.RepositoryImplementation
                 else
                 {
                     message1.Priority = MessagePriority.Low;
-                }*/
+                }
                 var fromAddress = new MailAddress("sriharshinirao25@gmail.com");
                 var fromPassword = "harshini@25@";
                 var toAddress = new MailAddress(forgotPassword.Email);
@@ -190,15 +188,11 @@ namespace FundooRepository.RepositoryImplementation
                     var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
                     var signInCr = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
                     var token = new JwtSecurityToken(
-                        ///issuer: "Sample",
                         issuer: configuration["Jwt:_url"],
                         audience: configuration["Jwt:_url"],
-                        ///audience: "Sample",
-                        //claims: claim,
                         expires: DateTime.Now.AddMinutes(60),
                         signingCredentials: signInCr);
                     var FinalToken = new JwtSecurityTokenHandler().WriteToken(token);
-                    //// this.distributedCache.SetString("Token", FinalToken);
                     return FinalToken;
                 }
             }

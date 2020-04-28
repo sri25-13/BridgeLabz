@@ -36,7 +36,7 @@ namespace FundooManager.ManagerImplementation
         /// </summary>
         /// <param name="login"></param>
         /// <returns></returns>
-        public async Task<bool> EmailLogin(LoginModel login)
+        public async Task<string> EmailLogin(LoginModel login)
         {
             return await this.accountRepository.EmailLogin(login);
         }
@@ -46,7 +46,7 @@ namespace FundooManager.ManagerImplementation
         /// </summary>
         /// <param name="login"></param>
         /// <returns></returns>
-        public async Task<RegisterModel> FacebookLogin(LoginModel login)
+        public async Task<string> FacebookLogin(LoginModel login)
         {
             return await this.accountRepository.FacebookLogin(login);
         }

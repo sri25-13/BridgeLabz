@@ -6,6 +6,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace FundooModel.Account
 {
+    using Microsoft.AspNetCore.Identity;
     using System.ComponentModel.DataAnnotations;
 
     /// <summary>
@@ -17,7 +18,6 @@ namespace FundooModel.Account
         private string lastname;
         private string email;
         private string password;
-        public bool Status;
 
         /// <summary>
         /// Get and sets the Firstname
@@ -53,7 +53,7 @@ namespace FundooModel.Account
         /// Get and sets the Lastname
         /// </summary>
         [Key]
-        public string Email
+        public  string  Email
         {
             get
             {

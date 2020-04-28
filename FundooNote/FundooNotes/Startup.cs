@@ -39,7 +39,8 @@ namespace FundooNotes
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContextPool<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DBConnection")));
+            services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DBConnection")));
+           /* services.AddSingleton<Context>();*/
             services.AddTransient<IAccountRepository, AccountRepository>();
             services.AddTransient<IAccountManager, AccountManager>();
             services.AddTransient<ILabelRepository, LabelRepository>();
@@ -48,9 +49,7 @@ namespace FundooNotes
             services.AddTransient<INoteManager, NoteManager>();
             services.AddTransient<ICollaboratorManager, CollaboratorManager>();
             services.AddTransient<ICollaboratorRepository, CollaboratorRepository>();
-            services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<Context>()
-                .AddDefaultTokenProviders();
+           
             services.Configure<DataProtectionTokenProviderOptions>(option =>
             option.TokenLifespan = TimeSpan.FromHours(1));
 
@@ -69,8 +68,6 @@ namespace FundooNotes
                     ValidateAudience = true,
                     ValidateIssuer = true,
                     ValidateIssuerSigningKey = true,
-                    //ValidIssuer ="Sample",
-                    //ValidAudience = "Sample",
                     ValidIssuer = Configuration["Jwt:_url"],
                     ValidAudience = Configuration["Jwt:_url"],
                     IssuerSigningKey = symmerticKey,

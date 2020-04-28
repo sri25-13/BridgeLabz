@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "0g0wYQgh1WfbDbwyg4o1/ELvm5l/3XWI0fsUguEECIxXrsPMgOowDc1FcVIQVji3sI7tBvgOFetXdGb+gVsryg==",
+  "dgSpecHash": "UTgdRyIGF9yg1yYj4q0eRPBxVFjI6XG1dEqW1lMLb4naEuSRxi5lesGt+lMNkR6JjuXrMn/Qi4HxHOXs6je05g==",
   "success": true,
   "projectFilePath": "C:\\Users\\sriha\\source\\repos\\FundooUnitTesting\\FundooUnitTesting.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sriha\\.nuget\\packages\\cloudinarydotnet\\1.10.0\\cloudinarydotnet.1.10.0.nupkg.sha512",
+    "C:\\Users\\sriha\\.nuget\\packages\\experimental.system.messaging\\1.1.0\\experimental.system.messaging.1.1.0.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.1.0\\microsoft.aspnetcore.authentication.2.1.0.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.1.0\\microsoft.aspnetcore.authentication.abstractions.2.1.0.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.1.0\\microsoft.aspnetcore.authentication.cookies.2.1.0.nupkg.sha512",

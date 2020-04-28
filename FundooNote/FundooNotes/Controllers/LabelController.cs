@@ -19,7 +19,7 @@ namespace FundooNote.Controllers
     /// <summary>
     /// Controller for Label
     /// </summary>
-    [Authorize]
+   [Authorize]
     public class LabelController : ControllerBase
     {
         private readonly ILabelManager labelManager;
@@ -36,11 +36,11 @@ namespace FundooNote.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("AddLabel")]
-        public async Task<IActionResult> AddLabel(Labelmodel labelmodel)
+        public  IActionResult AddLabel([FromBody] Labelmodel labelmodel)
         {
             try
             {
-                await this.labelManager.AddLabel(labelmodel);
+                 this.labelManager.AddLabel(labelmodel);
                 return Ok();
             }
             catch (Exception e)

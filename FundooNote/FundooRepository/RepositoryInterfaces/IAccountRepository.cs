@@ -47,13 +47,13 @@ namespace FundooRepository.RepositoryInterface
         /// </summary>
         /// <param name="login"></param>
         /// <returns></returns>
-        Task<bool> EmailLogin(LoginModel login);
+        Task<string> EmailLogin(LoginModel login);
 
         /// <summary>
         /// Method for Logging In Facebook
         /// </summary>
         /// <param name="login"></param>
         /// <returns></returns>
-        Task<RegisterModel> FacebookLogin(LoginModel login);
+        Task<string> FacebookLogin(LoginModel login);
     }
 }

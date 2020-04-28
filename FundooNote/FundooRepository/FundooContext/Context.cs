@@ -11,7 +11,7 @@ namespace FundooRepository.FundooContext
     using FundooModel.Collaborators;
     using FundooModel.Label;
     using FundooModel.Notes;
-
+    
     /// <summary>
     /// context class for database connection
     /// </summary>
