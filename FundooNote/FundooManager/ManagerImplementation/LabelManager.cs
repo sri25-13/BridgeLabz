@@ -37,11 +37,11 @@ namespace FundooManager.ManagerImplementation
         /// <param name="name"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        public  string AddLabel(Labelmodel labelmodel)
+        public  async Task<string> AddLabel(Labelmodel labelmodel)
         {
             try
             {
-                 this.labelRepository.AddLabel(labelmodel);
+                  await this.labelRepository.AddLabel(labelmodel);
                 return "added";
             }
             catch (Exception e)

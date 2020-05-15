@@ -21,7 +21,7 @@ namespace FundooRepository.RepositoryInterface
         /// <param name="name"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        string AddLabel(Labelmodel labelmodel);
+        Task AddLabel(Labelmodel labelmodel);
 
         /// <summary>
         /// method to Getalllabels

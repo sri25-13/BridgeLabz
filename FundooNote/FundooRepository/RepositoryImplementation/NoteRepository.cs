@@ -227,6 +227,22 @@ namespace FundooRepository.RepositoryImplementation
             }
             return null;
         }
+        public IQueryable GetnotesAndLabels(int Id,string email)
+        {
+            var result = context.Notes.Where(a => a.NoteId == Id&& a.Email==email).Join(context.Labels,
+                Notes => Notes.NoteId,
+                Labels => Labels.LabelId,
+                (Notes, Labels) => new
+                {
+                    NotesID = Notes.NoteId,
+                    NotesDescription = Notes.Description,
+                    NotesTitle = Notes.Title,
+                    LabelID = Labels.LabelId,
+                    LabelNAME = Labels.LabelName
+                });
+            return result;
+                
+        }
     }
 }
 

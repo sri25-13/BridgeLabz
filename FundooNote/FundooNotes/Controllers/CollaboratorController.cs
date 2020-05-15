@@ -18,7 +18,7 @@ namespace FundooNote.Controllers
     /// <summary>
     /// Controller class for Collaborator
     /// </summary>
-     [Authorize]
+   /*  [Authorize]*/
     public class CollaboratorController : ControllerBase
     {
         private readonly ICollaboratorManager collaboratorManager;
@@ -67,6 +67,20 @@ namespace FundooNote.Controllers
                 return this.Ok();
             }
             catch (Exception exception)
+            {
+                return BadRequest(exception.Message);
+            }
+        }
+        [HttpDelete]
+        [Route("api/delnotewith collab")]
+        public async Task<IActionResult> Delnotewithcollab(string email,int id)
+        {
+            try
+            {
+                await this.collaboratorManager.DelNotewithCollab(email,id);
+                return this.Ok();
+            }
+            catch(Exception exception)
             {
                 return BadRequest(exception.Message);
             }

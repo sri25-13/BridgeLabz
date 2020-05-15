@@ -19,14 +19,14 @@ namespace FundooRepository.RepositoryInterface
         /// </summary>
         /// <param name="register"></param>
         /// <returns></returns>
-        Task<int> RegisterAccount(RegisterModel register);
+        bool RegisterAccount(RegisterModel register);
 
         /// <summary>
         /// Login Method
         /// </summary>
         /// <param name="login"></param>
         /// <returns></returns>
-        string Login(LoginModel login);
+        Task<string> Login(LoginModel login);
 
         /// <summary>
         /// Method for ForgotPassword

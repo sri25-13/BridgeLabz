@@ -18,6 +18,7 @@ namespace FundooModel.Account
         private string lastname;
         private string email;
         private string password;
+        private string confirmpassword;
 
         /// <summary>
         /// Get and sets the Firstname
@@ -77,6 +78,17 @@ namespace FundooModel.Account
             set
             {
                 this.password = value;
+            }
+        }
+        public string Confirmpassword
+        {
+            get
+            {
+                return this.confirmpassword;
+            }
+            set
+            {
+                this.confirmpassword = value;
             }
         }
     }

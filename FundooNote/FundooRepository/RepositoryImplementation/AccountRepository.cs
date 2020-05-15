@@ -60,11 +60,7 @@ namespace FundooRepository.RepositoryImplementation
                         signingCredentials: signInCr
                         );
                     var securityToken = new JwtSecurityTokenHandler().WriteToken(token);
-                    var cacheKey = login.Email;
-                    ConnectionMultiplexer multiplexer = ConnectionMultiplexer.Connect("127.0.0.1:6379");
-                    IDatabase data = multiplexer.GetDatabase();
-                    data.StringSet(cacheKey, token.ToString());
-                    data.StringGet(cacheKey);
+                   
                     await this.context.SaveChangesAsync();
                     return securityToken;
                 }
@@ -96,8 +92,8 @@ namespace FundooRepository.RepositoryImplementation
                     var cacheKey = login.Email;
                     ConnectionMultiplexer multiplexer = ConnectionMultiplexer.Connect("127.0.0.1:6379");
                     IDatabase data = multiplexer.GetDatabase();
-                    data.StringSet(cacheKey, token.ToString());
-                    data.StringGet(cacheKey);
+                    data.StringSet($"cacheKey", token.ToString());
+                    data.StringGet($"cacheKey");
                     await this.context.SaveChangesAsync();
                     return securityToken;
                 }
@@ -116,7 +112,7 @@ namespace FundooRepository.RepositoryImplementation
             var user = CheckEmail(forgotPassword.Email);
             if (user == true)
             {
-                string message = forgotPassword.Email;
+                string message = email;
                 MessageQueue queue;
                 if (MessageQueue.Exists(@".\private$\queue"))
                 {
@@ -129,9 +125,9 @@ namespace FundooRepository.RepositoryImplementation
                 Message message1 = new Message
                 {
                     Formatter = new BinaryMessageFormatter(),
-                    Body = user,
-                    Label = "msmqMessage"
+                    Body = user
                 };
+                queue.Send(message);
                 if (message.Contains(email))
                 {
                     message1.Priority = MessagePriority.High;
@@ -144,7 +140,7 @@ namespace FundooRepository.RepositoryImplementation
                 var fromPassword = "harshini@25@";
                 var toAddress = new MailAddress(forgotPassword.Email);
                 string subject = "Reset Password";
-                string body = "To reset your password click the  given link :- " + " http://localhost:44387/api/reset";
+                string body = "To reset your password click the  given link :- http://localhost:4200/reset";
                 SmtpClient smtp = new SmtpClient
                 {
                     Host = "smtp.gmail.com",
@@ -161,12 +157,15 @@ namespace FundooRepository.RepositoryImplementation
                 })
                     try
                     {
+                        queue.Send(message);
                         smtp.Send(msg);
+                        queue.Receive();
                     }
                     catch (Exception e)
                     {
                         throw new Exception(e.Message);
                     }
+                
                 await Task.Run(() => this.context.SaveChangesAsync());
                 return "Success";
             }
@@ -178,7 +177,7 @@ namespace FundooRepository.RepositoryImplementation
         /// </summary>
         /// <param name="login"></param>
         /// <returns></returns>
-        public string Login(LoginModel login)
+        public async Task<string> Login(LoginModel login)
         {
             if (CheckEmail(login.Email))
             {
@@ -193,10 +192,15 @@ namespace FundooRepository.RepositoryImplementation
                         expires: DateTime.Now.AddMinutes(60),
                         signingCredentials: signInCr);
                     var FinalToken = new JwtSecurityTokenHandler().WriteToken(token);
+                    /*var cacheKey = login.Email;
+                    ConnectionMultiplexer multiplexer = ConnectionMultiplexer.Connect("127.0.0.1:6379");
+                    IDatabase data = multiplexer.GetDatabase();
+                    data.StringSet($"cacheKey", FinalToken.ToString());
+                    data.StringGet($"cacheKey");*/
+                    await Task.Run(() => this.context.SaveChangesAsync());
                     return FinalToken;
                 }
             }
-
             return "invalid";
         }
 
@@ -242,20 +246,25 @@ namespace FundooRepository.RepositoryImplementation
         /// </summary>
         /// <param name="register"></param>
         /// <returns></returns>
-        public Task<int> RegisterAccount(RegisterModel register)
+        public  bool RegisterAccount(RegisterModel register)
         {
-            RegisterModel register1 = new RegisterModel()
-            {
+           
+                RegisterModel register1 = new RegisterModel()
+                {
                 Firstname = register.Firstname,
                 Lastname = register.Lastname,
                 Email = register.Email,
-                Password = register.Password
-            };
-            var reg = this.context.Accountregister.Add(register);
-            var result = this.context.SaveChanges();
-            return Task.Run(() => result);
+                Password = register.Password,
+                Confirmpassword = register.Confirmpassword
+                };
+                if(register1.Password==register1.Confirmpassword)
+                {
+                this.context.Accountregister.Add(register1);
+                 this.context.SaveChanges();
+                return true;
+                 }
+            return false;
         }
-
         /// <summary>
         /// Async method implementation for ResetPassword
         /// </summary>
@@ -263,20 +272,23 @@ namespace FundooRepository.RepositoryImplementation
         /// <returns></returns>
         public async Task<string> ResetPassword(ResetPassword resetPassword)
         {
-
-            string password = resetPassword.Password;
-            RegisterModel registerModel = this.context.Accountregister.Where<RegisterModel>(option =>
-              option.Password == password).FirstOrDefault();
-            if (registerModel != null)
-            {
-
-                string pass = resetPassword.ConfirmPassword;
-                registerModel.Password = pass;
-                this.context.Update(registerModel);
-                await Task.Run(() => this.context.SaveChangesAsync());
-                return "success";
-            }
-            return null;
+                ResetPassword resetPassword1 = new ResetPassword()
+                {
+                    NewPassword = resetPassword.NewPassword,
+                ConfirmPassword = resetPassword.ConfirmPassword,
+                };
+                    if (resetPassword1.NewPassword == resetPassword1.ConfirmPassword)
+                {
+                RegisterModel registerModel = new RegisterModel();
+                    string password = resetPassword1.ConfirmPassword;
+                    registerModel.Password = password;
+                    registerModel.Confirmpassword = password;
+                    this.context.Update(registerModel);
+                    await Task.Run(() => this.context.SaveChanges());
+                    return "success";
+                }
+            
+            return default;
         }
     }
 }

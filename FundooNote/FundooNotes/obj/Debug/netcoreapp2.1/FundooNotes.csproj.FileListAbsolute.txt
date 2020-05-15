@@ -13,6 +13,7 @@ C:\Users\sriha\source\repos\FundooNotes\bin\Debug\netcoreapp2.1\FundooManager.pd
 C:\Users\sriha\source\repos\FundooNotes\bin\Debug\netcoreapp2.1\FundooModel.pdb
 C:\Users\sriha\source\repos\FundooNotes\bin\Debug\netcoreapp2.1\FundooRepository.pdb
 C:\Users\sriha\source\repos\FundooNotes\obj\Debug\netcoreapp2.1\FundooNotes.csprojAssemblyReference.cache
+C:\Users\sriha\source\repos\FundooNotes\obj\Debug\netcoreapp2.1\FundooNotes.csproj.CoreCompileInputs.cache
 C:\Users\sriha\source\repos\FundooNotes\obj\Debug\netcoreapp2.1\FundooNotes.RazorAssemblyInfo.cache
 C:\Users\sriha\source\repos\FundooNotes\obj\Debug\netcoreapp2.1\FundooNotes.RazorAssemblyInfo.cs
 C:\Users\sriha\source\repos\FundooNotes\obj\Debug\netcoreapp2.1\FundooNotes.AssemblyInfoInputs.cache
@@ -22,4 +23,3 @@ C:\Users\sriha\source\repos\FundooNotes\obj\Debug\netcoreapp2.1\FundooNotes.cspr
 C:\Users\sriha\source\repos\FundooNotes\obj\Debug\netcoreapp2.1\FundooNotes.dll
 C:\Users\sriha\source\repos\FundooNotes\obj\Debug\netcoreapp2.1\FundooNotes.pdb
 C:\Users\sriha\source\repos\FundooNotes\obj\Debug\netcoreapp2.1\FundooNotes.genruntimeconfig.cache
-C:\Users\sriha\source\repos\FundooNotes\obj\Debug\netcoreapp2.1\FundooNotes.csproj.CoreCompileInputs.cache

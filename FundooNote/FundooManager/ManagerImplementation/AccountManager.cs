@@ -66,9 +66,9 @@ namespace FundooManager.ManagerImplementation
         /// </summary>
         /// <param name="login"></param>
         /// <returns></returns>
-        public string Login(LoginModel login)
+        public async Task<string> Login(LoginModel login)
         {
-            return this.accountRepository.Login(login);
+            return await accountRepository.Login(login);
         }
 
         /// <summary>
@@ -76,10 +76,9 @@ namespace FundooManager.ManagerImplementation
         /// </summary>
         /// <param name="register"></param>
         /// <returns></returns>
-        public async Task<bool> Register(RegisterModel register)
+        public  bool Register(RegisterModel register)
         {
-            await this.accountRepository.RegisterAccount(register);
-            return true;
+              return this.accountRepository.RegisterAccount(register);
         }
 
         /// <summary>

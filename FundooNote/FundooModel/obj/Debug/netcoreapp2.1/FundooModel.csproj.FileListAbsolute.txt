@@ -9,4 +9,3 @@ C:\Users\sriha\source\repos\FundooModel\obj\Debug\netcoreapp2.1\FundooModel.dll
 C:\Users\sriha\source\repos\FundooModel\obj\Debug\netcoreapp2.1\FundooModel.pdb
 C:\Users\sriha\source\repos\FundooModel\obj\Debug\netcoreapp2.1\FundooModel.genruntimeconfig.cache
 C:\Users\sriha\source\repos\FundooModel\obj\Debug\netcoreapp2.1\FundooModel.csproj.CoreCompileInputs.cache
-C:\Users\sriha\source\repos\FundooModel\obj\Debug\netcoreapp2.1\FundooModel.csprojAssemblyReference.cache

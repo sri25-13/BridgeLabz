@@ -40,7 +40,7 @@ namespace FundooNotes
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DBConnection")));
-           /* services.AddSingleton<Context>();*/
+            /*services.AddSingleton<Context>();*/
             services.AddTransient<IAccountRepository, AccountRepository>();
             services.AddTransient<IAccountManager, AccountManager>();
             services.AddTransient<ILabelRepository, LabelRepository>();

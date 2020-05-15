@@ -31,6 +31,7 @@ namespace FundooNote.Controllers
                 return BadRequest(e.Message);
             }
         }
+        
         [HttpGet]
         [Route("getallnotes")]
         public IActionResult GetNotes()

@@ -19,14 +19,14 @@ namespace FundooManager.ManagerInterface
         /// </summary>
         /// <param name="register"></param>
         /// <returns></returns>
-        Task<bool> Register(RegisterModel register);
+        bool Register(RegisterModel register);
 
         /// <summary>
         /// Method for LoggingIn.
         /// </summary>
         /// <param name="login"></param>
         /// <returns></returns>
-        string Login(LoginModel login);
+        Task<string> Login(LoginModel login);
 
         /// <summary>
         /// ForgotPassword method.

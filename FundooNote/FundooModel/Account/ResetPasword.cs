@@ -6,34 +6,8 @@ namespace FundooModel.Account
 {
     public class ResetPassword
     {
-        private string email;
-        private string password;
         private string newpassword;
         private string confirmpassword;
-
-        public string Email
-        {
-            get
-            {
-                return this.email;
-            }
-            set
-            {
-                this.email = value;
-            }
-        }
-        public string Password
-        {
-            get
-            {
-                return this.password;
-            }
-            set
-            {
-                this.password = value;
-            }
-        }
-
         public string NewPassword
         {
             get

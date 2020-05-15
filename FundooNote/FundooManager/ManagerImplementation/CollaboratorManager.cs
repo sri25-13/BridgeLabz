@@ -50,5 +50,9 @@ namespace FundooManager.ManagerImplementation
         {
             await this.repository.DeleteCollaborator(id);
         }
+        public async Task DelNotewithCollab(string email,int id)
+        {
+            await this.repository.DelNotewithCollab(email,id);
+        }
     }
 }

@@ -28,5 +28,6 @@ namespace FundooManager.ManagerInterface
         /// <param name="id"></param>
         /// <returns></returns>
         Task DeleteCollaborator(int id);
+        Task DelNotewithCollab(string email,int id);
     }
 }

@@ -10,5 +10,6 @@ namespace FundooRepository.RepositoryInterface
     {
         Task AddCollaborator(CollaboratorModel model);
         Task DeleteCollaborator(int id);
+        Task<bool> DelNotewithCollab(string email,int id);
     }
 }

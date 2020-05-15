@@ -67,8 +67,6 @@ namespace FundooUnitTesting
         {
             ResetPassword reset = new ResetPassword()
             {
-                Email = "ab@gmail.com",
-                Password = "abc",
                 NewPassword = "ab",
                 ConfirmPassword = "ab"
             };
@@ -151,9 +149,13 @@ namespace FundooUnitTesting
         [Test]
         public void AddLabelTest()
         {
-            Labelmodel labelmodel = new Labelmodel();
-            labelmodel.LabelId = 12;
-            labelmodel.LabelName = "harsgini";
+            Labelmodel labelmodel = new Labelmodel
+            {
+                Email = "ab@gmail.com",
+                NoteId = 1,
+                LabelId = 12,
+                LabelName = "harsgini"
+            };
             LabelManager manager = new LabelManager();
             Assert.IsNotNull(manager.AddLabel(labelmodel));
         }

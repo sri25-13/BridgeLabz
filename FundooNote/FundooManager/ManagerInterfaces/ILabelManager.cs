@@ -21,7 +21,7 @@ namespace FundooManager.ManagerInterface
         /// <param name="name"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        string AddLabel(Labelmodel labelmodel);
+        Task<string> AddLabel(Labelmodel labelmodel);
 
         /// <summary>
         /// Gets all the labels

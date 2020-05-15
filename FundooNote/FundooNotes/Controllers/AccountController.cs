@@ -62,12 +62,16 @@ namespace FundooNote.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("register")]
-        public IActionResult Register([FromBody]RegisterModel register)
+        public  IActionResult Register([FromBody]RegisterModel register)
         {
             try
             {
-                var result = this.accountManager.Register(register);
-                return Ok(register);
+               bool res= this.accountManager.Register(register);
+                if (res)
+                {
+                    return Ok();
+                }
+                return BadRequest();
             }
             catch (Exception exception)
             {
@@ -82,14 +86,14 @@ namespace FundooNote.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("login")]
-        public IActionResult Login([FromBody]LoginModel loginModel)
+        public async Task<IActionResult> Login([FromBody]LoginModel loginModel)
         {
             try
             {
-                string result = this.accountManager.Login(loginModel);
+                string result = await this.accountManager.Login(loginModel);
                 if (result != null)
                 {
-                    return this.Ok(result);
+                    return this.Ok(new { result });
                 }
                 else
                 {
@@ -149,7 +153,7 @@ namespace FundooNote.Controllers
         /// method for loggingIn Facebook
         /// </summary>
         /// <param name="login"></param>
-        /// <returns></returns>
+        /// <returSns></returns>
         [HttpPost]
         [Route("fblogin")]
         public async Task<IActionResult> FacebookLogin([FromBody] LoginModel login)
