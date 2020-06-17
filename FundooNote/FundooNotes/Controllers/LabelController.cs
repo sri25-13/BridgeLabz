@@ -19,7 +19,7 @@ namespace FundooNote.Controllers
     /// <summary>
     /// Controller for Label
     /// </summary>
-   [Authorize]
+     [Authorize]
     public class LabelController : ControllerBase
     {
         private readonly ILabelManager labelManager;
@@ -36,11 +36,11 @@ namespace FundooNote.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("AddLabel")]
-        public  IActionResult AddLabel([FromBody] Labelmodel labelmodel)
+        public async Task<IActionResult> AddLabel([FromBody] Labelmodel labelmodel)
         {
             try
             {
-                 this.labelManager.AddLabel(labelmodel);
+                await this.labelManager.AddLabel(labelmodel);
                 return Ok();
             }
             catch (Exception e)
@@ -96,17 +96,10 @@ namespace FundooNote.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("api/getalllabels")]
-        public IActionResult GetAllLabels()
+        public List<Labelmodel> GetAllLabels()
         {
-            try
-            {
-                List<Labelmodel> labelmodels = this.labelManager.GetAllLabels();
-                return Ok(new { labelmodels });
-            }
-            catch (Exception d)
-            {
-                return this.BadRequest(d.Message);
-            }
-        }
+            return this.labelManager.GetAllLabels();
+                }
+           
     }
 }

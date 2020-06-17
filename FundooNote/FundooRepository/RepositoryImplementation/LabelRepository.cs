@@ -38,7 +38,7 @@ namespace FundooRepository.RepositoryImplementation
         /// <param name="name"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        public  Task AddLabel(Labelmodel labelmodel)
+        public async Task AddLabel(Labelmodel labelmodel)
         {
             Labelmodel label = new Labelmodel()
             {
@@ -46,11 +46,9 @@ namespace FundooRepository.RepositoryImplementation
                 LabelId = labelmodel.LabelId,
                 Email = labelmodel.Email,
                 NoteId = labelmodel.NoteId
-
             };
             this.context.Labels.Add(label);
-            var res = Task.Run(() => context.SaveChanges());
-            return res;
+            await Task.Run(() => context.SaveChanges());
         }
 
         /// <summary>
@@ -58,17 +56,15 @@ namespace FundooRepository.RepositoryImplementation
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Task DeleteLabel(int id)
+        public async Task DeleteLabel(int id)
         {
             var label = context.Labels.Where(r => r.LabelId == id).SingleOrDefault();
             if (label != null)
             {
                 this.context.Labels.Remove(label);
-                var res = Task.Run(() => context.SaveChanges());
-                return res;
+                await Task.Run(() => context.SaveChanges());
             }
 
-            return default;
         }
 
         /// <summary>
@@ -95,7 +91,6 @@ namespace FundooRepository.RepositoryImplementation
                 var res = Task.Run(() => context.SaveChanges());
                 return res;
             }
-
             return default;
         }
     }

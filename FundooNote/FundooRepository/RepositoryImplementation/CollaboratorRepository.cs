@@ -17,15 +17,13 @@ namespace FundooRepository.RepositoryImplementation
         {
             this.context = context;
         }
-        public Task AddCollaborator(CollaboratorModel model)
+        public async Task AddCollaborator(CollaboratorModel model)
         {
             try
             {
                 bool result = this.context.Notes.Any(option => option.Email == model.SenderEmail && option.NoteId == model.NoteId);
                 if (result)
                 {
-                    var user = this.context.Accountregister.Where(usr => usr.Email == model.ReceiverEmail).SingleOrDefault();
-                    {
                         var addCollaborator = new CollaboratorModel()
                         {
                             NoteId = model.NoteId,
@@ -33,18 +31,15 @@ namespace FundooRepository.RepositoryImplementation
                             ReceiverEmail = model.ReceiverEmail
                         };
                         context.Collaborators.Add(model);
-                        var res = Task.Run(() => context.SaveChanges());
-                        return res;
-                    }
+                        await Task.Run(() => context.SaveChanges());
                 }
-                return default;
             }
             catch (Exception exception)
             {
                 throw new Exception(exception.Message);
             }
         }
-        public Task DeleteCollaborator(int id)
+        public async  Task DeleteCollaborator(int id)
         {
             try
             {
@@ -52,17 +47,20 @@ namespace FundooRepository.RepositoryImplementation
                 if (result != null)
                 {
                     this.context.Collaborators.Remove(result);
-                    var res = Task.Run(() => context.SaveChanges());
-                    return res;
+                    await Task.Run(() => context.SaveChanges());
 
                 }
-                return default;
             }
             catch (Exception exception)
             {
                 throw new Exception(exception.Message);
             }
         }
+        public List<CollaboratorModel> getAllcollaborators()
+        {
+            return this.context.Collaborators.ToList();
+        }
+    
         //delete all the notes with collabor reeiveremailid of xyz@gmail.com
         //get all the notes with collabor recemail of xyz@gmail.com
         //get all the notes which doesnt have image and with receiveremail of xyz@gmail.com

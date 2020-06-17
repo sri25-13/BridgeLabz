@@ -35,7 +35,7 @@ namespace FundooNote.Controllers
         [HttpGet]
         [Route("getallnotes")]
         public IActionResult GetNotes()
-        {
+     {
             try
             {
                 List<NotesModel> n = this.noteManager.GetNotes();
@@ -52,6 +52,7 @@ namespace FundooNote.Controllers
         {
             try
             {
+             
                 List<NotesModel> notes = this.noteManager.GetNote(id);
                 return Ok(notes);
             }
@@ -62,12 +63,12 @@ namespace FundooNote.Controllers
         }
         [HttpPut]
         [Route("Update")]
-        public async Task<IActionResult> Update(int id, string tittle, string Decription, string color, string img)
+        public async Task<IActionResult> Update([FromBody]NotesModel notesModel)
         {
             try
             {
-                await this.noteManager.Update(id, tittle, Decription, color, img);
-                return Ok(id);
+                await this.noteManager.Update(notesModel);
+                return Ok();
             }
             catch (Exception e)
             {
@@ -174,17 +175,15 @@ namespace FundooNote.Controllers
         }
         [HttpGet]
         [Route("GetArchive")]
-        public IActionResult Getarchive()
+        public List<NotesModel> Getarchive()
         {
-            try
-            {
-                var result = this.noteManager.GetArcheive();
-                return Ok(new { result });
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
+            return this.noteManager.GetArcheive();
+        }
+        [HttpGet]
+        [Route("GetReminder")]
+        public List<NotesModel> GetReminder()
+        {
+            return this.noteManager.GetReminders();
         }
         [HttpPost]
         [Route("Reminder")]
@@ -193,6 +192,39 @@ namespace FundooNote.Controllers
             try
             {
                 await this.noteManager.Reminder(id, Reminder);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+        [HttpGet]
+        [Route("search")]
+        public async Task<IActionResult> Search(string searchParameter)
+        {
+            var result = await this.noteManager.Search(searchParameter);
+            try
+            {
+                if (result.Count() > 0)
+                {
+                    return this.Ok(result);
+                }
+
+                return this.BadRequest("No search results are Available");
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
+        }
+        [HttpDelete]
+        [Route("deleteReminder")]
+        public async Task<IActionResult> DeleteReminder(int id)
+        {
+            try
+            {
+                await this.noteManager.DeleteReminder(id);
                 return Ok();
             }
             catch (Exception e)

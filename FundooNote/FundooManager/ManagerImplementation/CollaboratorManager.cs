@@ -9,6 +9,7 @@ namespace FundooManager.ManagerImplementation
     using FundooManager.ManagerInterface;
     using FundooModel.Collaborators;
     using FundooRepository.RepositoryInterface;
+    using System.Collections.Generic;
     using System.Threading.Tasks;
 
     /// <summary>
@@ -39,6 +40,10 @@ namespace FundooManager.ManagerImplementation
         public async Task AddCollaborator(CollaboratorModel model)
         {
             await this.repository.AddCollaborator(model);
+        }
+        public List<CollaboratorModel> getcollaborators()
+        {
+            return this.repository.getAllcollaborators();
         }
 
         /// <summary>

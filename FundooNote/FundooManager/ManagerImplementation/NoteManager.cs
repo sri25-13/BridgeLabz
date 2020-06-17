@@ -13,7 +13,9 @@ using System.Threading.Tasks;
 namespace FundooManager.ManagerImplementation
 {
     using FundooManager.ManagerInterface;
+    using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
 
     /// <summary>
@@ -67,6 +69,22 @@ namespace FundooManager.ManagerImplementation
         {
             await this.noteRepository.Delete(id);
         }
+        public async Task DeleteReminder(int id)
+        {
+            await this.noteRepository.DeleteReminder(id);
+        }
+        public async Task<IQueryable<NotesModel>> Search(string searchParameter)
+        {
+            try
+            {
+                return await this.noteRepository.Search(searchParameter);
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
+        }
+
 
         /// <summary>
         /// gets Archeived data
@@ -75,6 +93,10 @@ namespace FundooManager.ManagerImplementation
         public List<NotesModel> GetArcheive()
         {
             return this.noteRepository.GetArcheive();
+        }
+        public List<NotesModel> GetReminders()
+        {
+            return this.noteRepository.GetReminders();
         }
 
         /// <summary>
@@ -177,9 +199,9 @@ namespace FundooManager.ManagerImplementation
         /// <param name="changeColor"></param>
         /// <param name="addImg"></param>
         /// <returns></returns>
-        public async Task Update(int noteId, string title, string description, string changeColor, string addImg)
+        public  Task Update(NotesModel notesModel)
         {
-            await this.noteRepository.Update(noteId, title, description, changeColor, addImg);
+            return this.noteRepository.Update(notesModel);
         }
 
         /// <summary>

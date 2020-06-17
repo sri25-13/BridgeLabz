@@ -51,7 +51,7 @@ namespace FundooNotes
             services.AddTransient<ICollaboratorRepository, CollaboratorRepository>();
            
             services.Configure<DataProtectionTokenProviderOptions>(option =>
-            option.TokenLifespan = TimeSpan.FromHours(1));
+            option.TokenLifespan = TimeSpan.FromHours(24));
 
             var secretKey = Configuration["Jwt:key"];
             var symmerticKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));

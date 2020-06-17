@@ -93,7 +93,7 @@ namespace FundooNote.Controllers
                 string result = await this.accountManager.Login(loginModel);
                 if (result != null)
                 {
-                    return this.Ok(new { result });
+                    return this.Ok(new { Token = result });
                 }
                 else
                 {

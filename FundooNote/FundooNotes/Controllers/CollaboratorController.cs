@@ -18,7 +18,7 @@ namespace FundooNote.Controllers
     /// <summary>
     /// Controller class for Collaborator
     /// </summary>
-   /*  [Authorize]*/
+   [Authorize]
     public class CollaboratorController : ControllerBase
     {
         private readonly ICollaboratorManager collaboratorManager;
@@ -50,6 +50,12 @@ namespace FundooNote.Controllers
             {
                 return BadRequest(exception.Message);
             }
+        }
+        [HttpGet]
+        [Route("getallcollaborators")]
+        public List<CollaboratorModel> getallCollaborators()
+        {
+            return this.collaboratorManager.getcollaborators();
         }
 
         /// <summary>

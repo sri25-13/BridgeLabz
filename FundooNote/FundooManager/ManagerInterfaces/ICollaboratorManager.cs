@@ -7,6 +7,7 @@
 namespace FundooManager.ManagerInterface
 {
     using FundooModel.Collaborators;
+    using System.Collections.Generic;
     using System.Threading.Tasks;
 
     /// <summary>
@@ -21,6 +22,7 @@ namespace FundooManager.ManagerInterface
         /// <param name="model"></param>
         /// <returns></returns>
        Task AddCollaborator(CollaboratorModel model);
+        List<CollaboratorModel> getcollaborators();
 
         /// <summary>
         /// Deletes the Collaborator

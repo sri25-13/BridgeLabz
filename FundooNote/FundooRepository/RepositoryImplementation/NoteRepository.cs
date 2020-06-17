@@ -23,7 +23,7 @@ namespace FundooRepository.RepositoryImplementation
         {
         }
 
-        public Task AddNotes(NotesModel notesModel)
+        public async Task AddNotes(NotesModel notesModel)
         {
             NotesModel notesModel1 = new NotesModel()
             {
@@ -37,11 +37,11 @@ namespace FundooRepository.RepositoryImplementation
                 Pin = notesModel.Pin,
                 ChangeColor = notesModel.ChangeColor,
                 AddImg = notesModel.AddImg,
-                Trash = notesModel.Trash
+                Trash = notesModel.Trash,
+                Reminder=notesModel.Reminder,
             };
             this.context.Notes.Add(notesModel1);
-            var s = Task.Run(() => context.SaveChanges());
-            return s;
+            await Task.Run(() => context.SaveChangesAsync());
         }
         public Task Delete(int id)
         {
@@ -53,10 +53,57 @@ namespace FundooRepository.RepositoryImplementation
             }
             return default;
         }
+        public Task DeleteReminder(int id)
+        {
+            var result = this.context.Notes.Where(op => op.NoteId==id).FirstOrDefault();
+            if (result != null)
+            {
+                if (result.Reminder != null)
+                {
+                    result.Reminder = null;
+                    this.context.Notes.Update(result);
+                    return Task.Run(() => context.SaveChanges());
+                }
+            }
+            return default;
+        }
+        public async Task<IQueryable<NotesModel>> Search(string searchNote)
+        {
+            try
+            {
+                var result = this.context.Notes.AsQueryable();
+
+                foreach (var values in searchNote)
+                {
+                  result = result.Where(search => search.Description.Contains(values) || search.Title.Contains(values));
+                }
+                await this.context.SaveChangesAsync();
+                return result;
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
+        }
         public List<NotesModel> GetNotes()
         {
-            return this.context.Notes.ToList();
+            var a = from notes in this.context.Notes where notes.Archeive == false && notes.Trash==false select notes;
+            if (a != null)
+            {
+                return this.context.Notes.Where(op => op.Archeive == false && op.Trash==false).ToList<NotesModel>();
+            }
+            return default;
         }
+        public List<NotesModel> GetReminders()
+        {
+            var a = from notes in this.context.Notes where notes.Reminder != null select notes;
+            if (a != null)
+            {
+                return this.context.Notes.Where(op => op.Reminder!=null).ToList<NotesModel>();
+            }
+            return default;
+        }
+
         public List<NotesModel> GetNote(int id)
         {
             var result = this.context.Notes.Where(op => op.NoteId == id).SingleOrDefault();
@@ -66,16 +113,16 @@ namespace FundooRepository.RepositoryImplementation
             }
             return null;
         }
-        public Task Update(int id, string tittle, string Decription, string color, string img)
+        public Task Update(NotesModel notesModel)
         {
-            var result = this.context.Notes.Where(op => op.NoteId == id).SingleOrDefault();
+            
+            var result = this.context.Notes.Where(op => op.NoteId == notesModel.NoteId).SingleOrDefault();
             if (result != null)
             {
-                result.Title = tittle;
-                result.Description = Decription;
-                result.ChangeColor = color;
-                result.AddImg = img;
-                this.context.Notes.Update(result);
+                result.Title = notesModel.Title;
+                result.Description = notesModel.Description;
+                result.ChangeColor = notesModel.ChangeColor;
+                result.AddImg = notesModel.AddImg;
                 return Task.Run(() => context.SaveChanges());
             }
             return default;
@@ -163,12 +210,12 @@ namespace FundooRepository.RepositoryImplementation
             }
             return null;
         }
-        public List<NotesModel> GetArcheive()
+        public  List<NotesModel> GetArcheive()
         {
-            var a = this.context.Notes.Where(op => op.Archeive == true).SingleOrDefault();
+            var a = from notes in this.context.Notes where notes.Archeive == true select notes;
             if (a != null)
             {
-                return this.context.Notes.Where(op => op.Archeive == true).ToList();
+                return  this.context.Notes.Where(op => op.Archeive == true).ToList<NotesModel>();
             }
             return default;
         }
@@ -187,7 +234,7 @@ namespace FundooRepository.RepositoryImplementation
         public List<NotesModel> TrashList()
         {
 
-            var result = this.context.Notes.Where(list => list.Trash == true).SingleOrDefault();
+            var result = from notes in this.context.Notes where notes.Trash==true select notes;
             if (result != null)
             {
                 return this.context.Notes.Where(list => list.Trash == true).ToList<NotesModel>();

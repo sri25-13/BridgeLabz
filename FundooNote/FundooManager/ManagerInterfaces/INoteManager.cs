@@ -8,6 +8,7 @@ namespace FundooManager.ManagerInterface
 {
     using FundooModel.Notes;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
 
     /// <summary>
@@ -51,7 +52,7 @@ namespace FundooManager.ManagerInterface
         /// <param name="changeColor"></param>
         /// <param name="addImg"></param>
         /// <returns></returns>
-        Task Update(int nodeId, string tittle, string description, string changeColor, string addImg);
+        Task Update(NotesModel notesModel);
 
         /// <summary>
         /// Uploads the image
@@ -110,13 +111,14 @@ namespace FundooManager.ManagerInterface
         /// <param name="Reminder"></param>
         /// <returns></returns>
         Task Reminder(int id, string Reminder);
-
+        Task DeleteReminder(int id);
         /// <summary>
         /// Moves to Trash
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         Task Trash(int id);
+        Task<IQueryable<NotesModel>> Search(string searchParameter);
 
         /// <summary>
         /// Gives the trashlist
@@ -143,5 +145,6 @@ namespace FundooManager.ManagerInterface
         /// </summary>
         /// <returns></returns>
         Task RestoreAll();
+        List<NotesModel> GetReminders();
     }
 }
