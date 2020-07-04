@@ -1,0 +1,17 @@
+C:\Users\sriha\source\repos\BookStoreManager\bin\Debug\netcoreapp2.1\BookStoreManager.deps.json
+C:\Users\sriha\source\repos\BookStoreManager\bin\Debug\netcoreapp2.1\BookStoreManager.runtimeconfig.json
+C:\Users\sriha\source\repos\BookStoreManager\bin\Debug\netcoreapp2.1\BookStoreManager.runtimeconfig.dev.json
+C:\Users\sriha\source\repos\BookStoreManager\bin\Debug\netcoreapp2.1\BookStoreManager.dll
+C:\Users\sriha\source\repos\BookStoreManager\bin\Debug\netcoreapp2.1\BookStoreManager.pdb
+C:\Users\sriha\source\repos\BookStoreManager\bin\Debug\netcoreapp2.1\BookStoreCommonLayer.dll
+C:\Users\sriha\source\repos\BookStoreManager\bin\Debug\netcoreapp2.1\BookStoreRepository.dll
+C:\Users\sriha\source\repos\BookStoreManager\bin\Debug\netcoreapp2.1\BookStoreCommonLayer.pdb
+C:\Users\sriha\source\repos\BookStoreManager\bin\Debug\netcoreapp2.1\BookStoreRepository.pdb
+C:\Users\sriha\source\repos\BookStoreManager\obj\Debug\netcoreapp2.1\BookStoreManager.csprojAssemblyReference.cache
+C:\Users\sriha\source\repos\BookStoreManager\obj\Debug\netcoreapp2.1\BookStoreManager.csproj.CoreCompileInputs.cache
+C:\Users\sriha\source\repos\BookStoreManager\obj\Debug\netcoreapp2.1\BookStoreManager.AssemblyInfoInputs.cache
+C:\Users\sriha\source\repos\BookStoreManager\obj\Debug\netcoreapp2.1\BookStoreManager.AssemblyInfo.cs
+C:\Users\sriha\source\repos\BookStoreManager\obj\Debug\netcoreapp2.1\BookStoreManager.csproj.CopyComplete
+C:\Users\sriha\source\repos\BookStoreManager\obj\Debug\netcoreapp2.1\BookStoreManager.dll
+C:\Users\sriha\source\repos\BookStoreManager\obj\Debug\netcoreapp2.1\BookStoreManager.pdb
+C:\Users\sriha\source\repos\BookStoreManager\obj\Debug\netcoreapp2.1\BookStoreManager.genruntimeconfig.cache

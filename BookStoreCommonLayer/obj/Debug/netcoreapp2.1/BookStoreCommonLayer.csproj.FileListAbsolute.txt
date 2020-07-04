@@ -1,0 +1,12 @@
+C:\Users\sriha\source\repos\BookStoreCommonLayer\bin\Debug\netcoreapp2.1\BookStoreCommonLayer.deps.json
+C:\Users\sriha\source\repos\BookStoreCommonLayer\bin\Debug\netcoreapp2.1\BookStoreCommonLayer.runtimeconfig.json
+C:\Users\sriha\source\repos\BookStoreCommonLayer\bin\Debug\netcoreapp2.1\BookStoreCommonLayer.runtimeconfig.dev.json
+C:\Users\sriha\source\repos\BookStoreCommonLayer\bin\Debug\netcoreapp2.1\BookStoreCommonLayer.dll
+C:\Users\sriha\source\repos\BookStoreCommonLayer\bin\Debug\netcoreapp2.1\BookStoreCommonLayer.pdb
+C:\Users\sriha\source\repos\BookStoreCommonLayer\obj\Debug\netcoreapp2.1\BookStoreCommonLayer.csproj.CoreCompileInputs.cache
+C:\Users\sriha\source\repos\BookStoreCommonLayer\obj\Debug\netcoreapp2.1\BookStoreCommonLayer.AssemblyInfoInputs.cache
+C:\Users\sriha\source\repos\BookStoreCommonLayer\obj\Debug\netcoreapp2.1\BookStoreCommonLayer.AssemblyInfo.cs
+C:\Users\sriha\source\repos\BookStoreCommonLayer\obj\Debug\netcoreapp2.1\BookStoreCommonLayer.dll
+C:\Users\sriha\source\repos\BookStoreCommonLayer\obj\Debug\netcoreapp2.1\BookStoreCommonLayer.pdb
+C:\Users\sriha\source\repos\BookStoreCommonLayer\obj\Debug\netcoreapp2.1\BookStoreCommonLayer.genruntimeconfig.cache
+C:\Users\sriha\source\repos\BookStoreCommonLayer\obj\Debug\netcoreapp2.1\BookStoreCommonLayer.csprojAssemblyReference.cache

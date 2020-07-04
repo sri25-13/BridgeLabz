@@ -1,0 +1,15 @@
+C:\Users\sriha\source\repos\BookStoreRepository\bin\Debug\netcoreapp2.1\BookStoreRepository.deps.json
+C:\Users\sriha\source\repos\BookStoreRepository\bin\Debug\netcoreapp2.1\BookStoreRepository.runtimeconfig.json
+C:\Users\sriha\source\repos\BookStoreRepository\bin\Debug\netcoreapp2.1\BookStoreRepository.runtimeconfig.dev.json
+C:\Users\sriha\source\repos\BookStoreRepository\bin\Debug\netcoreapp2.1\BookStoreRepository.dll
+C:\Users\sriha\source\repos\BookStoreRepository\bin\Debug\netcoreapp2.1\BookStoreRepository.pdb
+C:\Users\sriha\source\repos\BookStoreRepository\bin\Debug\netcoreapp2.1\BookStoreCommonLayer.dll
+C:\Users\sriha\source\repos\BookStoreRepository\bin\Debug\netcoreapp2.1\BookStoreCommonLayer.pdb
+C:\Users\sriha\source\repos\BookStoreRepository\obj\Debug\netcoreapp2.1\BookStoreRepository.csprojAssemblyReference.cache
+C:\Users\sriha\source\repos\BookStoreRepository\obj\Debug\netcoreapp2.1\BookStoreRepository.AssemblyInfoInputs.cache
+C:\Users\sriha\source\repos\BookStoreRepository\obj\Debug\netcoreapp2.1\BookStoreRepository.AssemblyInfo.cs
+C:\Users\sriha\source\repos\BookStoreRepository\obj\Debug\netcoreapp2.1\BookStoreRepository.csproj.CopyComplete
+C:\Users\sriha\source\repos\BookStoreRepository\obj\Debug\netcoreapp2.1\BookStoreRepository.dll
+C:\Users\sriha\source\repos\BookStoreRepository\obj\Debug\netcoreapp2.1\BookStoreRepository.pdb
+C:\Users\sriha\source\repos\BookStoreRepository\obj\Debug\netcoreapp2.1\BookStoreRepository.genruntimeconfig.cache
+C:\Users\sriha\source\repos\BookStoreRepository\obj\Debug\netcoreapp2.1\BookStoreRepository.csproj.CoreCompileInputs.cache
